@@ -1,0 +1,10 @@
+<!-- favicon 파비콘 -->
+
+<!-- pc용/ico -->
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- 안드로이드/png : type 속성사용 -->
+<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
+<!-- 애플IOS/jpg -->
+<link rel="apple-touch-icon" href="images/favicon.jpg">
