@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval_vertical_v2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        #box {
+            width: 600px;
+            height: 600px;
+            margin: 20px auto;
+            border: 3px solid #000;
+            overflow: hidden;
+            position: relative;
+            /* #btngrp의 기준! */
+        }
+
+        #btngrp {
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            /* #gallery도 position을 가졌을 때는 적용! */
+        }
+
+        #btngrp li {
+            display: inline-block;
+            color: #fff;
+        }
+
+        #btngrp li.active {
+            color: red;
+        }
+
+        #gallery {
+            width: 600px;
+            /*height값은 내용만큼 자동으로 잡히도록! 필요시 설정*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* outline: 2px solid red; */
+        }
+
+        #gallery li {
+            width: 100%;
+        }
+
+        #gallery li img {
+            width: 100%;
+            display: block;
+        }
+
+    </style>
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            //초기설정 - 페이지 표시
+            //$('#btngrp li').first().css('color','red');
+
+            //1번만 실행!
+            /* $('#gallery').animate({
+                top: -600
+            }, 800, function(){
+                $('#gallery').append($('#gallery li:first')).css('top','0'); 
+            }); */
+
+            //자동실행
+            setInterval(function () {
+                move();
+
+                /* $('#gallery').animate({
+                    top: -600
+                }, 800, function () {
+                    $('#gallery').append($('#gallery li:first')).css('top', '0');
+                }); */
+            }, 2000);
+
+
+            //슬라이드 함수 만들기
+            var bseq = 0; //페이저 초기값으로 사용할 변수!
+            function move (){
+                $('#gallery').animate({
+                    top: -600
+                }, 800, function () {
+                    $('#gallery').append($('#gallery li:first')).css('top', '0');
+                });
+
+                //페이져(블릿) 변경
+                bseq++;
+                if(bseq === 3) bseq = 0;
+                $('#btngrp li').eq(bseq).addClass('active').siblings().removeClass('active');
+            }
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="box">
+        <ul id="btngrp">
+            <li class="active">◆</li>
+            <li>◆</li>
+            <li>◆</li>
+        </ul>
+
+        <ul id="gallery">
+            <li><img src="image/item1.jpg" alt=""></li>
+            <li><img src="image/item2.jpg" alt=""></li>
+            <li><img src="image/item3.jpg" alt=""></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

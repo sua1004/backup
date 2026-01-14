@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>06_drop-down-list-box</title>
+</head>
+
+<body>
+
+    <!-- 에제1 -->
+    <p>언어설정</p>
+    <select name="" language>
+        <option value="">언어선택</option>
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+        <option value="ch">中文</option>
+    </select>
+
+    <!-- 예제2 -->
+    <p>어떤 기기를 사용하여 음악을 들으십니까?</p>
+
+    <select name="device">
+
+        <optgroup label="Apple">
+            <option value="아이패드">아이패드</option>
+            <option value="아이폰">아이폰</option>
+            <option value="맥북">맥북</option>
+        </optgroup>
+
+        <optgroup label="Samsung">
+            <option value="갤러시s">갤러시s</option>
+            <option value="갤러시s울트라">갤러시s울트라</option>
+            <option value="갤러시 엣지">갤러시 엣지</option>
+        </optgroup>
+
+        <!-- 
+        보통 예제1을 더 자주 사용함
+
+        <optgroup> : <option>을 묶어주는 태그
+        label (속성) : <optgroup>의 제목을 붙여주는 속성
+        ex) 예제2 참고
+        -->
+
+    </select>
+
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+/*** reset.css
+***************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*** common.css (공통으로 사용할 디자인)
+***************************************************************************/
+
+/* float해제를 위한 클래스와 가상요소! */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 
+구글 웹폰트
+
+1) Noto Sans Kr (font-weight: 100~900)
+  font-family: "Noto Sans KR", sans-serif;
+
+2) Fredoka (font-weight: 300~700)
+font-family: "Fredoka", sans-serif;
+*/
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+}
+
+.sandwich-menu {
+    width: 1200px;
+    margin: 60px auto;
+
+    /* background-color: yellow; */
+}
+
+.sandwich-menu .top {
+    /* outline: 2px solid red; */
+
+    margin-bottom: 40px;
+}
+.sandwich-menu .top .title {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 2.7rem;
+
+    line-height: 60px; /* height보다 더 자주 사용 */
+
+    background-image: url(../img/example3/bul_tit.png);
+    background-repeat: no-repeat;
+    padding-left: 30px;
+   
+    /* background-color: yellow; */
+    float: left;
+}
+
+/* 디자인 적용 후 위치 이동! */
+.sandwich-menu .top .tabmenu {
+   /*  background-color: plum; */
+   
+    float: right; 
+    /* position: relative;로 위치 이동 X 
+    문제) title 덩어리 위에 tabmenu를 얹어 놓은 게 됨
+    해결) title에도 float: left; 넣어서 해결하기 */
+}
+.sandwich-menu .top .tabmenu li {
+    display: inline-block;
+    line-height: 60px;
+
+    position: relative; /* 가상요소 after의 기준!!! */
+}
+.sandwich-menu .top .tabmenu li ~ li {
+    margin-left: 30px;
+}
+.sandwich-menu .top .tabmenu li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 14px;
+    background-color: #B2B2B2;
+
+    position: absolute;
+    left: -16px;
+    top: 24px;
+}
+.sandwich-menu .top .tabmenu li:first-child::after {
+    display: none; /* 첫번째 li요소만 선택 > 위에서 넣은 구분선 삭제 */
+}
+.sandwich-menu .top .tabmenu li a {
+    color: #B2B2B2;
+}
+/* li.active : li 중에서 클래스 active만 선택 */
+.sandwich-menu .top .tabmenu li.active a {
+    color: #009132;
+    font-weight: 600;
+}
+
+
+.sandwich-menu .content {
+    /* background-color: aquamarine; */
+   /* outline: 2px solid pink; */
+
+    position: relative; /* btn의 기준!!! */
+}
+
+.sandwich-menu .content .btn {
+   /*  outline: 2px solid blue; */
+
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+}
+.sandwich-menu .content .btn.prev {
+    left: -80px;
+}
+.sandwich-menu .content .btn.next {
+    right: -80px;
+}
+
+.sandwich-menu .content .btn a {
+    /* 글자 없애기 */
+   font-size: 0;
+   /* text-indent: -9999px; */
+   /* opacity: 0; */
+
+    /* background-color: yellow; */
+
+    display: block;
+    height: 100%;
+    background-image: url(../img/example3/icon_event_slider_arr.png);
+    background-repeat: no-repeat;
+}
+.sandwich-menu .content .prev a:hover {
+    background-position: left bottom;
+}
+
+.sandwich-menu .content .next a {
+    background-position: right top;
+}
+.sandwich-menu .content .next a:hover {
+    background-position: right bottom;
+}
+
+.sandwich-menu .content .menu-wrap {
+   /*  background-color: yellow; */
+
+    width: 100%;
+}
+.menu-wrap li {
+    /* outline: 2px solid red; */
+
+    width: 25%;
+    float: left;
+}
+.menu-wrap li a {
+    display: block;
+}
+.menu-wrap li a img {
+    width: 100%;
+}
+
+.menu-wrap li .info {
+    /* background-color: plum; */
+
+    padding: 0 20px;
+    text-align: center;
+}
+.menu-wrap li .info h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.menu-wrap li .info p {
+    color: #888;
+    line-height: 1.4;
+    letter-spacing: -0.6px;
+    word-break: keep-all; /* 단어가 중간에 끊어지는 걸 해결 */
+}

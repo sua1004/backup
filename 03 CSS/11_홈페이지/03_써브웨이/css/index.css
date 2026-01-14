@@ -1,0 +1,593 @@
+/*** subway.css **********************************/
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR&display=swap');
+
+/* common.css */
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.sec-tit {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.4rem;
+    font-weight: 200;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*** header ****************************************/
+header {
+    width: 100%;
+    background-color: #fff;
+    border-top: 5px solid #009132;
+    padding: 20px 0;
+}
+
+/* 1) 로고 이미지 자체를 배치하는 경우 */
+/*header > .inner {
+    background-color: yellow;
+    text-align: center;
+}*/
+
+/* 2) 로고 이미지를 담고 있는 h1.logo를 배치하는 경우 */
+header > .inner {
+    position: relative; 
+    height: 40px;
+    /*background-color: yellow;*/
+}
+header .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /*outline: 2px solid red;*/
+}
+header .logo img {
+    display: block;
+}
+
+header .lnb {
+    position: absolute;
+    right: 0;
+    /*top: 50%;
+    transform: translateY(-50%);*/
+    line-height: 40px;
+    font-size: 14px;
+    /*outline: 2px solid blue;*/
+}
+header .lnb li~li {
+    margin-left: 16px;
+}
+header .lnb li:first-child {
+    position: relative;
+    /*after의 기준!!!*/
+}
+header .lnb li:first-child:after {
+    content: "·";
+    display: block;
+    /*width: 3px;
+    height: 3px;
+    background-color: #f00;*/
+    position: absolute;
+    /*top: 18.5px;*/
+    /*left: 118%;*/
+    left: calc(100% + 6.5px);
+    top: 0;
+    color: #ccc;
+}
+
+header .lnb li:last-child {
+    font-size: 0;
+    width: 30px;
+    height: 100%;
+    background: url(../image/icon_utill_global.png) no-repeat center;
+    /*outline: 2px solid red;*/
+}
+
+header .lnb li a {
+    color: #ccc;
+    font-weight: 100;
+}
+
+
+header nav {
+    width: 1080px;
+    margin: 30px auto 0;
+    /*outline: 2px solid red;*/
+}
+header nav li {
+    width: 180px;
+    text-align: center;
+}
+header nav li a {
+    color: #333;
+}
+header nav li:hover a {
+    color: #009132;
+    font-weight: 600;
+}
+
+
+/*** main ****************************************/
+main {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+main a {
+    width: 100%;
+}
+main a img {
+    width: 100%;
+    display: block;
+}
+
+
+/*** quickbtn ****************************************/
+.quickbtn {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /*.btngrp의 float 해제를 위한 것*/
+    /*outline: 2px solid red;*/
+    position: relative;
+    top: -26px;
+}
+.quickbtn .btngrp {
+    float: right;
+}
+.quickbtn .btngrp a {
+    width: 230px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    float: left;
+}
+.quickbtn .btngrp a.store {
+    background-color: #ffc20d;
+    color: #333;
+    border-top-left-radius: 30px;
+}
+.quickbtn .btngrp a.franchise {
+    background-color: #009132;
+    color: #fff;
+    border-bottom-right-radius: 30px;
+}
+
+.quickbtn .btngrp img {
+    margin-right: 8px;
+    height: 26px;
+    vertical-align: text-bottom;
+}
+
+/*** sandwich ****************************************/
+.sandwich {
+    margin-top: 80px;
+}
+.sandwich h2 {
+    background: url(../image/bul_tit.png) no-repeat;
+    line-height: 60px;
+    padding-left: 30px;
+    float: left;
+}
+
+.sandwich .tapmenu {
+    line-height: 60px;
+    float: right;
+    /*outline: 2px solid red;*/
+}
+.sandwich .tapmenu li~li {
+    margin-left: 30px;
+}
+
+.sandwich .tapmenu li {
+    position: relative;
+}
+.sandwich .tapmenu li:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 14px;
+    background-color: #b2b2b2;
+    position: absolute;
+    top: 24px;
+    /*left: 100%;*/
+    left: calc(100% + 14.5px);
+}
+.sandwich .tapmenu li:last-child:after {
+    /*width: 0;
+    height: 0;*/
+    display: none;
+}
+
+.sandwich .tapmenu li a {
+    font-size: 14px;
+    color: #b2b2b2;
+    font-weight: 100;
+}
+.sandwich .tapmenu li.active a {
+    color: #009132;
+    font-weight: 600;
+}
+
+.sandwich .menu-wrap {
+    clear: both;
+    width: 100%;
+    /*background-color: yellowgreen;*/
+    padding-top: 60px;
+    position: relative; 
+    /* .btn의 기준!! */
+}
+
+/* 좌우버튼 */
+.sandwich .menu-wrap .btn {
+    width: 50px;
+    height: 50px;
+    background: url(../image/icon_event_slider_arr.png) no-repeat;
+    text-indent: -9999px;
+    position: absolute;
+    /*left: 0;*/
+    top: 154px;
+    /*outline: 2px solid red;*/
+}
+.sandwich .menu-wrap .prev {
+    background-position: left top;
+    left: -80px;
+}
+.sandwich .menu-wrap .prev:hover {
+    background-position: left bottom;
+}
+.sandwich .menu-wrap .next {
+    background-position: right top;
+    right: -80px;
+}
+.sandwich .menu-wrap .next:hover {
+    background-position: right bottom;
+}
+
+.sandwich .menu-wrap .btn a {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 샌드위치 박스 */
+/*.sandwich .menu-wrap .menu-box-wrap {
+    outline: 3px solid blue;
+}*/
+.menu-box-wrap .menu-box {
+    width: 25%;
+    text-align: center;
+    /*outline: 2px solid blue;*/
+}
+.menu-box-wrap .menu-box img {
+    width: 100%;
+    display: block;
+}
+.menu-box-wrap .menu-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.menu-box-wrap .menu-box p {
+    padding: 0 20px;
+    color: #999;
+    letter-spacing: -0.6px;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+/*** content ******************************************/
+.content {
+    margin-top: 100px;
+    width: 100%;
+    background-image: url(../image/bg_content.gif);
+    padding: 60px 0;
+}
+.content > .inner {
+    width: 1280px;
+    /*outline: 2px solid red;*/
+}
+
+.content .top {}
+.content .top .use {
+    width: 400px;
+    height: 300px;
+    background: url(../image/bg_utilization.png) no-repeat left;
+    float: left;
+    margin-left: 55px;
+    position: relative;
+}
+.content .top .use h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+.content .top .use a {
+    color: #fff;
+    font-weight: 600;
+    border: 3px solid #fff;
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 100px;
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+}
+.content .top .use a:hover {
+    background-color: #fff;
+    color: #00a5e3;
+}
+
+
+.content .top .history {
+    width: 825px;
+    height: 300px;
+    background: url(../image/img_subway_history.png) no-repeat left;
+    float: right;
+    position: relative;
+}
+.content .top .history h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    position: absolute;
+    left: 410px;
+    top: 40px;
+}
+.content .top .history a {
+    color: #fff;
+    font-weight: 600;
+    border: 3px solid #fff;
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 100px;
+    position: absolute;
+    left: 410px;
+    bottom: 40px;
+}
+.content .top .history a:hover {
+    background-color: #fff;
+    color: #ff8300;
+}
+
+
+.content .bottom {
+    margin: 30px 55px 0;
+}
+.content .bottom .news {
+    width: 870px;
+    height: 300px;
+    background-color: #fff;
+    float: left;
+    border-radius: 30px 0;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.news .title {
+    width: 36%;
+    float: left;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /*outline: 2px solid red;*/
+}
+.news .title h2 {
+    font-size: 2rem;
+    line-height: 50px;
+    background: url(../image/bul_tit.png) no-repeat left/auto 100%;
+    display: inline-block;
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+.news .title p {
+    font-size: 18px;
+    color: #999;
+}
+
+.news .news-list {
+    width: 64%;
+    float: right;
+    padding-left: 8%;
+    box-sizing: border-box;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /*outline: 2px solid blue;*/
+}
+.news .news-list ul {
+    margin-bottom: 30px;
+}
+.news .news-list ul li {
+    float: none; 
+    font-size: 18px;
+    line-height: 2;
+}
+.news .news-list ul li a {
+    color: #333;
+}
+.news .news-list ul li a:hover {
+    text-decoration: underline;
+    color: #009132;
+}
+
+.news .news-list .more {
+    color: #b2b2b2;
+}
+.news .news-list .more:hover {
+    text-decoration: underline;
+}
+
+.content .bottom .ad {
+    width: 270px;
+    height: 300px;
+    float: right;
+    /*border-radius: 0 30px;
+    overflow: hidden;*/
+}
+.content .bottom .ad img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 30px;
+}
+
+/*** quick-menu ******************************************/
+.quick-menu {
+    /*background-color: yellow;*/
+    margin: 40px 0;
+}
+.quick-menu > .inner {
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.quick-menu .quick-box {
+    width: 25%;
+    float: left;
+    background: url(../image/icon_quickmenu.png) no-repeat;
+    height: 70px;
+}
+.quick-menu .quick-box:nth-child(2) {
+    background-position: -70px;
+}
+.quick-menu .quick-box:nth-child(3) {
+    background-position: -140px;
+}
+.quick-menu .quick-box:nth-child(4) {
+    background-position: -210px;
+}
+
+
+.quick-menu .quick-box a {
+    height: 100%; /*70px*/
+    background-color: #fff;
+    margin-left: 70px; /*아이콘 이미지 크기만큼 설정*/
+    padding-left: 10px;
+    color: #333;
+}
+.quick-menu .quick-box a h4 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    padding-top: 6px;
+}
+.quick-menu .quick-box a p {
+    font-size: 14px;
+    color: #999;
+}
+
+/*** footer *****************************************/
+footer {
+    width: 100%;
+    background-color: #292929;
+    color: rgba(255,255,255,0.4);
+    position: relative;
+}
+footer:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255,255,255,0.4);
+    position: absolute;
+    top: 50px;
+}
+footer a {
+    color: rgba(255,255,255,0.4);
+}
+
+footer .link {
+    /*background-color: dodgerblue;*/
+}
+footer .link a {
+    display: inline-block;
+    line-height: 50px;
+    font-size: 14px;
+}
+footer .link a~a {
+    margin-left: 20px;
+}
+
+footer .link a.active {
+    color: rgba(255,255,255,0.8);
+    font-weight: bold;
+}
+
+footer .info-box {
+    font-size: 14px;
+    margin: 30px 0 50px;
+    float: left;
+    /*outline: 2px solid lime;*/
+}
+footer .info-box .info {
+    margin-bottom: 6px;
+}
+footer .info-box .info address {
+    font-style: normal;
+    display: inline-block;
+    margin-right: 10px;
+}
+footer .info-box .info span {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+}
+footer .info-box .info span:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.4);
+    position: absolute;
+    left: -6px;
+    top: 5px;
+}
+
+footer .sns {
+    margin-top: 30px;
+    float: right;
+    /*outline: 2px solid lime;*/
+}
+footer .sns a {
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;
+    float: left;
+    /*outline: 1px solid lime;*/
+}
+footer .sns a.insta {
+    background: url(../image/icon_sns_instar.png) no-repeat;
+    margin-right: 10px;
+}
+footer .sns a.insta:hover {
+    background-position: right;
+}
+
+footer .sns a.facebook {
+    background: url(../image/icon_sns_facebook.png) no-repeat;
+}
+footer .sns a.facebook:hover {
+    background-position: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boxSlide</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ol,
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        body {
+            font-family: "Noto Sans KR", serif;
+        }
+
+        section #menu {
+            width: 100%;
+            /* width: 80%; */
+
+            margin: 100px auto;
+
+            position: relative; /* .menu-btn의 기준! */
+
+            overflow: hidden;
+            /* background-color: bisque; */
+        }
+
+        #menu h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.4rem;
+        }
+
+        #menu .viewer {
+            /* 실제 슬라이드가 보여지는 공간! */
+            width: 33.33%;
+            margin: 0 auto;
+            height: 660px;
+
+            position: relative;
+            /* li의 기준! */
+
+            /* outline: 2px solid red; */
+        }
+        #menu .viewer .box-wrap {
+            position: relative;
+            left: 0;
+        }
+
+        #menu .viewer li {
+            /* 각 케이크 박스! */
+            position: absolute;
+            top: 0;
+
+            width: 100%;
+
+            transition: all 1s ease-in-out;
+
+            /* outline: 3px solid blue; */
+        }
+
+        /* 각 케이크박스 디자인! */
+
+        /* 왼쪽 1번 */
+        #menu .viewer li.cb1 {
+            left: -190%;
+            transform: scale(0.8);
+            opacity: 0.1;
+        }
+
+        /* 왼쪽 2번 */
+        #menu .viewer li.cb2 {
+            left: -100%;
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+
+        /* center!!!! */
+        #menu .viewer li.cb3 {
+            left: 0;
+            transform: scale(1);
+        }
+
+        /* 오른쪽 1번 */
+        #menu .viewer li.cb4 {
+            left: 100%;
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+
+        /* 오른쪽 2번 */
+        #menu .viewer li.cb5 {
+            left: 190%;
+            transform: scale(0.8);
+            opacity: 0.1;
+        }
+
+
+        #menu .viewer li .img-box {
+            width: 400px;
+            margin: 0 auto 30px;
+            /* outline: 2px solid plum; */
+        }
+
+        #menu .viewer li .img-box img {
+            width: 100%;
+        }
+
+        #menu .viewer li .caption {
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+
+            display: none;
+        }
+
+        #menu .viewer li h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        #menu .viewer li p {
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            word-break: keep-all;
+        }
+
+
+        #menu .menu-btn {
+            /* outline: 2px solid blue; */
+
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            /* bottom: 0; */
+            top: 266px;
+
+            width: 33.33%; /* 기준요소의 너비를 기준으로 33.33% */
+        }
+        #menu .menu-btn img {
+            width: 60px;
+            display: block;
+            cursor: pointer;
+        }
+        #menu .menu-btn img.btn-prev {
+            float: left;
+        }
+        #menu .menu-btn img.btn-next {
+            float: right;
+        }
+
+    </style>
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/boxSlide.js"></script>
+</head>
+
+<body>
+
+    <section>
+        <div id="menu">
+            <h2>MENU</h2>
+
+            <div class="viewer">
+                <ul class="box-wrap">
+                    <li class="cb1">
+                        <div class="img-box"><img src="img/cake_redVelVet.png" alt="레드벨벳 케이크" title="케이크1"></div>
+
+                        <div class="caption">
+                            <h3>레드벨벳 케이크</h3>
+                            <p>
+                                감미로운 붉은색 레드 카카오로 만든
+                                초코 시트에 진하고 부드러운 크림치즈가 들어간 케이크
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="cb2">
+                        <div class="img-box"><img src="img/cake_carrot.png" alt="당근 케이크" title="케이크2"></div>
+
+                        <div class="caption">
+                            <h3>당근 케이크</h3>
+                            <p>
+                                당근과 피칸, 시나몬 가루를 첨가하여 고소한 식감을 살린 후,
+                                생크림과 크림치즈를 얹은 달콤한 빌리엔젤의 시그니처 케이크
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- CENTER!!!! -->
+                    <li class="cb3">
+                        <div class="img-box"><img src="img/cake_bananaCoco.png" alt="바나나 코코넛 케이크" title="케이크3"></div>
+
+                        <div class="caption">
+                            <h3>바나나 코코넛 케이크</h3>
+                            <p>바나나와 코코넛, 그리고 우유 크림의 부드러운 단맛이 적절히 조화를 이루어 부드럽고 은은한 진짜 바나나의 향과 단맛을 느낄 수 있는 케이크</p>
+                        </div>
+                    </li>
+
+                    <li class="cb4">
+                        <div class="img-box"><img src="img/cake_space.png" alt="우주 케이크" title="케이크4"></div>
+
+                        <div class="caption">
+                            <h3>우주 케이크</h3>
+                            <p>플레인과 초코크림치즈로 아름다운 우주를 가득 표현한 빌리엔젤의 감성 케이크</p>
+                        </div>
+                    </li>
+
+                    <li class="cb5">
+                        <div class="img-box"><img src="img/cake_tiramisu.png" alt="티라미수 케이크" title="케이크5"></div>
+
+                        <div class="caption">
+                            <h3>티라미수 케이크</h3>
+                            <p>크레이프의 부드러움과 티라미수의 달콤함이 일품인 티라미수 크레이프. 입안에서 달콤함이 녹아내리는 케이크</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 좌우버튼 -->
+            <div class="menu-btn">
+                <img src="img/left-btn.png" alt="이전버튼" class="btn-prev">
+                <img src="img/right-btn.png" alt="다음버튼" class="btn-next">
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

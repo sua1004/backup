@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/*** reset.css
+***************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+    /* =400 */
+}
+
+a {
+    text-decoration: none;
+}
+
+/*** common.css (공통으로 사용할 디자인)
+***************************************************************************/
+
+/* float 해제룰 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: "Chiron GoRound TC", sans-serif;
+    font-weight: 400;
+}
+
+.subway-menu {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.subway-menu .title {
+    /* background-color: antiquewhite; */
+
+    margin: 100px 0;
+    position: relative;
+}
+
+.subway-menu .title .logo {
+    outline: 2px solid red;
+
+    background-image: url(../img/example3/bul_tit.png);
+    background-repeat: no-repeat;
+     height: 60px;
+}
+.subway-menu .title .logo img {}
+.subway-menu .title .logo h2 {
+    font-size: 38px;
+    font-weight: 800;
+
+    position: absolute;
+    left: 28px;
+    top: 5px;
+
+    
+   
+}
+
+.subway-menu .title .menu{
+   /*  outline: 2px solid greenyellow; */
+
+    position: absolute;
+    left: 940px;
+    top: 23px;
+}
+.subway-menu .title .menu a{
+    font-size: 18px;
+    font-weight: 500;
+    color: #888;
+
+    display: inline-block;
+    /* padding: 0 10px; */
+}
+.subway-menu .title .menu a ~ a {
+    padding-left: 10px;
+}
+.subway-menu .title .menu a:hover {
+    color: green;
+}
+
+.subway-menu .content {
+   /*  background-color: lightblue; */
+   margin: 0 10px;
+}
+.subway-menu .content .box{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.subway-menu .content .box a{}
+.subway-menu .content .box a img{
+    width: 100%;
+}
+.subway-menu .content .box a h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+
+    margin-bottom: 10px;
+}
+.subway-menu .content .box a h3:hover {
+    color: green;
+}
+.subway-menu .content .box a p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+}
+
+.slide {}
+.slide .prev{}
+.slide .next{}

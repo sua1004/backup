@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+/* =========================
+   Responsive (Tablet / Mobile)
+   ========================= */
+
+/* 공통: 박스 사이징/이미지 안전장치 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Tablet (768px ~ 1024px) ===== */
+@media (max-width: 1024px) {
+
+    /* 섹션 간격/타이포 축소 */
+    h2.sec-tit {
+        margin-bottom: 56px;
+    }
+
+    h2 .title-ko {
+        font-size: 28px;
+    }
+
+    .btn {
+        width: 170px;
+        padding: 11px 0;
+    }
+
+    /* Intro: 좌우 비율 조정 */
+    article.intro {
+        background-size: cover;
+        background-position: right center;
+    }
+
+    article.intro {
+        background-position: 60%;
+    }
+
+    article.intro .title {
+        width: 60%;
+    }
+
+    article.intro .title h1 {
+        font-size: 2.6rem;
+        margin-bottom: 110px;
+        padding-top: 80px;
+    }
+
+    article.intro .title h1 span:last-child {
+        font-size: 3.1rem;
+    }
+
+    article.intro .title .producer {
+        bottom: 14%;
+    }
+
+    article.intro .title .producer p {
+        font-size: 16px;
+    }
+
+    /* Introduce 여백 축소 */
+    article.introduce {
+        padding: 90px 5% 120px;
+    }
+
+    /* Layout 섹션: float 유지하되 폭/여백 조정 */
+    article.layout .content-box {
+        padding: 50px 0;
+    }
+
+    article.layout .content-box .btngroup {
+        /* padding-left: 6%;
+        margin-top: 30px; */
+        left: 10%;
+    }
+
+    article.layout .content-box .img-box {
+        width: 56%;
+        margin-right: 6%;
+    }
+
+    /* Design 버튼 그룹 간격 축소 */
+    article.design .content-box .btngroup {
+        margin-bottom: 70px;
+    }
+
+    /* Footer 줄바꿈 개선 */
+    footer p {
+        margin-right: 12px;
+    }
+}
+
+/* ===== Mobile (<= 767px) ===== */
+@media (max-width: 767px) {
+
+    /* 모바일에서 높이 고정 이슈 방지 */
+    html,
+    body {
+        height: auto;
+    }
+
+    div.container {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* 섹션 공통 간격 축소 */
+    article.sitemap,
+    article.layout,
+    article.design,
+    article.website {
+        margin-bottom: 100px;
+    }
+
+    h2.sec-tit {
+        margin-bottom: 40px;
+    }
+
+    h2 .title-en {
+        font-size: 16px;
+    }
+
+    h2 .title-ko {
+        font-size: 24px;
+    }
+
+    /* 버튼: 화면 폭에 맞게 */
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: 1px;
+    }
+
+    /* ===== Intro: 모바일은 "세로 스택 + 오버레이" ===== */
+    article.intro {
+        height: auto;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    article.intro .title {
+        width: 100%;
+        min-height: 100vh;
+        padding: 28px 6% 24px;
+        background-color: rgba(255, 255, 255, 0.92);
+        display: flex;
+        flex-direction: column;
+    }
+
+    article.intro .title h1 {
+        padding-top: 0;
+        font-size: 2.1rem;
+        margin-bottom: 28px;
+    }
+
+    article.intro .title h1 span:last-child {
+        font-size: 2.6rem;
+    }
+
+    /* producer를 absolute -> 일반 흐름으로 (겹침 방지) */
+    article.intro .title .producer {
+        position: static;
+        margin-top: auto;
+        padding-top: 18px;
+    }
+
+    article.intro .title .producer p {
+        font-size: 15px;
+    }
+
+    /* ===== Introduce ===== */
+    article.introduce {
+        padding: 70px 5% 100px;
+    }
+
+    article.introduce .text-box h2 {
+        font-size: 24px;
+    }
+
+    article.introduce .text-box p {
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+
+    /* ===== Layout: float 해제 -> 세로 스택 ===== */
+    article.layout h2.sec-tit {
+        margin-bottom: 30px;
+    }
+
+    article.layout .content-box {
+        padding: 40px 0;
+    }
+
+    article.layout .content-box .btngroup {
+        position: static;
+        margin: 0 auto 22px;
+        width: 90%;
+        max-width: 360px;
+    }
+
+    article.layout .content-box .btngroup a {
+        margin: 0 auto 12px;
+    }
+
+    article.layout .content-box .img-box {
+        float: none;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* ===== Design: 버튼 그룹을 flex로 줄바꿈 ===== */
+    article.design .content-box .btngroup {
+        margin-bottom: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding: 0 6%;
+    }
+
+    article.design .content-box .btngroup a {
+        display: block;
+        /* 기존 inline-block 덮어쓰기 */
+        margin: 0;
+        /* ~a margin-left 제거 */
+    }
+
+    article.design .content-box .btngroup a~a {
+        margin-left: 0;
+    }
+
+    /* ===== Website 버튼 여백 ===== */
+    article.website .btn {
+        margin: 0 auto;
+    }
+
+    /* ===== Footer: 한 줄씩 보기 좋게 ===== */
+    footer {
+        padding: 28px 0;
+    }
+
+    footer p {
+        display: block;
+        margin: 8px 0 0;
+        margin-right: 0;
+    }
+}

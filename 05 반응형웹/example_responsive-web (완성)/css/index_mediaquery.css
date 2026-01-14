@@ -1,0 +1,299 @@
+@charset "utf-8";
+
+/*** index_mediaquery.css ********************************************/
+
+
+/***태블릿용 미디어쿼리********************************************/
+@media all and (min-width:768px) {
+    /*body {
+        background-color: yellow;
+    }*/
+    
+    .divider {
+        margin-top: 60px;
+    }
+    .m-divider {
+        margin-top: 110px;
+    }
+    header nav {
+        display: block !important;
+        position: static;
+        background-color: transparent;
+        float: right;
+        width: auto;
+    }
+    header .gnb li {
+        border-bottom: 0;
+        float: left;
+        padding: 0;
+        line-height: 80px;
+    }
+    header .gnb li~li {
+        margin-left: 20px;
+    }
+    header .gnb li a {
+        color: #3f51b5;
+    }
+    
+    header .menu-toggle-btn {
+        display: none;
+    }
+    
+    .promotion-section {
+        margin-top: 110px;
+    }
+    
+    /* 1) 여백까지 포함하여 li 너비 설정하기 */
+    /*.promotion-section .promo-list li {
+        width: 25%;
+        float: left;
+        padding: 0 3%;
+        box-sizing: border-box;
+    }
+    .promotion-section .promo-list li a p {
+        width: 100%;
+    }*/
+    
+    /* 2) li의 컨텐츠 너비와 여백 별도로 설정하기 */
+    /*
+    최소 컨텐츠 너비 : 768px
+    
+    내가 사용할 총 여백 : 20px * 3 = 60px
+    총 컨텐츠 너비 768px - 60px = 708px
+    708px ÷ 4(박스갯수) = 177px
+    */
+    .promotion-section .promo-list li {
+        width: 23.046875%;
+        /* 177px ÷ 768px * 100% */
+        float: left;
+    }
+    .promotion-section .promo-list li~li {
+        margin-left: 2.604166666666667%;
+        /* 20px ÷ 768px * 100% */
+    }
+    .promotion-section .promo-list li a p {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .work-section {
+        margin-top: 110px;
+    }
+    .work-section .sec-tit {
+        margin-bottom: 80px;
+    }
+    .work-section .work-list li {
+        width: 50%;
+        float: left;
+    }
+    .work-section .work-list li a .info {
+        left: 40px;
+    }
+    .work-section .work-list li a:hover .info {
+        transform: translateY(40px);
+    }
+    
+    .blog-section {
+        margin-top: 110px;
+    }
+    .blog-section .sec-tit {
+        margin-bottom: 80px;
+    }
+    /*
+    최소 컨텐츠 너비 : 768px
+    
+    내가 사용할 총 여백 : 20px * 2 = 40px
+    총 컨텐츠 너비 768px - 40px = 728px
+    728px ÷ 3(박스갯수) = 242.6666666666667px
+    */
+    .blog-section .blog-list li {
+        width: 31.59722222222222%;
+        /* 242.6666666666667px ÷ 768px * 100% */
+        float: left;
+        margin: 0;
+    }
+    .blog-section .blog-list li~li {
+        margin-left: 2.604166666666667%;
+        /* 20px ÷ 768px * 100% */
+    }
+    .blog-section .blog-list li a {
+        font-size: 16px;
+        font-size: 1rem;
+    }
+    
+    .contact-section {
+        margin-top: 110px;
+    }
+    .contact-section .sec-tit {
+        margin-bottom: 80px;
+    }
+    
+    /*
+    최소 컨텐츠 너비 : 768px
+    
+    내가 사용할 총 여백 : 20px * 1 = 20px
+    총 컨텐츠 너비 768px - 20px = 748px
+    748px ÷ 2(박스갯수) = 374px
+    */
+    
+    .contact-section .form-box .inputgrp, 
+    .contact-section .form-box .textareabox {
+        width: 48.69791666666667%;
+        /* 374px ÷ 768px * 100% */
+        float: left;
+    }
+    .contact-section .form-box .inputgrp {
+        margin-right: 2.604166666666667%;
+        /* 20px ÷ 768px * 100% */
+    }
+    .contact-section .form-box .inputgrp input:last-child {
+        margin-bottom: 0;
+    }
+    .contact-section .form-box .textareabox textarea {
+        height: 173px;
+        margin-bottom: 0; 
+    }
+    .contact-section .form-box .send-btn {
+        /*clear: both;*/
+        margin-top: 26px;
+        float: right;
+    }
+    
+    footer iframe {
+        height: 430px;
+    }
+    footer p {
+        padding: 30px 0;
+    }
+    
+}
+
+
+/***PC용 미디어쿼리********************************************/
+@media all and (min-width:1200px) {
+    
+    header {
+        height: 100px;
+    }
+    header h1 a {
+        font-size: 30px;
+        font-size: 1.875rem;
+        line-height: 100px;
+    }
+    header .gnb li {
+        line-height: 100px;
+        font-size: 18px;
+        font-size: 1.125rem;
+    }
+    .display-section {
+        margin-top: 110px;
+        text-align: left;
+    }
+    .display-section .sec-tit {
+        float: left;
+        width: 25%;
+    }
+    .display-section .desc {
+        float: right;
+        width: 75%;
+        padding-left: 13px;
+        box-sizing: border-box;
+        position: relative; /* :before의 기준! */
+    }
+    .display-section .desc:before {
+        content: "";
+        display: block;
+        width: 3px;
+        height: 42px;
+        background-color: #ccc;
+        position: absolute;
+        left: 0px;
+        top: 5px;
+    }
+    
+    /*
+    최소 컨텐츠 너비 : 1200px
+    
+    내가 사용할 총 여백 : 30px * 3 = 90px
+    총 컨텐츠 너비 1200px - 90px = 1110px
+    1110px ÷ 4(박스갯수) = 277.5px
+    */
+    .promotion-section .promo-list li {
+        width: 23.125%;
+        /* 277.5px ÷ 1200px * 100% */
+    }
+    .promotion-section .promo-list li~li {
+        margin-left: 2.5%;
+        /* 30px ÷ 1200px * 100% */
+    }
+    
+    
+    .work-section .sec-tit {
+        text-align: left;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto 80px;
+    }
+    .work-section .work-list li {
+        width: 25%;
+    }
+    
+    /*
+    blog, contact는 컨텐츠 너비를 4분할하여 배치
+    컨텐츠 최소 너비 1200px ÷ 4개 = 300px (1개당 크기)
+
+    제목 컨텐츠 너비(1/4) : 300px
+    제목을 제외한 컨텐츠 너비(3/4) : 900px
+    */
+    
+    /*
+    blog-section 
+    제목을 제외한 총 컨텐츠 너비 900px
+    
+    내가 사용할 총 여백 : 30px * 2 = 60px
+    총 컨텐츠 너비 900px - 여백 60px = 840px
+    840px ÷ 3(박스갯수) = 280px
+    */
+    
+    .blog-section .sec-tit {
+        float: left;
+    }
+    .blog-section .blog-list {
+        float: right;
+        width: 75%;
+    }
+    .blog-section .blog-list li {
+        width: 31.11111111111111%;
+    }
+    .blog-section .blog-list li~li {
+        margin-left: 3.333333333333333%;
+    }
+    
+    /*
+    contact-section 
+    제목을 제외한 총 컨텐츠 너비 900px
+    
+    내가 사용할 총 여백 : 30px * 1 = 30px
+    총 컨텐츠 너비 900px - 여백 30px = 870px
+    870px ÷ 2(박스갯수) = 435px
+    */
+    .contact-section .sec-tit {
+        float: left;
+    }
+    .contact-section .form-box {
+        float: right;
+        width: 75%;
+    }
+    .contact-section .form-box .inputgrp,
+    .contact-section .form-box .textareabox {
+        width: 48.33333333333333%;
+    }
+    .contact-section .form-box .inputgrp {
+        margin-right: 3.333333333333333%;
+    }
+    
+    footer iframe {
+        height: 480px;
+    }
+    
+}

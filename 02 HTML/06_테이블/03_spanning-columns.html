@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>03_spanning-columns</title>
+    </head>
+
+    <body>
+        
+        <table width="500" cellpadding="6">
+            <tr bgcolor="lightgray">
+                <th></th>
+                <th>9am</th>
+                <th>10am</th>
+                <th>11am</th>
+                <th>12am</th>
+            </tr>
+
+            <tr bgcolor="lightgray">
+                <th>월요일</th>
+                <td colspan="2">지리</td>
+                <td>수학</td>
+                <td>미술</td>
+            </tr>
+
+            <!-- 
+            표에서 가로, 세로 용어 정리
+            가로 : row (행)
+            세로 : column (열)
+
+            열(colunm)과 열을 병합 : colspan (속성)을 병합 시작점에 추가하기
+            ㄴ 세로가 병합해서 가로가 길어진 것!
+
+            표에 색상 넣기 : bgcolor (속성)을 <tr>태그에 추가하기
+
+            여백 추가하기 : width (속성), cellpadding (속성)을 <table>태그에 추가하기
+            -->
+
+            <tr bgcolor="lightgray">
+                <th>화요일</th>
+                <td colspan="3">체육</td>
+                <td>가정</td>
+            </tr>
+        </table>
+
+    </body>
+</html>

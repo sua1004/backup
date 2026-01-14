@@ -1,0 +1,6 @@
+폼 태그 단독 속성
+
+autofocus
+readonly
+disabled
+required

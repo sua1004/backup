@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_responsive2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            padding: 0 150px;
+            height: 500px;
+            position: relative; /* nav와 aside의 기준 */
+
+            /* outline: 2px solid red; */
+        }
+        main {
+            background-color: tomato;
+            height: 500px;
+        }
+        nav {
+            width: 150px;
+            background-color: yellow;
+            height: 100%;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        aside {
+            width: 150px;
+            background-color: greenyellow;
+            height: 100%;
+
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        /* 최소너비 760px ~ 최대너비 1024px */
+        @media (min-width:769px) and (max-width:1024px) {
+            #wrap {
+                padding: 0;
+                height: auto;
+                position: static; /* position의 기본값 */
+            }
+            #wrap > div {
+                padding-left: 150px;
+                height: 500px;
+                position: relative; /* nav의 기준!! */
+            }
+            aside {
+                position: static;
+                width: 100%;
+                height: 120px;
+            }
+        }
+
+        /* 최소너비 321px ~ 최대너비 768px */
+        @media (min-width:321px) and (max-width:768px) {
+            #wrap {
+                padding: 0;
+                position: static;
+                height: auto;
+            }
+            main {
+                background-color: plum;
+            }
+            nav {
+                position: static;
+                width: 100%;
+                height: 120px;
+            }
+            aside {
+                position: static;
+                width: 100%;
+                height: 300px;
+            }
+        }
+
+        /* 최소너비 0px ~ 최대너비 320px */
+        @media (min-width:0px) and (max-width:320px) {
+            #wrap {
+                padding: 0;
+                height: auto;
+                position: static;
+            }
+            main {
+                height: 700px;
+                background-color: lightpink;
+            }
+            nav {
+                position: static;
+                width: 100%;
+                height: 300px;
+            }
+            aside {
+                position: static;
+                width: 100%;
+                height: 450px;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div>
+            <main>메인</main>
+            <nav>메뉴</nav>
+        </div>
+
+        <aside>광고영역</aside>
+    </div>
+
+</body>
+
+</html>

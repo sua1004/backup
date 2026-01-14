@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>06_background-clip</title>
+
+    <style>
+        .box {
+            width: 400px;
+            padding: 50px;
+            border: 5px dotted purple;
+            background-color: plum;
+            background-clip: content-box;
+        }
+
+        h1 {
+            font-size: 60px;
+            background-image: url(images/bg_paris.jpg);
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: all 0.7s;
+        }
+
+        h1:hover {
+            background-position: left bottom;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">맛있는 블루베리!!!</div>
+
+    <h1>
+        2024 PARIS <br>
+        파리올림픽 개최!
+    </h1>
+    
+</body>
+</html>

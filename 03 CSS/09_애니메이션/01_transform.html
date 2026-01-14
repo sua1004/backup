@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01_transform</title>
+
+    <style>
+        div {
+            margin-left: 100px;
+        }
+        img {
+            width: 400px;
+            border: 1px solid #000;
+            transition: all 0.5s;
+        }
+
+        /* 괄호 안에 속성값을 넣을 때는 쉼표로 구분 경우가 다수 */
+
+        .box1 img:hover {
+            /* transform: translate(20px,30px); */
+            transform: translateX(-100px);
+        }
+
+        .box2 img:hover {
+            transform: rotate(30deg); /* deg = 각도 */
+        }
+
+        .box3 img:hover {
+            /* transform: scale(2); */
+            transform: scaleX(3);
+        }
+
+        .box4 img:hover {
+            /* transform: skewX(50deg); */
+            /* transform: skewY(-20deg); */
+            transform: skew(40deg,10deg);
+        }
+
+        .box5 {
+            width: 400px;
+            height: 400px;
+            background-color: lightpink;
+        }
+        .box5 img:hover {
+            opacity: 0.5;
+            /* 0은 투명, 1은 불투명 */
+            /* 투명도가 적용 되면서 아래의 배경색이 비춰서 보임 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>translate</h2>
+    <div class="box1"><img src="images/img01.jpg" alt=""></div>
+
+    <h2>rotate</h2>
+    <div class="box2"><img src="images/img01.jpg" alt=""></div>
+
+    <h2>scale</h2>
+    <div class="box3"><img src="images/img01.jpg" alt=""></div>
+
+    <h2>skew</h2>
+    <div class="box4"><img src="images/img01.jpg" alt=""></div>
+
+    <h2>opacity</h2>
+    <div class="box5"><img src="images/img01.jpg" alt=""></div>
+
+</body>
+
+</html>

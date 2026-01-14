@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+/*** reset.css
+***************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+/*** common.css (공통으로 사용할 디자인)
+***************************************************************************/
+
+/* float해제를 위한 클래스와 가상요소! */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+
+}
+.instagram {
+    width: 100%;
+    background-color: rgb(124, 81, 161);
+    padding: 100px 0;
+}
+
+.instagram .inbox {
+    /* width: 1280px; */
+
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    /* outline: 2px solid lime; */
+}
+
+.instagram .title {
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+.instagram .content {
+    /* outline: 2px solid red; */
+
+    background-color: rgb(243, 130, 0);
+    /* hover했을 때 이미지가 투명도가 생겨서 아래 배경색이 비춰짐 */
+
+    margin-bottom: 60px;
+}
+.instagram .content ul {}
+.instagram .content ul li {
+    width: 16.66%;
+    float: left;
+
+    overflow: hidden;
+
+   /*  outline: 2px solid green; */
+}
+.instagram .content ul li {}
+.instagram .content ul li a {
+    
+}
+.instagram .content ul li a img{
+    width: 100%;
+   /*  float: left;
+   ul의 float해제가 적용됨 */
+
+   display: block;
+
+   transition: all 0.6s;
+   /* transition: css의 시작과 끝 사이동안 디자인 변경 요소를 보여줌 */
+}
+
+/* hover */
+/* hover를 기준으로 하위 요소의 디자인을 변경 할 수 있음!(상위 요소 X) */
+.instagram .content ul li:hover img{
+    transform: scale(1.3);
+    opacity: 0.5;
+}
+
+.instagram .button {
+    /* outline: 2px solid lightblue; */
+    text-align: center;
+    /* 
+    하위요소 중 인라인 성격을 가진 요소는 글자처럼 취급되므로
+    text-align을 통해 정렬할 수 있다!
+    */
+}
+.instagram .button a {
+    font-size: 18px;
+    background-color: rgb(243, 130, 0);
+    color: #FFF;
+    padding: 10px 20px; /* 가로가 긴 사각형 1:2 비율 */
+    text-transform: uppercase;
+    display: inline-block;
+}

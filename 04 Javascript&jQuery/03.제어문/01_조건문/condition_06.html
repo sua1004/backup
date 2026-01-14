@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>condition_06</title>
+</head>
+
+<body>
+    <h4>중첩if문을 이용해 다음을 완성시키세요.</h4>
+
+    <script type="text/javascript">
+        /*prompt를 이용해 id가 green일 경우,
+        비밀번호를 입력할 수 있는 prompt창을 다시 띄우고,
+        비밀번호가 1234일 경우 "id님 반갑습니다"라는 경고창이 실행되도록, 아닐 시에는 "비밀번호가 일치하지 않습니다."를 경고창으로 띄우세요.
+        아이디를 잘못입력하였을 경우에는 "아이디가 일치하지 않습니다"라는 경고창이 떠야합니다.*/
+
+        /* 
+        아이디 입력 받기!!!
+
+        1. 아이디 비교 (if else문)
+            1) 아이디 일치
+                >> 비밀번호 입력 받기!!!
+
+                2. (입력받은) 비밀번호 비교하기 (if else문)
+                    1) 비밀번호 일치
+                        >> alert('id님 반갑습니다');
+
+                    2) 비밀번호 불일치
+                        >> alert('비밀번호가 일치하지 않습니다.');
+
+            2) 아이디 불일치
+                >> 아이디 일치하지 않았다는 경고창!
+                alert('아이디가 일치하지 않습니다');
+        */
+
+        //저장된 데이터
+        const id = 'green';
+        const pw = '1234';
+
+        //사용자로부터 아이디 입력받기
+        /* var userId = prompt('아이디를 입력하세요!');
+
+        if (id == userId){
+            //ture, 아이디가 일치했을 때
+            var userPw = prompt('비밀번호를 입력하세요!');
+
+            if (pw == userPw){
+                //true, 비밀번호가 일치했을 때
+                alert(userId + '님 반갑습니다!');
+
+            } else {
+                //false, 비밀번호가 일치하지 않았을 때
+                alert('비밀번호가 일치하지 않습니다.');
+                location.reload(); //페이지 새로고침
+            }
+
+        } else {
+            //false, 아이디가 일치하지 않았을 때
+            alert('아이디가 일치하지 않습니다');
+            location.reload(); //페이지 새로고침
+        } */
+
+
+        //입력받은 id, pw값 동시에 비교하기
+        var userPw2 = prompt('아이디를 입력하세요.');
+        var userId2 = prompt('비밀번호를 입력하세요.');
+
+        if (id == userId2 && pw == userPw2){
+            //입력한 아이디, 비밀번호가 모두 일치했을 때!
+            alert(`${userId2}님 반가워요!`);
+        } else {
+            //입력한 아이디 또는 비밀번호가 일치하지 않았을 떄!
+            alert('아이디 또는 비밀번호를 확인해 주세요!');
+            location.reload(); //페이지 새로고침, 다시 입력
+        }
+
+
+
+        /* 
+        기준값 : id = green / pw = 1234
+
+        1. 아이디를 입력할 prompt 창 띄우기
+        >> green일 때, 비밀번호을 입력할 prompt 창 띄우기
+        >> green 아닐 때, "아이디가 일치하지 않습니다" 경고창 띄우기
+
+        2. 비밀번호를 입력할 prompt 창 띄우기
+        >> 1234일 때, "id님 반갑습니다" 경고창 띄우기
+        >> 1234 아닐 때, "비밀번호가 일치하지 않습니다" 경고창 띄우기
+        */
+    </script>
+</body>
+
+</html>

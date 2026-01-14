@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01_position-relative</title>
+
+    <style>
+
+        /*
+        css의 position 속성
+        - 위치를 지정하는 스타일 속성
+        - 좌표값을 사용하여 위치 지정 (left, right, top, bottom)
+        - position이 없으면 좌표값이 적용되지 않음
+        - 좌표값은 px, % 단위 사용 (좌표값 = 이동거리)
+
+        position의 속성값
+        1) relative
+        - 상대 위치
+        - 요소의 현재 위치를 기준으로 이동 (lefr, top 좌표만 사용 가능)
+        - absolute를 가진 하위요소의 기준을 설정할 때 사용!
+
+        */
+
+        div {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            left: 200px;
+            top: 200px;
+        }
+
+        .box1 {
+            background-color: tomato;
+        }
+
+        .box2 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+</body>
+
+</html>

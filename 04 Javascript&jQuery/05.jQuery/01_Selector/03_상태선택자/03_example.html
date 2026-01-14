@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_example</title>
+
+    <script src="jquery-1.7.2.min.js"></script>
+
+    <!--  jQuery ui : 컬러 애니메이션이 가능하도록 도와줌 -->
+    <script src="jquery-ui-1.8.23.custom.min.js"></script>
+    
+    <script>
+
+        /* 
+        *효과메서드 : 소요시간(ms) / 가속도 / 콜백함수
+
+        1. show() - display 상태를 none이 아닌 것으로 변경 (원래 값으로!)
+
+        2. hide() - display 상태를 none으로 변경
+
+        3. animate ({css 설정}, 소요시간(ms), 가속도, 콜백함수)
+
+        - css 변경사항을 애니메이션 해주는 효과 메서드
+        - css에 트랜지션을 넣은 것과 같은 효과 구현
+        - 수치로 된 속성값만 적용 가능
+
+        */
+
+        //예제 - 색상 버튼을 클릭하면 색상정보가 변경되고, .img-box의 배경색이 클릭한 버튼의 색상으로 변경되도록 구현하시오.
+        /* 
+        색상 버튼을 클릭하면 >> 클릭대상: button, 이벤트: click()
+
+        1) 색상정보를 바꾸고 글자색 변경 >> .select span / text() css()
+        2) img-box의 배경색 변경 >> .img-box / css()
+
+        우리에게 필요한 값은?
+        >> 내가 클릭한 버튼의 색상 -> 내가 클릭한 버튼의 '버튼명'!!
+        >> 버튼명 반환 ->text()
+        */
+
+        $(function () {
+
+            $('button').click(function () {
+
+                //클릭한 버튼의 버튼명 반환
+                var color = $(this).text();
+                console.log(color);
+
+                //방법1) 애니메이션 효과 X
+                /* //1) 색상정보 변경
+                $('.select').find('span').text(color).css('color', color);
+
+                //2) .img-box 배경색 변경
+                $('.img-box').css('background-color',color); */
+
+
+                //방법2) 애니메이션 효과 O
+                //1) 색상정보 변경
+                //$('.select').hide().text(color);
+
+                $('.select').hide(1000, function(){
+                    $(this).find('span').text(color).css('color',color) 
+                    //this : hide된 select의 span
+                }).show(1000);
+
+                //2 img-box 변경
+                $('.img-box').animate({
+                    backgroundColor: color
+                },800, function(){
+                    //+이미지 등장 콜백함수!
+                    $(this).find('img').css({
+                        transform: 'scale(1)',
+                        transition: 'all 1s'
+                    })
+                });
+
+                //답안 작성
+                /*
+                $('.select span').text(color).css('color',color);
+                $('.img-box').css('background-color',color);
+                */
+            });
+
+        });
+
+
+        //한 번의 실행 먼저!
+        /* $(document).ready(function(){
+            $('#red').click(function(){
+                $('.select span').text('red').css('color','red');
+                $('.img-box').css('background-color','red');
+            });
+
+            $('#orange').click(function(){
+                $('.select span').text('orange').css('color','orange');
+                $('.img-box').css('background-color','orange');
+            });
+        }); */
+
+    </script>
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>무지개색 버튼을 클릭해 보세요!</h1>
+        <p class="select"><span>색상</span>을(를) 선택하셨습니다!</p>
+
+        <div class="btngrp">
+            <button id="red">red</button>
+            <button id="orange">orange</button>
+            <button>yellow</button>
+            <button>green</button>
+            <button>blue</button>
+            <button>navy</button>
+            <button>purple</button>
+        </div>
+
+        <div class="img-box">
+            <img src="https://t1.daumcdn.net/news/202506/12/newsay/20250612130002542oyza.png" alt="아기 고양이">
+        </div>
+    </div>
+
+    <style>
+        p {
+            font-size: 24px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 24px;
+        }
+
+        .btngrp {
+            margin-bottom: 20px;
+        }
+
+        .img-box {
+            width: 800px;
+            background-color: #000;
+            padding: 20px;
+        }
+
+        .img-box img {
+            width: 100%;
+            display: block;
+            transform: scale(0);
+        }
+    </style>
+
+</body>
+
+</html>

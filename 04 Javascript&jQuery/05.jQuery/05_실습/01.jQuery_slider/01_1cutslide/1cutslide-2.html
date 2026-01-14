@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1cutslide-2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol,li {
+            list-style: none;
+        }
+        #slider {
+            width: 1200px;
+            border: 5px solid #997c70;
+            margin: 40px auto;
+
+            position: relative; /* #pager의 기준!! */
+            overflow: hidden;
+        }
+        #gallery {
+            width: 400%;
+            position: relative; 
+            outline: 3px solid red;
+        }
+        #gallery::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #gallery img {
+            display: block;
+            width: 25%;
+            float: left;
+        }
+
+        #pager {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+        #pager li {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            background-color: #ecdfcc;
+
+            text-align: center;
+            line-height: 40px;
+
+            display: inline-block;
+        }
+        #pager li a {
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+
+        /* 클릭된 pager 디자인 적용 - active 클래스 활용하기 */
+        #pager li.active {
+            background-color: #b6a28e;
+        }
+        #pager li.active a {
+            color: #fff;
+        }
+
+    </style>
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/1cutslide-2.js"></script>
+</head>
+
+<body>
+
+    <!-- 
+    #slider : 실제 슬라이드가 보여질 공간
+    #gallery : 슬라이드 전체를 담는 부모
+    #gallery img : 각각의 슬라이드
+    -->
+
+    <div id="slider">
+        <div id="gallery">
+            <img src="images/illom-slide1.jpg" alt="">
+            <img src="images/illom-slide2.jpg" alt="">
+            <img src="images/illom-slide3.jpg" alt="">
+            <img src="images/illom-slide4.jpg" alt="">
+        </div>
+
+        <ul id="pager">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/* 09_example_mq_T.css */
+
+/* 태블릿, 모바일 UI */
+/* @media (min-width:0px) and (max-width:768px) {} */
+
+@media all and (max-width:768px) {
+    body {
+        padding: 20px;
+    }
+    .content br {
+        display: none;
+    }
+    .content h1 {
+        font-size: 22px;
+        font-size: 1.375rem;
+        margin-bottom: 20px;
+        word-break: keep-all;
+    }
+    .content p {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .content ul li {
+        width: 100%;
+        float: none;
+    }
+
+    .search {
+        padding: 40px 20px;
+    }
+    .search select {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 4px;
+        text-indent: 16px;
+    }
+    .search .inputbox {
+        display: block;
+        padding-right: 100px; /* submit, reset 버튼이 위치할 여백! */
+
+        position: relative; /* 버튼의 기준! */
+        /* outline: 2px solid red; */
+    }
+    .search .inputbox input {}
+    .search .inputbox input[type="search"] {
+        width: 100%;
+        height: 50px;
+    }
+    .search .inputbox input[type="submit"] {
+        width: 45px;
+        height: 50px;
+        background-size: auto 20px;
+
+        position: absolute;
+        right: 55px;
+        top: 0;
+    }
+    .search .inputbox input[type="reset"] {
+        width: 50px;
+        height: 50px;
+        background-size: 50px;
+
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .search .keyword h2 {
+        display: block;
+        margin: 0 0 10px 0;
+    }
+    .search .keyword p {
+        display: block;
+    }
+    .search .keyword p a {
+        margin: 0 6px;
+    }
+    .search .keyword p a ~ a::after {
+        display: none;
+    }
+}

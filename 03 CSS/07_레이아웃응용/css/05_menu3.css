@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol, li {
+    list-style: none;
+} 
+a {
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    /* background-color: tomato; */
+    /* padding: 25px 0; */
+    /* padding: 0 500px; */
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+header h1 {
+   
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+    float: left;
+}
+
+header .sns {
+   float: right;
+   margin-right: 350px;
+}
+header .sns li {
+     display: inline-block;
+}
+header .sns li ~ li {
+    margin-left: 25px;
+}
+header .sns li a{
+   color: #333;
+   font-size: 20px;
+}
+header .sns li a:hover {
+    color: blue;
+}
+
+header .tab-menu {
+    clear: both;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+
+    background-color: darkblue;
+}
+header .tab-menu li {
+    display: inline-block;
+    margin: 0 50px;
+}
+header .tab-menu li a {
+    font-size: 18px;
+    color: white;
+}
+
+header .tab-menu li a:hover {
+    color: greenyellow;
+}
+
+
+section {
+    /* background-color: green; */
+    margin-bottom: 30px;
+}
+section .main {
+    width: 100%;
+    height: 500px;
+    background-color: lightblue;
+
+    padding-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+section .sub {
+    
+}
+section .sub p {
+    float: left;
+    width: 640px;
+    height: 150px;
+
+    text-align: center;
+    font-size: 18px;
+    line-height: 150px;
+    
+}
+section .sub .box1 {
+    background-color: lightgreen;
+}
+section .sub .box2 {
+    background-color: pink;
+}
+
+
+footer {
+    background-color: lightgrey;
+}
+
+footer .footer-wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+footer p {
+    width: 100%;
+    height: 150px;
+
+    font-size: 20px;
+    line-height: 150px;
+    text-align: center;
+}

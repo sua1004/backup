@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_example_append()_prepend()</title>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        //이전 또는 다음 버튼을 눌러서, 이미지를 맨 앞으로 또는 맨 뒤로 이동시키오!
+
+        $(document).ready(function (){
+
+            $('#append').click(function (){
+                //맨 앞에 있는 .box를 .img-box 맨 뒤로 보내기
+                //$('.img-box').append($('.img-box .box').first());
+
+                $('.img-box .box').first().appendTo('.img-box');
+            });
+
+            $('#prepend').click(function (){
+                //맨 뒤에 있는 .box를 .img-box 맨 앞으로 보내기
+                //$('.img-box').prepend($('.img-box .box').last());
+                
+                $('.img-box .box:last').prependTo('.img-box');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="prepend">prepend(이전)</button>
+        <button id="append">append(다음)</button>
+
+        <div class="img-box">
+            <div class="box">
+                <img src="image/cake1.jpg" alt="">
+                <h2>케이크 1</h2>
+            </div>
+
+            <div class="box">
+                <img src="image/cake2.jpg" alt="">
+                <h2>케이크 2</h2>
+            </div>
+
+            <div class="box">
+                <img src="image/cake3.jpg" alt="">
+                <h2>케이크 3</h2>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <style>
+        .container {
+            width: 760px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .container button {
+            font-size: 24px;
+        }
+
+        .container .img-box {
+            outline: 3px solid tomato;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        .container .img-box::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .img-box .box {
+            float: left;
+        }
+
+        .img-box .box~.box {
+            margin-left: 10px;
+        }
+
+        .img-box h2 {
+            margin: 0;
+        }
+    </style>
+
+</body>
+
+</html>

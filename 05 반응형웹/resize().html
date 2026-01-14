@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resize()</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        /* 
+        resize() 이벤트 메서드
+        - 브라우저 창의 크기가 변경될 때 발생
+        - 이벤트 대상 : $(window)
+        - 제이쿼리 시작코드 안에 작성할 필요 없음
+        */
+
+        $(window).resize(function(){
+
+            var vw = $(this).width();
+            //console.log(vw);
+
+            $('#here').text(vw);
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>변경된 브라우저 너비 : <span id="here">0</span>px</p>
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+/* register.css */
+
+@import url(header.css);
+@import url(footer.css);
+
+/* float을 해제하는 선택자 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+}
+
+/* 여기서부터 section */
+section {
+    width: 100%;
+    background-image: url(../img/login_bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    margin-top: 120px;
+    padding: 80px 0;
+}
+
+section .inner-section {
+    width: 900px;
+    margin: 0 auto;
+}
+
+section .section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section .join {
+    background-color: #fff;
+    padding: 40px;
+}
+
+section .join .top {
+    margin-bottom: 60px;
+    padding: 0 80px;
+
+    position: relative;
+
+   /*  border: 2px solid red; */
+}
+section .join .top img {
+    float: left;
+}
+section .join .top .msg {
+    float: right;
+    color: #333;
+    
+    position: absolute;
+    top: 150px;
+    right: 100px;
+}
+section .join .top .msg p {}
+section .join .top .msg p span {
+    color: #007042;
+}
+section .join .top .msg p:last-child {
+    color: #888;
+}
+
+
+section .join .content {}
+section .join .content form {}
+section .join .content form .required {
+    margin-bottom: 40px;
+}
+
+.required legend {
+    display: block;
+    padding: 30px 0;
+    font-size: 18px;
+}
+
+.required table {
+    border-collapse: collapse;
+    border-top: 3px solid #444;
+
+    /* border: 2px solid red; */
+}
+.required table tr {}
+.required table tr input[type="text"],
+.required table tr input[type="password"] {
+    height: 30px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-indent: 10px;
+    outline: 0;
+}
+.required table tr input[type="email"] {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-indent: 10px;
+    outline: 0;
+}
+.required table tr td label {
+    display: block;
+}
+.required table tr td label input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.required table tr th {
+    background-color: #f6f5ef;
+    padding: 20px 15px;
+
+    text-align: left;
+}
+.required table tr td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #999;
+}
+
+
+section .join .content form .optional {}
+
+.optional legend {
+    display: block;
+    padding: 30px 0;
+    font-size: 18px;
+}
+.optional table {
+    border-collapse: collapse;
+    border-top: 3px solid #444;
+
+    /* border: 2px solid red; */
+}
+.optional table tr input[type="text"] {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-indent: 10px;
+    outline: 0;
+}
+.optional table tr {}
+.optional table tr th {
+    background-color: #f6f5ef;
+    padding: 20px 15px;
+
+    text-align: left;
+}
+.optional table tr td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #999;
+}

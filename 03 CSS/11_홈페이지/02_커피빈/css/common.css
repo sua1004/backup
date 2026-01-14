@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/* common.css */
+/* 공통으로 사용할 css를 모아놓는 것!!! */
+
+/* float 해제를 위한 가상요소! */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 안쪽에서 컨텐츠 너비를 잡아줄 때 사용할 클래스! */
+.inner {
+    width: 1280px;
+    margin: 0 auto;
+    /* outline: 2px solid red; */
+}
+
+/* 본문 영역 제목에 공통으로 적용될 디자인 */
+.sec-title {
+    color: rgb(207,102,26);
+    font-size: 28px;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* 영문폰트 클래스 */
+.eng-font {
+    font-family: "Merriweather", serif;
+}

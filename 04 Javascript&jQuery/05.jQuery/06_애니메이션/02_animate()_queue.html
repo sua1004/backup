@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>02_animate()_queue</title>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery-ui-1.8.23.custom.min.js"></script>
+
+    <script>
+        /*
+        큐(Queue)란?
+        - 애니메이션이 적용된 메서드는 함수가 적용된 순서대로 큐(Queue)라는 저장소에 저장
+        - 큐에 저장된 애니메이션 대기열이 있다면 먼저 들어간 애니메이션 먼저 실행
+        (FIFO: First In First Out)
+        */
+
+        //미션 : 클래스가 run인 버튼을 클릭하면, #box인 요소에 아래의 순서대로 애니메이션 하시오.
+
+        $(function(){
+            $('.run').click(function(){
+
+                //1. 현재 위치로부터 left: 400px 이동, 배경색은 red (2초)
+                $('#box').animate({
+                    left: '400px',
+                    backgroundColor: 'red'
+                }, 2000)
+                
+                //2. 현재 위치로부터 top: 200px 이동, 배경색은 yellow (2초)
+                .animate({
+                    top: '200px',
+                    backgroundColor: 'yellow'
+                }, 2000)
+                
+                //3. 현재 위치로부터 top: -100px, left: -100px 이동, 배경색은 green (2초)
+                .animate({
+                    top: '-=100px',
+                    left: '-=100px',
+                    backgroundColor: 'green'
+                }, 2000)
+                
+                //4. 현재 위치로부터 top: -50px, left: -50px, width: 360px, height: 200px, 배경색은 pink (2초)
+                .animate({
+                    top: '-=50px',
+                    left: '-=50px',
+                    width: '360px',
+                    height: '200px',
+                    backgroundColor: 'pink'
+                }, 2000, function(){
+
+                    //5. 4번이 실행된 후에 배경이미지를 박스(#box)에 넣고
+                    $(this).css({
+                        background: 'url(https://www.palnews.co.kr/news/photo/201801/92969_25283_5321.jpg) no-repeat top/cover'
+                    });
+                })
+                
+                //6. 2초 후에 0.5초간 slideUp하여 사라짐
+                .delay(2000).slideUp(500);
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+    <p><a href="#" class="run">animate()</a></p>
+
+    <div id="box"></div>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: darkseagreen;
+            position: relative;
+        }
+    </style>
+    
+</body>
+</html>

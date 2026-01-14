@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_클래스선택자</title>
+
+    <script src="jquery-1.7.2.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $('.title').css('background-color','greenyellow');
+
+            var title = $('.title').text();
+            console.log(title);
+
+            $('.list li').click(function(){
+                //$('.list li').text('안녕!!!');
+
+                //변경대상 : .list li 중에 내가 클릭한 li!!
+                //this >> 클릭당한 li!!!
+
+                $(this).text('안녕안녕!!!').css({
+                    fontSize: '40px',
+                    color: 'red',
+                    fontWeight: 'bold',
+                    transition: 'all 0.5s'
+                });
+            });
+        });
+
+        /* 
+        text() 메서드
+        1) $(선택자).text();
+        - 선택한 요소의 텍스트 반환!
+
+        2) $(선택자).text('내용!');
+        - 선택한 요소의 텍스트 변경!
+        */
+
+    </script>
+</head>
+
+<body>
+
+    <h1 class="title">한국의 사계절</h1>
+
+    <ul class="list">
+        <li>봄</li>
+        <li>여름</li>
+        <li>가을</li>
+        <li>겨울</li>
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_max-width</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url(images/bg0.jpg) no-repeat fixed;
+            background-size: cover;
+        }
+
+        /* max-width는 큰 수치에서 작은 수치 순서로 작성! */
+
+        @media screen and (max-width: 1024px) {
+            body {
+                background: url(images/bg1.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+
+        @media all and (max-width:768px) {
+            body {
+                background-image: url(images/bg2.jpg);
+            }
+        }
+
+        @media all and (max-width: 375px) {
+            body {
+                background-image: url(images/bg3.jpg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

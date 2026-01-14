@@ -1,0 +1,14 @@
+1. bx slider(가장 많이 사용됨/옵션이 다양)
+http://bxslider.com/
+
+2. flex slider
+http://flexslider.woothemes.com/
+
+3. colorbox
+http://www.jacklmoore.com/colorbox/
+
+4. Swiper(모바일에서 많이 사용되는 플러그인)
+https://swiperjs.com/get-started
+
+5. fullpage.js (깃허브에서 확인!)
+https://github.com/alvarotrigo/fullPage.js/blob/master/lang/korean/README.md

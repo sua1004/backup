@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02_table</title>
+
+    <style>
+        .table1 {
+            border: 1px solid #999;
+            margin-top: 50px;
+            width: 600px;
+
+            border-spacing: 10px 30px;
+            empty-cells: hide;
+        }
+        .table1 th, .table1 td {
+            border: 1px solid #999;
+            padding: 20px 10px;
+        }
+        .table1 .top {
+            background-color: rgba(255,0,0,0.1);
+        }
+
+        .table2 {
+            margin-top: 50px;
+            border: 1px solid #999;
+            width: 600px;
+            border-top: 3px solid #c00000;
+
+            /* border-spacing: 0; */
+            border-collapse: collapse;
+        }
+        .table2 th, .table2 td {
+            border: 1px solid #999;
+            /* border-left: 1px solid #999;
+            border-bottom: 1px solid #999; */
+            padding: 20px;
+        }
+        .table2 .top {
+            background-color: rgba(255,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 기본 테이블(css 적용 X) -->
+     <table border="1" width="600" cellpadding="20" cellspacing="10">
+        <tr bgcolor="lightblue">
+            <th>head</th>
+            <th>head</th>
+            <th>head</th>
+            <th>head</th>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+        </tr>
+          <tr>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+        </tr>
+     </table>
+
+     <!-- table1 : css 적용(border-spacing) -->
+      <table class="table1">
+        <tr class="top">
+            <th>head</th>
+            <th></th>
+            <th>head</th>
+            <th>head</th>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+            <td></td>
+        </tr>
+          <tr>
+            <td>content</td>
+            <td>content</td>
+            <td></td>
+            <td>content</td>
+        </tr>
+      </table>
+
+      <!-- table2 : css 적용(border-collapse) -->
+       <table class="table2">
+        <tr class="top">
+            <th>head</th>
+            <th>head</th>
+            <th>head</th>
+            <th>head</th>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+        </tr>
+          <tr>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+            <td>content</td>
+        </tr>
+      </table>
+</body>
+</html>

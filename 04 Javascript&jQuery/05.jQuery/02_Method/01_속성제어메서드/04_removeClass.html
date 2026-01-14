@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04_removeClass</title>
+
+    <script src="jquery-1.7.2.min.js"></script>
+
+    <script>
+        /* 
+        removeClass() : 선택한 요소에서 지정한 클래스명 삭제
+
+        * 기본형
+        1) $('선택요소').removeClass('클래스명');
+        2) $('선택요소').removeClass('클래스명1 클래스명2 클래스명n');
+        3) $('선택요소').removeClass(); >> 선택요소의 '모든' 클래스명 제거!!!
+        */
+
+        $(function(){
+            
+            $('#btn').click(function(){
+                
+                //지정된 하나의 클래스명 삭제
+                $('h1').removeClass('under');
+
+                //여러 개의 클래스명 삭제
+                $('p:first').removeClass('bold under');
+
+                //모든 클래스명 삭제 - class 속성은 남아있고 클래스명만 제거!!!
+                $('p').first().removeClass();
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1 class="under bg">This is a heading.</h1>
+
+    <p class="intro bold under">This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+
+    <button id="btn">Remove Class</button>
+
+    <style>
+        .intro {
+            font-size: 1.5rem;
+            color: red;
+        }
+        .under {
+            text-decoration: underline;
+            font-style: italic;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .bg {
+            background-color: greenyellow;
+        }
+    </style>
+
+</body>
+
+</html>

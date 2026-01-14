@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 | Join</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset_251021.css">
+    <link rel="stylesheet" href="css/register_T.css">
+</head>
+
+<body>
+    <header>
+        <div class="inner-header clearfix">
+            <h1 class="logo"><a href="#"><img src="img/logo.png" alt="스타벅스 코리아"></a></h1>
+
+            <nav class="gnb">
+                <ul>
+                    <li><a href="#">coffee</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">store</a></li>
+                    <li><a href="#">responsibility</a></li>
+                    <li><a href="#">starbucks rewards</a></li>
+                    <li><a href="#">what's new</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="inner-section">
+            <h2 class="section-title">회원가입</h2>
+
+            <!-- .join -> 흰색 박스!! -->
+            <div class="join">
+                <div class="top clearfix">
+                    <img src="img/icon_find_sally.png" alt="스타벅스 파트너">
+
+                    <div class="msg">
+                        <p><span>Welcome!</span>스타벅스커피 코리아에 오신 것을 환영합니다.</p>
+                        <p>*표시는 필수입력 항목입니다.</p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <form action="#">
+                        <!-- 필수사항 입력! -->
+                        <fieldset class="required">
+                            <legend>필수사항 입력</legend>
+
+                            <table>
+                                <tr>
+                                    <th><label for="uid">아이디</label></th>
+                                    <td class="userid">
+                                        <input type="text" name="user-id" id="uid" required>
+                                        <input type="button" value="중복확인">
+                                        <span>(영문, 숫자 혼합한 4~13자리 사이로 입력하세요.)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="upw">비밀번호</label></th>
+                                    <td>
+                                        <input type="password" name="user-pw" id="upw" required>
+                                        <span>(영문, 숫자 혼합한 8~12자리 사이로 입력하세요.)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="upw-re">비밀번호 재입력</label></th>
+                                    <td>
+                                        <input type="password" name="user-pw-re" id="upw-re" required>
+                                        <span>(비밀번호를 다시한번 입력해 주세요)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="uname">이름</label></th>
+                                    <td><input type="text" name="user-name" id="uname" required></td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="utel">휴대폰</label></th>
+                                    <td>
+                                        <input type="tel" name="user-tal" value="010"> -
+                                        <input type="tel" name="user-tal" id="utel" required> -
+                                        <input type="tel" name="user-tal" required>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="uemail">이메일</label></th>
+                                    <td class="useremail">
+                                        <input type="email" name="user-email" id="uemail" required>
+                                        <label><input type="checkbox" name="agree" value="yes">이메일을 통한 이벤트 및 신규매장 정보수신에
+                                            동의합니다. [선택]</label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+
+                        <!-- 선택사항 입력! -->
+                        <fieldset class="optional">
+                            <legend>선택사항 입력</legend>
+
+                            <table>
+                                <tr>
+                                    <th><label for="nickname">닉네임</label></th>
+                                    <td class="nickname"><input type="text" name="nickname" id="nickname"
+                                            placeholder="한글 6자리 이내로 입력하세요."></td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="birth">생년월일</label></th>
+                                    <td>
+                                        <div class="date">
+                                            <select name="year" id="birth">
+                                                <option value="2000">2000년</option>
+                                                <option value="2001">2001년</option>
+                                                <option value="2002">2002년</option>
+                                                <option value="2003">2003년</option>
+                                            </select>
+
+                                            <select name="month">
+                                                <option value="1">1월</option>
+                                                <option value="2">2월</option>
+                                                <option value="3">3월</option>
+                                                <option value="4">4월</option>
+                                                <option value="5">5월</option>
+                                            </select>
+
+                                            <select name="day">
+                                                <option value="1">1일</option>
+                                                <option value="2">2일</option>
+                                                <option value="3">3일</option>
+                                                <option value="4">4일</option>
+                                                <option value="5">5일</option>
+                                            </select>
+                                        </div>
+                                        <p>회원가입 완료 후 스타벅스 카드를 등록하시면 생일 무료 쿠폰이 발행됩니다.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p>* 선택항목은 입력하지 않거나 동의하지 않아도 회원가입이 가능합니다.</p>
+                        </fieldset>
+
+                        <input type="submit" value="가입하기" class="btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="inner-footer">
+            <div class="links">
+                <ul>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">영상정보처리기기 운영관리방침</a></li>
+                    <li><a href="#">홈페이지 이용약관</a></li>
+                    <li><a href="#">위치정보 이용약관</a></li>
+                    <li><a href="#">스타벅스카드 이용약관</a></li>
+                    <li><a href="#">비회원 이용약관</a></li>
+                    <li><a href="#">My DT Pass 서비스 이용약관</a></li>
+                    <li><a href="#">윤리경영 핫라인</a></li>
+                </ul>
+            </div>
+
+            <div class="btngrp">
+                <ul>
+                    <li><a href="#">찾아오시는 길</a></li>
+                    <li><a href="#">신규입점제의</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <p>
+                    <span><b>사업자등록번호</b> 201-81-21515</span>
+                    <span><b>(주)스타벅스코리아 대표이사</b> 송 데이비드 호섭</span>
+                    <span><b>TEL</b> 1522-3232</span>
+                    <span><b>개인정보 책임자</b> 김그린</span>
+                </p>
+                <p>&copy; 2021 Starbucks Coffee Company. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

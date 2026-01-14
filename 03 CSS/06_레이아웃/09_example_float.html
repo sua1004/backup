@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>09_example_T</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(images/backdrop.gif);
+        }
+
+        .title {
+            /* background-color: greenyellow; */
+            margin: 30px 0 50px;
+            text-align: center;
+        }
+
+        .title h1 {
+            height: 122px;
+            /* 배경이미지의 높이만큼! */
+
+            background-image: url(images/title.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            font-size: 0;
+            margin-bottom: 10px;
+
+        }
+
+        .title p {
+            font-size: 18px;
+        }
+
+        .content {
+            /* background-color: lightpink; */
+
+            width: 720px;
+            text-align: center;
+
+            margin: 0 auto;
+            outline: 3px solid tomato;
+        }
+
+        .content::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .content .box {
+            background-color: #777;
+
+            width: 200px;
+            padding: 10px;
+
+            margin: 10px;
+            margin-bottom: 20px;
+            /* text-align: center; */
+
+           /*  display: inline-block; */
+           float: left;
+        }
+
+        .content .box p {
+            color: #FFF;
+
+            background-image: url(images/icon.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+
+            display: inline-block;
+            padding-left: 20px;
+
+            letter-spacing: -0.2px;
+
+            /* outline: 2px solid lime; */
+        }
+       
+    </style>
+</head>
+
+<body>
+
+    <div class="title">
+        <!-- <h1><img src="images/title.gif" alt="Galerie Botanique"></h1> -->
+
+        <h1>Galerie Botanique</h1>
+        <p>개최된 컬렉션에 선택된 고풍스러운 식물 이미지는 다음과 같다.</p>
+    </div>
+
+    <div class="content">
+        <div class="box">
+            <img src="images/print-01.jpg" alt="해바라기(Helianthus)">
+            <p>해바라기(Helianthus)</p>
+        </div>
+
+        <div class="box">
+            <img src="images/print-02.jpg" alt="시계꽃(passiflora)">
+            <p>시계꽃(passiflora)</p>
+        </div>
+
+        <div class="box">
+            <img src="images/print-03.jpg" alt="닉토칼로스(Nyctocalos)">
+            <p>닉토칼로스(Nyctocalos)</p>
+        </div>
+
+        <div class="box">
+            <img src="images/print-04.jpg" alt="폴리안테스(Polianthes)">
+            <p>폴리안테스(Polianthes)</p>
+        </div>
+
+        <div class="box">
+            <img src="images/print-05.jpg" alt="무화과나무(Ficus)">
+            <p>무화과나무(Ficus)</p>
+        </div>
+
+        <div class="box">
+            <img src="images/print-06.jpg" alt="덴드로비움(Dendrobium)">
+            <p>덴드로비움(Dendrobium)</p>
+        </div>
+
+        <!-- ::after / float 끝!! -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>03_on()</title>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        /* 
+        1. 단독 이벤트 등록 메서드 : 한 동작에 대한 이벤트를 등록
+
+        $('selector').click(function(){실행코드;});
+
+        (1) $('selector') : 이벤트 대상
+        (2) click() : 이벤트
+        (3) function(){} : 이벤트 핸들러 
+
+
+        2. 그룹 이벤트 등록 메서드 : 두 가지 이상의 동작(이벤트)에 대한 이벤트 등록 >> on() 메서드 사용
+
+        ex) 마우스 포인터를 올리거나 클릭했을 때 환영메세지 출력!
+            >> 이벤트1 : 마우스 포인터를 올리거나 
+            >> 이벤트2 : 클릭했을 때
+        */
+
+        /* 
+        on() 메서드 등록방식1
+
+        $('이벤트 대상').on('이벤트명1 이벤트명2 이벤트명n',function(){});
+        */
+
+        $(function(){
+            $('#btn').on('click mouseover',function(){
+                console.log('Welcome!');
+            });
+        });
+
+        /* 
+        on() 메서드 등록방식2
+
+        $('이벤트 대상').on({
+            '이벤트명1 이벤트명2 이벤트명n' : function(){
+                실행코드;
+            }
+        });
+        */
+
+        $(function(){
+            $('.msg').on({
+                'click mouseover' : function(){
+                    console.log('드라이브 가자!!!');
+                }
+            });
+        });
+
+        /* 
+        on() 메서드 등록방식3
+
+        $('이벤트 대상').on({
+            '이벤트명1' : function(){},
+            '이벤트명2' : function(){},
+            '이벤트명n' : function(){}
+        });
+        */
+
+        $(function(){
+            $('h4').on({
+                'mouseover' : function(){
+                    console.log('너무 추워요!!!!');
+                },
+                'mouseout' : function(){
+                    console.log('따뜻한 집으로 가자!!');
+                }
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+
+    <button id="btn">눌러봐!!</button>
+
+    <p class="msg">주말에 가장 하고 싶은 일은?</p>
+
+    <h4>겨울이 왔어요!</h4>
+
+    <style>
+        p, h4 {
+            background-color: plum;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+    
+</body>
+</html>

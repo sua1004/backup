@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+            //#box1, #box2 스크롤 이동거리 구하기
+            //이동거리 = 문서로부터 떨어진 거리!
+
+            var box1pos = $('#box1').offset().top,
+                box2pos = $('#box2').offset().top;
+
+                console.log(box1pos + '＼n' + box2pos);
+
+                $('#btn1').click(function(){
+                    $('html,body').animate({
+                        scrollTop: box1pos
+                    }, 800);
+                });
+
+                $('#btn2').click(function(){
+                    //$(window).scrollTop(box2pos);
+                    $('html, body').animate({
+                        scrollTop: box2pos
+                    }, 800);
+                });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="btngrp">
+        <button id="btn1">페이지1</button>
+        <button id="btn2">페이지2</button>
+    </div>
+
+    <div id="box1" class="page">페이지1</div>
+    <div id="box2" class="page">페이지2</div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 보이는 화면 기준 */
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        .btngrp {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100px;
+        }
+        .btngrp button {
+            font-size: 20px;
+            margin: 0 6px;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+
+            text-align: center;
+            line-height: 100px;
+            font-size: 2rem;
+        }
+
+        #box1 {background-color: skyblue;}
+        #box2 {background-color: lightpink;}
+    </style>
+
+</body>
+
+</html>

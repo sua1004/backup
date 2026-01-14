@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_addClass()</title>
+
+    <script src="jquery-1.7.2.min.js"></script>
+
+    <script>
+        /* 
+        addClass() : 선택한 요소에 클래스를 생성
+
+        * 기본형
+        1) $('요소선택').addClass('클래스명');
+        >> 하나의 클래스 추가
+
+        2) $('요소선택').addClass('클래스명1 클래스명2 클래스명n');
+        >> 여러개의 클래스 추가
+        */
+
+        $(document).ready(function(){
+
+            //class 추가하기
+            $('#btn1').click(function(){
+                $('p').last().addClass('under');
+
+                //기존 class에 새로운 클래스명 추가
+                $('h1').addClass('bg');
+            });
+
+            //기존 class값 변경하기 - attr()
+            $('#btn2').click(function(){
+                //$('p').first().attr('class','bg');
+                $('p').first().attr('class','bg bold');
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <h1 class="under">This is a heading.</h1>
+
+    <p class="intro bold">This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+
+    <button id="btn1">Add Class</button>
+    <button id="btn2">Change Class</button>
+
+    <style>
+        .intro {
+            font-size: 1.5rem;
+            color: red;
+        }
+        .under {
+            text-decoration: underline;
+            font-style: italic;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .bg {
+            background-color: greenyellow;
+        }
+    </style>
+
+</body>
+
+</html>

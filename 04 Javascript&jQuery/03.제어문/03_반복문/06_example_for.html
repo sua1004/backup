@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>06_example_for문</title>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            color: #fff;
+            padding-left: 20px;
+        }
+        
+        #box {
+            outline: 3px solid lime;
+        }
+        
+        #box img {
+            width: 200px;
+            margin: 0 5px;
+            border-radius: 10px;
+        }
+
+        /* img {
+            width: 200px;
+            margin: 5px;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <h1>좋거나 나쁜 동재</h1>
+    
+    <!--이미지 넣을 박스-->
+    <div id="box">
+        <!-- <img src="images/tving/dj_1.jpg" alt="좋거나 나쁜 동재" title="동재1">
+        <img src="images/tving/dj_2.jpg" alt="좋거나 나쁜 동재" title="동재2">
+        <img src="images/tving/dj_3.jpg" alt="좋거나 나쁜 동재" title="동재3">
+        <img src="images/tving/dj_4.jpg" alt="좋거나 나쁜 동재" title="동재4">
+        <img src="images/tving/dj_5.jpg" alt="좋거나 나쁜 동재" title="동재5">
+        <img src="images/tving/dj_6.jpg" alt="좋거나 나쁜 동재" title="동재6">
+        <img src="images/tving/dj_7.jpg" alt="좋거나 나쁜 동재" title="동재7">
+        <img src="images/tving/dj_8.jpg" alt="좋거나 나쁜 동재" title="동재8"> -->
+    </div>
+    
+
+    <script>
+        //for문을 이용해서 이미지 8개가 반복적으로 나타날 수 있도록 구현하시오.
+
+        //화면에 img 출력하기
+        //document.write('<img src="images/tving/dj_1.jpg" alt="">');
+
+        //#box에 img 출력하기
+        //document.getElementById('box').innerHTML = '<img src="images/tving/dj_1.jpg" alt="">';
+
+        //#box에 8개 이미지가 반복해서 출력되도록 하기!
+
+        var box = document.getElementById('box');
+
+        /* for (var i=1; i<=8; i++){
+            box.innerHTML += `<img src="images/tving/dj_${i}.jpg" alt="좋거나 나쁜 동재" title="동재${i}">`;
+        } */
+
+        var imgBox = ''; //이미지 태그를 담는 변수
+        for (var i=1; i<=8; i++){
+            imgBox += `<img src="images/tving/dj_${i}.jpg" alt="좋거나 나쁜 동재" title="동재${i}">`;
+        }
+
+        console.log(imgBox);
+
+        box.innerHTML = imgBox;
+        
+        //답안 작성
+        /* 
+        var imgSrc = ['dj_1.jpg','dj_2.jpg','dj_3.jpg','dj_4.jpg','dj_5.jpg','dj_6.jpg','dj_7.jpg','dj_8.jpg'];
+        var imgCount = imgSrc.length;
+
+        for (var img=0; img < imgCount; img++){
+            document.write(`<img src="images/tving/${imgSrc[img]}"alt="">`)
+        }
+        */
+    </script>
+
+</body>
+
+</html>

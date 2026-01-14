@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+/* coffeebeanstory_T.css */
+
+/*** Bread Crumb ********************************************************/
+.breadcrumb {
+    margin-top: 141px; /* header와 border까지 포함해서! */
+    width: 100%;
+    background-color: rgb(105,81,157);
+    height: 30px;
+    line-height: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.breadcrumb ul {
+    width: 1280px;
+    margin: 0 auto;
+
+    /* outline: 2px solid lime; */
+}
+.breadcrumb ul li {
+    margin-right: 20px;
+    background: url(../img/img_arr_location.png) no-repeat right;
+    padding-right: 24px;
+}
+.breadcrumb ul li:last-child {
+    background: none;
+    padding-right: 0;
+}
+.breadcrumb ul li a:hover {
+    text-decoration: underline;
+}
+
+/*** section1. simply the best
+***************************************************************** */
+section.simply {
+    margin-bottom: 100px;
+}
+
+section.simply .banner {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto 60px;
+}
+section.simply .banner img {
+    width: 100%;
+    display: block;
+}
+
+
+section.simply .value {
+    width: 1200px;
+    margin: 0 auto;
+
+    /* background-color: lightcoral; */
+}
+section.simply .value ul {
+    border-bottom: 1px solid rgb(105,81,157);
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+/* 1) 가상요소 after에 배경이미지 처리 */
+/* section.simply .value ul li {
+    outline: 2px solid red;
+
+    width: 25%;
+    text-align: center;
+
+    position: relative; 
+}
+section.simply .value ul li::after {
+    content: "";
+    display: block;
+
+    width: 41px;
+    height: 41px;
+    background: url(../img/bg_plus_icon.gif) no-repeat;
+
+    position: absolute;
+    right: -20px;
+    top: 60px;
+}
+section.simply .value ul li:last-child::after {
+    display: none;
+}
+ */
+
+/* 2) width, margin으로 조절 */
+.value ul li {
+    /* outline: 2px solid red; */
+
+    text-align: center;
+    width: 340px;
+
+    background: url(../img/bg_plus_icon.gif) no-repeat 0 60px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.value ul li:first-child {
+    background: none;
+}
+
+.value ul li img {
+    margin-bottom: 25px;
+}
+.value ul li .txt-box,
+.value ul li  dl {
+    /* background-color: yellow; */
+
+    padding: 0 20px;
+}
+.value ul li .txt-box h3,
+.value ul li  dl dt {
+    font-size: 18px;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    color: rgb(105,81,157);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.value ul li .txt-box p,
+.value ul li  dl dd {
+    font-size: 18px;
+    color: rgb(47,28,17);
+    line-height: 1.4;
+}
+.value ul li  dl dd.accent {
+    font-family: "Merriweather", serif;
+    font-size: 16px;
+    color: rgb(105,81,157);
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+
+section.simply .value .value-des {
+    text-align: center;
+}
+section.simply .value .value-des p:first-child {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+section.simply .value .value-des p:last-child {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(207,102,26);
+}
+
+/*** section2. specialty coffee & tea
+****************************************************************************/
+section.specialty {
+    margin-bottom: 100px;
+}
+
+section.specialty .banner {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto 100px;
+}
+section.specialty .banner img {
+    width: 100%;
+    display: block;
+}
+
+
+section.specialty .product {
+    width: 1280px;
+    margin: 0 auto;
+}
+section.specialty .product > article {
+    /* outline: 3px solid plum; */
+
+    margin-bottom: 80px;
+}
+
+/*** coffee & tea 공통 디자인 적용 *****************************************/
+.product .title {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: rgb(207,102,26);
+    margin-bottom: 20px;
+    text-align: center;
+
+    background: url(../img/bg_bar6.gif) repeat-x center;
+}
+
+/* 타이틀 양 옆에 구분선 넣기 */
+.product .title span {
+    background-color: rgb(255, 255, 255);
+    padding: 0 30px;
+}
+
+.product .slogan {
+    font-family: "Merriweather", serif;
+    font-size: 22px;
+    color: rgb(207,102,26);
+    margin-bottom: 30px;
+    text-align: center;
+}
+.product .description {
+    font-size: 18px;
+    color: rgb(51,51,51);
+    line-height: 1.4rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.product .img-list {
+    margin-bottom: 60px;
+}
+.product .img-list li {
+    /* outline: 1px solid red; */
+
+    width: 32%;
+}
+.product .img-list li ~ li {
+    margin-left: 2%;
+}
+.product .img-list li img {
+    width: 100%;
+    display: block;
+
+    transition: all 0.5s;
+}
+
+.product .btn {
+    text-align: center;
+}
+.product .btn a {
+    background-color: rgb(243,130,0);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 16px 40px;
+
+    display: inline-block;
+}
+
+/***************************************************************************/
+
+/* 이미지 hover 효과 */
+.product .coffee .img-list li {
+    overflow: hidden;
+}
+.product .coffee .img-list li:hover img {
+    transform: scale(1.3);
+}
+
+.product .tea .img-list li:hover img {
+    opacity: 0.5;
+}

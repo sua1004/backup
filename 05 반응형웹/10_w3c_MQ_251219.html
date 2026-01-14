@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_w3c_MQ</title>
+
+    <style>
+        /* 기준CSS - PC */
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        header {
+            width: 100%;
+            height: 120px;
+            line-height: 120px;
+            background-color: #06f;
+            color: #fff;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li {
+            background-color: #0cf;
+            color: #fff;
+            margin-bottom: 6px;
+            box-shadow: 0px 2px 2px #888;
+            
+        }
+        nav ul li:hover {
+            background-color: #03f;
+        }
+        nav ul li a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
+
+        article {
+            /* background-color: blanchedalmond; */
+        }
+
+        aside .inner-aside {
+            background-color: #00f;
+            color: #fff;
+            text-align: center;
+            padding: 14px;
+            box-shadow: 0 2px 2px #888;
+        }
+
+        aside h3, aside p {
+            margin: 0;
+        }
+        aside .inner-aside > div {
+            margin-bottom: 20px;
+        }
+
+        /* 12 column grid에 따른 너비설정 */
+        .col-1 {width: 8.33%;} /* 12개 */
+        .col-2 {width: 16.66%;} /* 6개 */
+        .col-3 {width: 25%;} /* 4개 */
+        .col-4 {width: 33.33%;} /* 3개 */
+        .col-5 {width: 41.66%;} /* 2개 */
+        .col-6 {width: 50%;} /* 2개 */
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+
+        footer {
+            clear: both;
+            width: 100%;
+            background-color: #006;
+            color: #eee;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        footer p {
+            margin: 0;
+        }
+
+        /* 태블릿용 미디어쿼리 */
+        @media all and (max-width: 1024px) {
+            #content article {
+                width: 75%;
+            }
+            #content aside {
+                width: 100%;
+                float: none;
+                clear: both;
+            }
+        }
+
+        /* 모바일용 미디어쿼리 */
+        @media all and (max-width:767px) {
+            [class*="col-"] {
+                width: 100%;
+                float: none;
+            }
+            #content article {
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Samsung Mobile</h1>
+    </header>
+
+    <section id="content">
+        <nav class="col-3">
+            <ul>
+                <li><a href="#">The Flight</a></li>
+                <li><a href="#">The City</a></li>
+                <li><a href="#">The Island</a></li>
+                <li><a href="#">The Food</a></li>
+            </ul>
+        </nav>
+
+        <article class="col-6">
+            <h2>The City</h2>
+            <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+        </article>
+
+        <aside class="col-3">
+            <div class="inner-aside">
+                <div>
+                    <h3>What?</h3>
+                    <p>Chania is a city on the island of Crete.</p>
+                </div>
+                <div>
+                    <h3>Where?</h3>
+                    <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                </div>
+                <div>
+                    <h3>How?</h3>
+                    <p>You can reach Chania airport from all over Europe.</p>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <footer>
+        <p>Resize the browser window to see how the content respond to the resizing.</p>
+    </footer>
+    
+</body>
+</html>

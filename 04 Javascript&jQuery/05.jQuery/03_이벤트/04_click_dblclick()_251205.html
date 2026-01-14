@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>04_click_dblclick()</title>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        /* 
+        1. click() - 선택한 요소를 클릭했을 때 이벤트 발생!
+
+        2. dblclick() - 선택한 요소를 연속해서 두번 클릭했을 때 이벤트 발생!
+        */
+
+        $(document).ready(function(){
+            //이벤트가 발생하면 이벤트 객체가 자동으로 생성 (이벤트 객체 >> 이벤트를 당한 대상!!!)
+            //이벤트 객체는 이벤트 핸들러의 매개변수 자리에 저장된다!
+
+            $('.btn1').on('click', function(e){
+
+                //a태그의 기본이동 막기!!
+                e.preventDefault();
+
+                $('.txt1').css({
+                    backgroundColor: 'tomato'
+                });
+            });
+
+            $('.btn2').on('click', function(){
+                $('.txt2').css({
+                    backgroundColor: 'navy',
+                    color: 'white'
+                });
+
+                return false;
+            });
+
+            /* 
+            <a>, <form> 요소에 클릭 이벤트 적용시 기본 기능 차닪나기
+
+                1. preventDefault()
+                $('a 또는 submit').이벤트메서드(function(evt){
+                    evt.preventDefault();
+                });
+
+                **주로 첫줄에 작성**
+
+                2. return false;
+                $('a 또는 submit').이벤트메서드(function(){
+                    실행코드;
+
+                    return false;
+                });
+
+                **주로 마지막 줄에 작성**
+            */
+
+            $('.btn3').on('dblclick', function(){
+                $('.txt3').css({
+                    backgroundColor: 'yellow'
+                });
+            });
+
+            $('.btn4').on('click', function(){
+                $('.txt4').css({
+                    color: 'red',
+                    textDecoration: 'underline'
+                });
+            });
+
+            //이벤트 강제발생 - trigger('강제발생시킬 이벤트명!');
+            //$('.btn4').trigger('click');
+
+            //이벤트 제거 - off('제거할 이벤트명')
+            $('.btn4').off('click');
+
+
+        });
+
+    </script>
+</head>
+<body>
+    
+    <p><a href="http://www.daum.net" class="btn1" target="_blank">다음</a></p>
+    <p class="txt1">Content1</p>
+
+    <p><a href="http://www.naver.com" class="btn2" target="_blank">네이버</a></p>
+    <p class="txt2">Content2</p>
+
+    <button class="btn3">버튼</button>
+    <p class="txt3">Content3</p>
+
+    <button class="btn4">이벤트 강제발생!</button>
+    <p class="txt4">Content4</p>
+
+</body>
+</html>

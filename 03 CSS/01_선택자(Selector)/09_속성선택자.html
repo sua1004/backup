@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>09_속성선택자</title>
+
+    <style>
+        /* (태그/요소의) 속성 선택자 */
+
+        a[id] {
+            background-color: greenyellow;
+        }
+
+        /* 속성값 선택자 */
+        a[class="link1"] {
+            background-color: pink;
+        }
+
+        /* 속성값의 시작이 같은 것 찾기 ^= */
+        a[class^="link"] {
+            color: red;
+        }
+
+        /* 속성값의 끝이 같은 것 찾기 $= */
+        a[href$="net"] {
+            border: 2px solid blue;
+        }
+
+        /* 같은 값 모두 찾기 *= */
+        a[href*="www"] {
+            text-decoration: line-through;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- ul>li*3[href=http] -->
+
+    <ul>
+        <li><a href="http://www.naver.com" class="link1">네이버</a></li>
+        <li><a href="http://www.google.com" class="link2">구글</a></li>
+        <li><a href="http://www.daum.net" id="daum">다음</a></li>
+    </ul>
+
+    <!-- 복습할 때 input 작성해서 선택해 보세요! -->
+</body>
+
+</html>

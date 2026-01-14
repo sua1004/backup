@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_transition</title>
+
+    <style>
+        h2 {
+            color: red;
+        }
+        div {
+            margin-left: 100px;
+        }
+
+        /* transition-property & duration */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: lightpink;
+            border: 2px solid #000;
+
+            transition-property: width, height;
+            transition-duration: 4s, 2s;
+        }
+        .box1:hover {
+            width: 500px;
+            height: 400px;
+
+            /* hover에 적용하면 복구 될 때는 적용이 안됨
+            transition-property: width, height;
+            transition-duration: 4s, 2s; */
+        }
+
+        /* transition-timing-funstion */
+        .box2 {
+            background-color: bisque;
+        }
+        .box2::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .box2 > div {
+            width: 100px;
+            height: 50px;
+            background-color: navy;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+
+            float: left;
+            margin: 5px 10px;
+
+            transition-property: height;
+            transition-duration: 3s;
+        }
+        .box2:hover > div {
+            height: 400px;
+        }
+
+        .ease {transition-timing-function: ease;}
+        .linear {transition-timing-function: linear;}
+        .ease-in {transition-timing-function: ease-in;}
+        .ease-out {transition-timing-function: ease-out;}
+        .ease-in-out {transition-timing-function: ease-in-out;}
+
+        /* 
+        timing-function (가속도)
+
+        1) ease : 기본값, 처음에 천천히 시작, 점점 빨라지다가
+        마지막에 천천히 끝남
+        2) linear : 시작부터 끝까지 일정한 속도
+        3) ease-in : 시작을 느리게
+        4) ease-out : 느리게 끝나기
+        5) ease-in-out : 느리게 시작해서 느리게 끝나기
+        */
+
+        /* transition-delay */
+        .no-delay {
+            width: 150px;
+            height: 150px;
+            background-color: darkseagreen;
+            border: thin solid #000;
+
+            margin-bottom: 20px;
+            transition: all 0.5s linear;
+        }
+        .no-delay:hover {
+            transform: rotate(30deg);
+        }
+        
+        .delay {
+            width: 150px;
+            height: 150px;
+            background-color: greenyellow;
+            border: thin solid #000;
+
+            transition: all 0.5s linear;
+            transition-delay: 1s;
+        }
+        .delay:hover {
+            transform: rotate(30deg);
+        }
+
+        /* transition */
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 1px solid #000;
+
+            transition: all 1s ease-in-out 1s;
+
+            /* transition: property duration timing-functuon delay */
+        }
+        .box3:hover {
+            background-color: tomato;
+            border: 5px dotted greenyellow;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>transition-property &amp; duration</h2>
+    <div class="box1"></div>
+
+    <h2>transition-timing-funstion</h2>
+    <div class="box2">
+        <div class="ease">ease (기본값)</div>
+        <div class="linear">linear</div>
+        <div class="ease-in">ease-in</div>
+        <div class="ease-out">ease-out</div>
+        <div class="ease-in-out">ease-in-out</div>
+    </div>
+
+    <h2>transition-delay</h2>
+    <div class="no-delay"></div>
+    <div class="delay"></div>
+
+    <h2>transition</h2>
+    <div class="box3"></div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>08_example</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(images/pattern_gray.png);
+            text-align: center;
+        }
+
+        .faq {
+            width: 100%;
+            padding: 50px;
+            border-bottom: 5px solid #000;
+            background-image: url(images/faq_topimg.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #FFF;
+            margin: 50px 0px 70px;
+        }
+
+        .box {
+            width: 600px;
+            /* height: 250px; */
+            border: 3px solid #FFF;
+            border-radius: 25px;
+            background-color: #666;
+            padding: 30px 40px;
+            color: #FFF;
+            box-shadow: 0 2px 7px #555;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .title {
+        font-size: 30px;
+        padding: 0px 0px 15px;
+        }
+
+        .box .question {
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #222;
+            margin: 15px;
+        }
+
+        .box .question strong {
+            color: lightgreen;
+        }
+
+        .box .answer {
+            margin: 15px;
+            padding-left: 10px;
+            text-indent: 20px;
+        }
+
+        .box .answer strong {
+            color: yellow;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="faq"></div>
+    <div class="box">
+        <h1 class="title">3DS MAX에서 에러 메시지</h1>
+        <hr>
+        <p class="question"><strong>Q..</strong> Missing Map Files의 에러 메시지가 나옵니다.</p>
+        <p class="answer"><strong>A..</strong> 위와 같은 에러 메시지는 맥스 3.1 풀버전을 설치하시지 않으셨기 때문입니다. 맥스 3.1 setup 시에 custom 옵션에서
+            모든 항목을 체크하시면 door와 windows라는 플러그인이 설치가 됩니다.</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>06_example_Class()</title>
+
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+
+        //예제 - 클릭된 탭메뉴에 디자인을 적용하시오. 
+
+        /* 
+        조건
+        1. 선택된 버튼의 클래스 추가 >> 클릭될 때 버튼에 적용될 css 
+        2. 아무것도 누르지 않았을 때 기본은 첫번째(강남점) 버튼이 클릭 되어있는 상태
+        */
+
+        /* 
+        클릭했을 때 변경 될 css 추가 >> .on
+
+        1. 기본 선택 : .gnb ul li의 첫번째(강남점) >> eq(0) addClass('on')
+
+        2. 클릭했을 때 버튼의 css 변경 >> click()
+        1) 다른 버튼을 클릭했을 때, 그 전에 적용된 .on css는 제거 >> removeClass()
+        2) 클릭된 버튼만 변경된 css 적용 >> this toggleClass('on')
+        */
+
+         $(document).ready(function(){
+
+            //1. 기본 선택 : 첫번째 탭 on
+            $('.gnb ul li').eq(0).addClass('on');
+
+            //2. 클릭했을 때 버튼의 css 변경
+            $('.gnb ul li').click(function(){
+
+                // 1) 모든 li(버튼)에서 on 제거
+                $('.gnb ul li').removeClass('on');
+
+                // 2) 클릭된 li(버튼)만 토글(= on 추가)
+                $(this).toggleClass('on');
+            });
+
+        });
+
+        //재연습
+        /* $(document).ready(function(){
+
+            $('.gnb ul li').eq(0).addClass('on');
+
+            $('.gnb ul li').click(function(){
+
+                $('.gnb ul li').removeClass('on');
+                $(this).toggleClass('on');
+            });
+        }); */
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="top">
+        <h1>그린컴퓨터 아카데미</h1>
+
+        <nav class="gnb">
+            <ul>
+                <li><a href="#">강남점</a></li>
+                <li><a href="#">역삼점</a></li>
+                <li><a href="#">종로점</a></li>
+                <li><a href="#">신촌점</a></li>
+                <li><a href="#">신도림점</a></li>
+                <li><a href="#">노원점</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <style>
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
+
+
+        .top {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .top h1 {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        nav.gnb ul li {
+            border: 1px solid #ccc;
+            display: inline-block;
+            border-radius: 50px;
+        }
+
+        nav.gnb ul li~li {
+            margin-left: 10px;
+        }
+
+        nav.gnb ul li a {
+            padding: 10px 20px;
+            font-size: 20px;
+            color: #777;
+        }
+
+        /* 변경된 css(클릭했을 때 적용될 버튼 디자인) */
+        nav.gnb ul li.on a {
+            background: skyblue;
+            color: #fff;
+            border: 1px solid skyblue;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+    </style>
+
+</body>
+
+</html>

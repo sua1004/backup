@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>13_html5-form-validation</title>
+</head>
+
+<body>
+
+    <!-- 
+    <form> 태그 속성
+
+        1) action : <form> 태그 안의 내용들을 처리해 줄 서버싱의 프로그램(파일)을 지정
+            ex) login.php / regist.php 등
+
+        2) merhod : 사용자가 입력한 내용(데이터)을 서버 프로그램으로 어떻게 남겨줄지 지정
+
+        - get : 주소 표시줄에 입력한 내용이 노출 (예 : 검색어 등), 256byte ~ 4096byte의 데이터만 서버로 전달 가능
+
+        - post : 사용자가 입력한 내용들을 표준입력(5tandard input)으로 넘기기 때문에 입력 내용 길이에 제한이 없음, 사용자가 입력한 내용이 노출되지 않음
+
+        3) name : 폼의 이름 지정, 한 문서 안에 여러 개의 <form> 태그가 있을 경우 폼을 구분하기 위해 사용
+    -->
+
+    <form action="#" method="post" name="loginfrm">
+
+        <fieldset>
+            <legend>로그인 정보</legend>
+
+            <p>
+                <label for="userid">아이디</label>
+                <input type="text" name="id" id="userid" autofocus required>
+            </p>
+
+            <p>
+                <label for="userpw">비밀번호</label>
+                <input type="password" name="pw" id="userpw" required>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="로그인">
+        <input type="reset" value="다시 작성">
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,332 @@
+@charset "utf-8";
+
+/* index.css */
+
+/* header ********************************************************************************************************************/
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    padding: 20px 0;
+    box-sizing: border-box;
+
+    /* border-bottom: 1px solid #eee; */
+    box-shadow: 0 0 8px #ddd;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+
+header .inner {
+    position: relative; /* .gnb의 기준! */
+}
+
+header .logo {
+    /* outline: 2px solid red; */
+
+    float: left;
+}
+header .logo img {
+    height: 50px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* 모바일 메뉴 */
+header .m-menu {
+    display: none;
+}
+
+header .gnb {
+    /* outline: 2px solid red; */
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header .gnb ul {}
+header .gnb ul li {
+    margin: 0 24px;
+}
+header .gnb ul li a {
+    font-size: 20px;
+    font-size: 1.25rem;
+    color: #333;
+    font-family: "PT Serif", serif;
+    line-height: 60px;
+}
+header .gnb ul li a:hover {
+    color: #f00;
+    text-decoration: underline;
+    /* font-weight: 700; */
+    transform: scale(1.2);
+}
+
+header .sns {
+    /* outline: 2px solid red; */
+
+    float: right;
+}
+header .sns a {
+    display: inline-block;
+}
+header .sns a img {
+    height: 50px;
+    margin-top: 5px;
+    display: block;
+}
+
+
+section {
+    margin-top: 100px;
+}
+section > article {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    /* outline: 2px solid plum; */
+}
+
+/* article1. INTRO *******************************************************************************************/
+article.intro {
+    height: 550px;
+    background: url(../images/rb_logo.png) no-repeat right bottom/auto 500px;
+
+    position: relative; /* .txt-box와 .btn의 기준!!! */
+    margin-bottom: 100px;
+}
+article.intro .txt-box {
+    /* background-color: yellow; */
+
+    width: 40%;
+
+    position: absolute;
+    top: 80px;
+}
+article.intro .txt-box p {}
+article.intro .txt-box p.des-en {
+    font-size: 22.4px;
+    font-size: 1.4rem;
+    color: darkgray;
+    margin-bottom: 30px;
+}
+article.intro .txt-box p.des-ko {
+    font-size: 19.2px;
+    font-size: 1.2rem;
+    word-break: keep-all;
+}
+article.intro .btn {
+    position: absolute;
+    bottom: 25%;
+
+    color: #e64461;
+}
+article.intro .btn:hover {
+    background-color: #e64461;
+    color: #fff;
+    border-color: #e66461;
+}
+
+
+/* article2. WORKS *******************************************************************************************/
+article.works {
+    margin-bottom: 100px;
+}
+article.works .img-box-wrap {}
+article.works .img-box-wrap .img-box {
+    /* outline: 2px solid blue; */
+    width: 23.5%;
+    float: left;
+    margin-bottom: 2%;
+
+    overflow: hidden;
+}
+article.works .img-box-wrap .img-box ~ .img-box {
+    margin-left: 2%;
+}
+article.works .img-box-wrap .img-box:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+article.works .img-box-wrap .img-box img {
+    width: 100%;
+    display: block;
+
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+article.works .img-box-wrap .img-box:hover img {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+/* article3. ABOUT *******************************************************************************************/
+article.about {
+    margin-bottom: 100px;
+    text-align: center;
+
+    background-image: url(../images/people_01-1.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    /* height: 400px; */
+    padding-bottom: 200px;
+}
+
+article.about p {
+    width: 50%;
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin: 0 auto 40px;
+}
+article.about .btn {
+    color: #00c5b4;
+}
+
+/* article4. NEWS *******************************************************************************************/
+article.news {}
+article.news .sec-tit {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+article.news > p {
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+article.news .box-wrap {}
+article.news .box-wrap .box {
+    /* outline: 2px solid blue; */
+
+    width: 32%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+    float: left;
+}
+article.news .box-wrap .box:hover {
+    /* border-color: forestgreen; */
+    outline: 3px solid forestgreen;
+}
+article.news .box-wrap .box ~ .box {
+    margin-left: 2%;
+}
+
+article.news .box-wrap .box img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+article.news .box-wrap .box .title {
+    padding: 0 10px;
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin-bottom: 6px;
+
+    height: 52px;
+}
+article.news .box-wrap .box .title a {
+    color: #333;
+}
+article.news .box-wrap .box .title a:hover {
+    color: forestgreen;
+    text-decoration: underline;
+}
+
+/* article.news .box-wrap .box .title a {
+    height: 52px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+} */
+article.news .box-wrap .box .date {
+    padding: 0 10px;
+    color: darkgray;
+    margin-bottom: 10px;
+}
+
+
+/* CONTACT *****************************************************************************************************/
+section.contact {
+    width: 100%;
+    max-width: 1920px;
+    margin: 100px auto 0;
+
+    background-image: url(../images/rb-03.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 100px 0 160px;
+    text-align: center;
+}
+section.contact .sec-tit {
+    font-size: 48px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+section.contact p {
+    font-size: 24px;
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+    color: white;
+}
+section.contact .btn {
+    color: #fff;
+}
+section.contact .btn:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+}
+
+/* footer **********************************************************************************************************/
+footer {
+    background-color: #fff;
+    padding: 60px 0;
+    position: relative; /* .top의 기준! */
+}
+footer .footer-box {
+    /* outline: 2px solid blue; */
+
+    width: 33.33%;
+    float: left;
+}
+footer .footer-box h4 {
+    font-size: 18px;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+footer .footer-box p {
+    color: #999;
+}
+
+/* footer - dark mode 디자인 */
+footer.dark {
+    background-color: #333;
+}
+footer.dark .footer-box h4 {
+    color: rgba(255,255,255,0.8);
+}
+footer.dark .footer-box p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+footer .top {
+    position: absolute;
+    right: 5%;
+    bottom: 100px;
+}
+footer .top img {
+    display: block;
+}

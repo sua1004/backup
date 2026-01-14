@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>06_example_Class()</title>
+
+    <script src="jquery-1.7.2.min.js"></script>
+    <script>
+        
+        //예제 - 클릭된 탭메뉴에 디자인을 적용하시오. 
+        //클릭된 탭메뉴에 활성화 된 디자인을 적용하고 >> .active 추가!
+        //나머지 메뉴는 기본 디자인 적용 >> 나머지 메뉴는 .active 제거!
+
+        $(document).ready(function(){
+
+            /* $('.gnb li').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+                //.siblings() >> this를 제외한 나머지 형제 요소 선택
+            }); */
+
+            //만약 클릭 대상이 a태그라면???
+            $('.gnb li a').click(function(){
+                $(this).parent().addClass('active').siblings().removeClass('active');
+                //parent() >> this의 부모 요소 선택
+            });
+        });
+        
+        
+    </script>
+</head>
+<body>
+
+    <div class="top">
+        <h1>그린컴퓨터 아카데미</h1>
+
+        <nav class="gnb">
+            <ul>
+                <li class="active"><a href="#">강남점</a></li>
+                <li><a href="#">역삼점</a></li>
+                <li><a href="#">종로점</a></li>
+                <li><a href="#">신촌점</a></li>
+                <li><a href="#">신도림점</a></li>
+                <li><a href="#">노원점</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <style>
+
+        ul, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+        }
+
+        
+        .top {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .top h1 {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+    
+        nav.gnb ul li {
+            border: 1px solid #ccc;
+            display: inline-block;
+            border-radius: 50px;
+        }
+        nav.gnb ul li~li {
+            margin-left: 10px;
+        }
+
+        nav.gnb ul li a {
+            padding: 10px 20px;
+            font-size: 20px;
+            color: #777;
+        }
+
+        /* 선택돤 메뉴에 적용될 디자인! */
+        nav.gnb ul li.active {
+            background-color: #41b3a2;
+            border-color: #41b3a2;
+        }
+        nav.gnb ul li.active a {
+            color: #fff;
+        }
+
+
+
+
+    </style>
+    
+</body>
+</html>

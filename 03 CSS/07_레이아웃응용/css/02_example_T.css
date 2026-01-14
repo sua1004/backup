@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+/*** reset.css
+***************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+    /* =400 */
+}
+
+a {
+    text-decoration: none;
+}
+
+/*** common.css (공통으로 사용할 디자인)
+***************************************************************************/
+
+/* float 해제룰 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+}
+
+.best-recipe {
+    /*  background-color: yellow; */
+    margin: 100px 0;
+}
+
+.best-recipe .title {
+    /* background-color: greenyellow; */
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.best-recipe .title h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.best-recipe .title p {
+    font-size: 1.5rem;
+    color: #777;
+}
+
+
+/* 
+% : 비율
+px : 고정값
+*/
+
+.best-recipe .content {
+   /*  background-color: bisque; */
+
+    /* 1번 - 전체 너비 사용, 양쪽 패딩 설정*/
+    /* width: 100%;
+    padding: 0 100px;
+    padding: 0 5%;
+    box-sizing: border-box; */
+    /* 전체 너비를 사용할 때는 여백은 50px ~ 100px 정도를 사용함 */
+
+    /* 2번 - width 설정 */
+    /* width: 90%;
+    max-width: 1720px;
+    margin: 0 auto; */
+    /* max-width : 주로 너비와 같이 사용 */
+
+    /* 응용 */
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.best-recipe .content .box {
+    /* outline: 3px solid blue; */
+
+    float: left;
+    width: 18.4%;
+    position: relative; /* h3의 기준 + 가상요소 before의 기준!!! */
+    overflow: hidden; /* 이미지를 border-radius 모양대로 깎아주기*/
+}
+.best-recipe .content .box ~ .box {
+    margin-left: 2%;
+}
+
+/* .box의 border-radious 설정! */
+.b1 {border-radius: 0 130px 0 0;}
+.b2 {border-radius: 0 0 0 130px;}
+.b3 {border-radius: 0 0 130px 0;}
+.b4 {border-radius: 0 0 130px 0;}
+.b5 {border-radius: 0 130px 0 0;}
+
+.best-recipe .content .box a {
+    display: block; 
+    /* a태그를 이미지의 높이까지 설정(개발자 도구 확인) */
+}
+.best-recipe .content .box a::before {
+    content: "";
+    display: block;
+    
+    /* % : 기준 요소가 가진 너비와 높이를 전부 사용하겠다는 뜻! */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+
+    position: absolute;
+}
+.best-recipe .content .box a img {
+    width: 100%;
+    display: block;
+    /* 이미지 태그 : 인라인 요소 > 블럭 요소로 변경(여백 없애기) */
+   
+}
+.best-recipe .content .box a h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFF;
+
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    /* left / top의 값을 0으로 설정(기준 설정 확인) > 위치 이동 */
+}

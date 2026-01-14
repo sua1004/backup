@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+
+    <style>
+        h2 {
+            color: tomato;
+        }
+
+        /* font-size */
+        /* 
+        웹 기본 폰트 사이즈 : 16px
+        16px = 1em = 1rem
+
+        글자 크기 단위는 px, em, rem 사용 가능!
+        */
+        .small {
+            font-size: 14px;
+        }
+        .big {
+            /* font-size: 32px; */
+            font-size: 2em;
+        }
+
+
+        /* font-weight */
+        /* 기본값 400 = normal */
+        .bold {
+            /*  font-weight: bold; */
+            font-weight: 600;
+            /* 600부터 bold 적용 */
+        }
+        .light {
+            font-weight: lighter;
+        }
+        h4 {
+            font-weight: 400;
+        }
+
+
+        /* font-style */
+        .italic {
+            font-style: italic;
+        }
+        .oblique {
+            font-style: oblique;
+        }
+        address {
+            font-style: normal;
+        }
+
+
+        /* text-decoration */
+        .deco {
+            text-decoration: underline;
+            /*  text-decoration: overline; < 라인이 위에 생김
+            text-decoration: line-through; < 라인이 텍스트 중간에 생김 */
+        }
+        a {
+            text-decoration: none;
+        }
+
+
+        /* text-transform */
+        .upper {
+            text-transform: uppercase;
+        }
+        .lower {
+            text-transform: lowercase;
+        }
+        .capitalize {
+            text-transform: capitalize;
+        }
+
+
+        /* text-align */
+        .box {
+            width: 600px;
+            border: 1px solid blue;
+            padding: 30px;
+        }
+        .center {
+            text-align: center;
+        }
+        .right {
+            text-align: right;
+        }
+
+
+        /* text-indent */
+        .indent1 {
+            text-indent: 50px;
+        }
+        .indent2 {
+            text-indent: 10%;
+        }
+
+
+        /* line-height */
+        /* 한 줄의 높이값! 내용은 한 줄의 높이에 상하중앙에 배치! */
+        .line1 {
+            background-color: aquamarine;
+            line-height: 50px;
+        }
+        .line2 {
+            background-color: orange;
+            line-height: 1.4;
+            /* 단위가 없을 때는 rem 적용*/
+        }
+
+
+        /* letter & word-spacing */
+        .letter1 {
+            letter-spacing: 1rem;
+        }
+        .letter2 {
+            letter-spacing: -1px;
+        }
+        .word1 {
+            word-spacing: 1rem;
+        }
+        .word2 {
+            /* word-spacing: -5px; */
+            word-spacing: 16px;
+        }
+
+
+        /* text-shadowL x y blur color; */
+        .shadow {
+            font-size: 30px;
+            font-weight: bold;
+            text-shadow: 0px 0px 4px orange;
+        }
+
+
+        .overflow {
+            width: 300px;
+            border: 1px solid #CCC;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .overflow:hover {
+            overflow: visible;
+        }
+
+        /* 
+        *white-space 속성값
+
+        normal : 기본값, 여러 개의 공백을 하나로 표시, 자동 줄바꿈
+        nowrap : 여러 개의 공백을 하나로 표시, 너비를 넘어가도 한 줄로 표시
+
+        pre : 여러 개의 공백을 그대로 처리, 줄바꿈 없음
+        pre-line : 여러 개의 공백을 하나로 표시, 자동 줄바꿈, 엔터(Enter)로 줄바꿈 시 공백문자로 처리하지 않고 강제 줄바꿈 처리
+        pre-wrap: 여러 개의 공백을 그대로 표시, 자동 줄바꿈
+
+        *text-overflow 속성값
+        clop : 넘치는 텍스트를 자름(기본값)
+        ellipsis : 말 줄임표로 잘린 텍스트가 있음을 표시(생략), 가로로 넘치는 내용을 밑줄임표로 표시
+
+        *text-overflow를 사용하기 위해 필요한 2가지 설정
+        1) white-space : nowarp;
+        2) overflow : hidden;
+        */
+    </style>
+</head>
+
+<body>
+    <h1>택스트 스타일 속성</h1>
+
+    <h2>font-size</h2>
+    <p>글씨크기 (기준)</p>
+    <p class="big">글씨크기</p>
+    <p class="small">글씨크기</p>
+    <hr>
+
+
+    <h2>font-weight</h2>
+    <p>그린 컴퓨터 아카데미 (기준)</p>
+    <p class="bold">그린 컴퓨터 아카데미</p>
+    <p class="light">그린 컴퓨터 아카데미</p>
+
+    <h4>그린 컴퓨터 아카데미</h4>
+    <hr>
+
+
+    <h2>font-style</h2>
+    <p class="italic">비 오는 화요일</p>
+    <p class="oblique">눈 오는 수요일</p>
+    <address>그린 컴퓨터 아카데미 강남점</address>
+    <hr>
+
+
+    <h2>text-decoration</h2>
+    <p class="deco">에버랜드 사파리</p>
+    <a href="#">에버랜드 사파리 바로가기</a>
+
+    <p>
+        <ins>내용 삽입</ins>
+        <del>내용 삭제</del>
+        <u>밑줄밑줄</u>
+    </p>
+    <hr>
+
+
+    <h2>text-transform</h2>
+    <p class="upper">Today is Tuesday.</p>
+    <p class="lower">Today is Tuesday.</p>
+    <p class="capitalize">Today is Tuesday.</p>
+    <hr>
+
+
+    <h2>text-align</h2>
+    <p class="box">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+        it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+        including versions of Lorem Ipsum.</p>
+
+    <p class="box center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+        PageMaker including versions of Lorem Ipsum.</p>
+
+    <p class="box right">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+        PageMaker including versions of Lorem Ipsum.</p>
+    <hr>
+
+
+    <h2>text-indent</h2>
+    <p class="indent1">블루베리는 비타민 A, C, E가 풍부하고 안톤니시아민, 페놀 등이 활성 산소를 없애 노화를 억제하고 블루베리의 안톤니시아민은 눈의 피로와 시력 저하를 회복시키는 효능을
+        가지기도 한다.</p>
+
+    <p class="indent2">블루베리는 비타민 A, C, E가 풍부하고 안톤니시아민, 페놀 등이 활성 산소를 없애 노화를 억제하고 블루베리의 안톤니시아민은 눈의 피로와 시력 저하를 회복시키는 효능을
+        가지기도 한다.</p>
+    <hr>
+
+
+    <h2>line-height</h2>
+    <p class="line1">여름이 가고 가을이 오고 있어요</p>
+
+    <p class="line2">
+        비가 내리고 있어요 <br>
+        봄비가 내리고 있어요 <br>
+        가을비가 내리고 있어요
+    </p>
+    <hr>
+
+
+    <h2>latter-spacing &amp; word-spacing</h2>
+    <p class="letter1">It is rainy.</p>
+    <p class="letter2">It is rainy.</p>
+    <p class="word1">It is rainy.</p>
+    <p class="word2">It is rainy.</p>
+    <hr>
+
+
+    <h2>text-shadow: x y blur color;</h2>
+    <p class="shadow">HTML5</p>
+    <hr>
+
+
+    <h2>text-overflow</h2>
+    <p class="overflow">귀리(oat)는 베타글루칸(항암 및 면역증강작용을 가지고 있는 불소화성 다당류) 성분을 포함하고 있다. <br> 귀리는 오트밀의 재료로 많이 사용된다.</p>
+    <hr>
+
+
+    <h2>first-latter &amp; first-line</h2>
+    <p class="first">토마토는 비타민 A, C가 풍부한 채소다. <br>칼륨과 같은 각종 미네랄은 혈액의 산성도를 낮추는 역할을 해주며 혈압을 내리고 혈관을 튼튼하게 해준다.</p>
+
+    <style>
+
+        .first:first-letter {
+            color: tomato;
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .first::first-line {
+            color: green;
+        }
+    </style>
+</body>
+
+</html>

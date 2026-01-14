@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01_list</title>
+
+    <style>
+        /* list-style-type */
+        .circle {
+            list-style-type: circle;
+        }
+        .square {
+            list-style-type: square;
+        }
+        .roman {
+            list-style-type: upper-roman;
+        }
+        .alpha {
+            list-style-type: lower-alpha;
+        }
+
+        /* 
+            <ul>
+                disc (●) - 기본값
+                circle (○)
+                squara (■)
+            
+            <ol>
+                decimal (1, 2, 3....) - 기본값
+                decimal-leading-zero (01, 02, 03....)
+                upper-alpha
+                lower-alpha
+                upper-roman
+                lower-roman
+                hiragana (일본어 히라가나)
+                katakana (일본어 카타카나)
+        */
+
+        /* list-style-image */
+        .image {
+            list-style-image: url(images/star.png);
+        }
+
+        /* list-style-position */
+        .outside {
+            list-style-position: outside;
+        }
+        .inside {
+            list-style-position: inside;
+        }
+
+
+        /* list-style: type position url(); */
+    </style>
+</head>
+
+<body>
+
+    <h2>list-style-type</h2>
+    <ul class="circle">
+        <li>coffee</li>
+        <li>coffee</li>
+        <li>coffee</li>
+        <li>coffee</li>
+    </ul>
+
+    <ul class="square">
+        <li>coffee</li>
+        <li>coffee</li>
+        <li>coffee</li>
+        <li>coffee</li>
+    </ul>
+
+    <ol class="roman">
+        <li>cake</li>
+        <li>cake</li>
+        <li>cake</li>
+        <li>cake</li>
+    </ol>
+
+    <ol class="alpha">
+        <li>cake</li>
+        <li>cake</li>
+        <li>cake</li>
+        <li>cake</li>
+    </ol>
+
+    <h2>list-style-image</h2>
+    <ul class="image">
+        <li>movie</li>
+        <li>movie</li>
+        <li>movie</li>
+        <li>movie</li>
+    </ul>
+
+    <h2>list-style-position</h2>
+    <ul class="outside">
+        <li>music<br>K-Pop</li>
+        <li>music</li>
+        <li>music</li>
+        <li>music</li>
+    </ul>
+
+     <ul class="inside">
+        <li>music<br>K-Pop</li>
+        <li>music</li>
+        <li>music</li>
+        <li>music</li>
+    </ul>
+</body>
+
+</html>

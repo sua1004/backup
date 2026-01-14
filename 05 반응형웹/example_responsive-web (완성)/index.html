@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- [if It IE 9]>
+        <script src="js/respond.js"></script>
+<![endif] -->
+
+    <!--[if It IE 9]>          
+	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>       
+<![endif]-->
+
+    <title>INDIGO</title>
+
+    <!--pc용/ico-->
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+
+    <!--안드로이드용/png-->
+    <link rel="shortcut icon" href="images/favicon/indigo-touch-icon.png">
+
+    <!--애플IOS/png, jpg-->
+    <link rel="apple-touch-icon" href="images/favicon/indigo-touch-icon.png">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index_mediaquery.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.menu-toggle-btn').click(function() {
+                $('nav').stop().slideToggle(600);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="#">INDIGO</a></h1>
+
+        <nav>
+            <ul class="gnb">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">WE ARE</a></li>
+                <li><a href="#">WORK</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <img src="images/p-images/slide01.jpg" alt="main slide">
+    </main>
+
+    <section>
+        <article class="display-section">
+            <div class="container">
+                <h2 class="sec-tit">we are</h2>
+                <p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+            </div>
+        </article>
+
+        <article class="promotion-section">
+            <div class="container">
+                <ul class="promo-list">
+                    <li>
+                        <a href="#">
+                            <img src="images/s-images/promo01.png" alt="">
+                            <h3>HOME</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/s-images/promo02.png" alt="">
+                            <h3>WE ARE</h3>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/s-images/promo03.png" alt="">
+                            <h3>WORK</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/s-images/promo04.png" alt="">
+                            <h3>BLOG</h3>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <hr class="divider">
+
+        <article class="work-section">
+            <h2 class="sec-tit">work</h2>
+            <ul class="work-list">
+                <li>
+                    <a href="#">
+                        <!--:before-->
+                        <div class="info">
+                            <h3>Running</h3>
+                            <span>WEB/PRINT</span>
+                        </div>
+
+                        <img src="images/p-images/work01.jpg" alt="">
+                        <!--:after-->
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="info">
+                            <h3>Rugby</h3>
+                            <span>WEB/PRINT</span>
+                        </div>
+                        <img src="images/p-images/work02.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="info">
+                            <h3>Weight</h3>
+                            <span>WEB/PRINT</span>
+                        </div>
+                        <img src="images/p-images/work03.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="info">
+                            <h3>Marathon</h3>
+                            <span>WEB/PRINT</span>
+                        </div>
+                        <img src="images/p-images/work04.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="info">
+                            <h3>Boxing</h3>
+                            <span>WEB/PRINT</span>
+                        </div>
+                        <img src="images/p-images/work05.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="info">
+                            <h3>Ice Hockey</h3>
+                            <span>WEB/PRINT</span>
+                        </div>
+                        <img src="images/p-images/work06.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="info">
+                            <h3>Skate Board</h3>
+                            <span>WEB/PRINT</span>
+                        </div>
+                        <img src="images/p-images/work07.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="info">
+                            <h3>Basketball</h3>
+                            <span>WEB/PRINT</span>
+                        </div>
+                        <img src="images/p-images/work08.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </article>
+
+        <hr class="m-divider">
+
+        <article class="blog-section">
+            <div class="container">
+                <h2 class="sec-tit">blog</h2>
+                <ul class="blog-list">
+                    <li>
+                        <a href="#"><img src="images/p-images/blog01.jpg" alt=""></a>
+
+                        <p>
+                            <span>OCT 30, 2021</span>
+                            <a href="#">There are many variations of passages of Lorem Ipsum available.</a>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/p-images/blog02.jpg" alt=""></a>
+
+                        <p>
+                            <span>OCT 29, 2021</span>
+                            <a href="#">There are many variations of passages of Lorem Ipsum available.</a>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/p-images/blog03.jpg" alt=""></a>
+
+                        <p>
+                            <span>OCT 28, 2021</span>
+                            <a href="#">There are many variations of passages of Lorem Ipsum available.</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="contact-section">
+            <div class="container">
+                <h2 class="sec-tit">contact</h2>
+
+                <div class="form-box">
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend class="blind">contact us</legend>
+
+                            <div class="inputgrp">
+                                <label for="username" class="blind">이름</label>
+                                <input type="text" name="name" id="username" placeholder="Name">
+
+                                <label for="userphone" class="blind">연락처</label>
+                                <input type="phone" name="phone" id="userphone" placeholder="Phone">
+
+                                <label for="useremail" class="blind">이메일</label>
+                                <input type="email" name="email" id="useremail" placeholder="Email">
+                            </div>
+
+                            <div class="textareabox">
+                                <label for="message" class="blind">문의사항</label>
+                                <textarea name="msg" id="message" placeholder="Message"></textarea>
+                            </div>
+
+                            <div class="send-btn">
+                                <button>SEND MESSAGE</button>
+                                <!--<input type="submit" value="SEND MESSAGE">-->
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </article>
+    </section>
+
+    <footer>        
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1582.6646388858287!2d127.02907629999999!3d37.5001513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15857ce38dd%3A0xac87641577138f5d!2z6re466aw7Lu07ZOo7YSw7JWE7Lm0642w66-4IOqwleuCqOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1708672963040!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <p class="footer-logo">INDIGO</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

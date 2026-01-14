@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4cut_slide</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px;
+            background-color: lightgray;
+            border-radius: 6px;
+            color: #fff;
+
+            float: left;
+            margin-right: 10px;
+
+            position: relative;
+            top: 100px;
+        }
+
+        /* 실제 슬라이더가 보여지는 공간 */
+        .slider {
+            width: 1000px;
+            overflow: hidden;
+
+            float: left;
+
+            /* outline: 2px solid red; */
+        }
+        /* 전체를 담는 부모 >> 움직이는 대상!!! */
+        .slider .container {
+            /* width: 200%; */
+            /* background-color: antiquewhite; */
+            
+            position: relative;
+        }
+        .slider .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .slider .container .item {
+            /* width: 240px; */
+            height: 300px;
+            border: 5px solid lightgray;
+            background-color: #fff;
+            box-sizing: border-box;
+
+            margin-right: 10px;
+            float: left;
+        }
+        .slider .container .item h2 {
+            text-align: center;
+        }
+        .slider .container .item img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            //css 초기설정
+            //.container, .item의 width값 설정
+            //item이 추가될 것을 고려하여 유동적인 .container의 너비 설정이 필요!
+
+            var width = $('.slider').width(), //1000
+                count = $('.slider .item').length; //6
+
+            console.log(width, count);
+
+            //css값 적용하기
+            $('.slider .container').css({
+                width: width*count
+            }).find('.item').css({
+                width: (width/4) - 10 //(1000/4)-10(margin-right)=240
+            });
+
+            //짝수번째 .item의 border-color 변경
+            $('.item:nth-child(even)').css('border-color','lightblue');
+
+            /* 슬라이드 구현하기 
+            
+            움직이는 대상 >> .container
+            초기값 >> left: 0
+
+            *다음 버튼을 클릭했을 때
+            0번(1,2,3,4번 아이템) >> left: 0
+            1번(2,3,4,5번 아이템) 클릭 >> left: -250px
+            2번(3,4,5,6번 아이템) 클릭 >> left: -500px
+            3번(4,5,6,7번 아이템) 클릭 >> left: -750px
+            
+            *이전 버튼을 클릭했을 때
+            1번 클릭(3,4,5,6번 아이템) >> left: -500px
+            2번 클릭(2,3,4,5번 아이템) >> left: -250px
+            3번 클릭(1,2,3,4번 아이템) >> left: 0
+            */
+
+            var stat =0; //광클제어 (0-클릭허용/1-클릭금지)
+            var currentPage = 0; //현재 페이지 (초깃값: 0)
+            var changePage = function(){
+                $('.slider .container').animate({
+                    left: -(currentPage * width)/4
+                }, 800, function(){
+                    //클릭허용 상태 변경
+                    stat = 0;
+                });
+
+                /* 
+                *다음버튼 클릭 시 (cp++)
+                cp=0, (0*1000)/4 = 0
+                cp=1, -(1*1000)/4 = -250
+                cp=2, -(2*1000)/4 = -500
+                cp=3, -(3*1000)/4 = -750
+
+                *이전버튼 클릭 시 (cp--)
+                cp=2, -(2*1000)/4 = -500
+                cp=1, -(1*1000)/4 = -250
+                cp=0, (1*1000)/4 = 0
+                */
+            };
+
+
+            //다음버튼 클릭
+            $('#right-button').click(function(){
+
+                if(stat === 1) return;
+                stat = 1
+
+                if (currentPage < count-4){
+                    //총 아이템갯수(count,6) - 보여지고 있는 아이템 갯수(4)=2
+                    currentPage++;
+                    console.log('다음 페이지: ' + currentPage);
+                }
+
+                changePage();
+            });
+
+            //이전버튼 클릭
+            $('#left-button').click(function(){
+
+                if(stat === 1) return;
+                stat = 1
+
+                if (currentPage > 0){
+                    currentPage--;
+                    console.log('이전 페이지: ' + currentPage);
+                }   
+
+                /* //이전에 사용한 방식 - 변경된 변수값을 if문으로 제어
+                currentPage--;
+                if(currentPage < 0) currentPage=0; */
+                
+                changePage();
+            });
+
+
+            /* $('#right-button').click(function(){
+                $('.slider .container').animate({
+                    left: '-=' + 250
+                }, 800);
+            }); */
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="left-button">&lt;</button>
+
+    <div class="slider">
+        <div class="container">
+            <div class="item">
+                <h2>1 phto</h2>
+                <img src="img/trip1.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>2 phto</h2>
+                <img src="img/trip2.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>3 phto</h2>
+                <img src="img/trip3.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>4 phto</h2>
+                <img src="img/trip4.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>5 phto</h2>
+                <img src="img/trip1.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>6 phto</h2>
+                <img src="img/trip2.jpg" alt="">
+            </div>
+
+            <!-- 추가 -->
+             <div class="item">
+                <h2>7 phto</h2>
+                <img src="img/trip3.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>8 phto</h2>
+                <img src="img/trip4.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>9 phto</h2>
+                <img src="img/trip1.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <h2>10 phto</h2>
+                <img src="img/trip2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <button id="right-button">&gt;</button>
+
+</body>
+
+</html>

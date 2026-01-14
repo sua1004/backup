@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04_z-index_layout_T</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 26px;
+        }
+
+        header {
+            width: 100%;
+            height: 150px;
+            background-color: lightblue;
+            color: white;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+        }
+
+        header p {
+            line-height: 150px;
+            text-align: center;
+        }
+
+        section {
+            background-color: antiquewhite;
+            margin-top: 150px;
+        }
+
+        section .slide {
+            width: 100%;
+            height: 659px;
+            background-color: #d7c3f1;
+            position: relative;
+        }
+
+        section .slide p {
+            line-height: 100px;
+            text-align: center;
+        }
+
+        section .slide a {
+           /*  outline: 2px solid red; */
+
+            width: 60px;
+            height: 60px;
+            display: block;
+
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+        }
+
+        section .slide a.prev {
+            left: 100px;
+        }
+
+        section .slide a.next {
+            right: 100px;
+        }
+
+        section .slide a img{
+           /*  width: 60px;
+            display: block; */
+
+            width: 100%;
+        }
+
+        section .content {
+            width: 100%;
+            height: 1000px;
+            background-color: lightpink;
+        }
+
+        section .content p {
+            line-height: 100px;
+            text-align: center;
+        }
+
+        footer {
+            width: 100%;
+           /*  height: 100px; */
+            background-color: grey;
+            padding: 50px 0 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- html구조1 -->
+     <header>
+        <p>header 고정</p>
+     </header>
+
+     <section>
+        <article class="slide">
+            <p>슬라이드</p>
+            <a href="#" class="prev"><img src="img/left_icon.png" alt="이전 버튼"></a>
+            <a href="#" class="next"><img src="img/right_icon.png" alt="다음 버튼"></a>
+        </article>
+
+        <article class="content">
+            <p>컨텐츠</p>
+        </article>
+     </section>
+
+     <footer>
+        <p>footer</p>
+        <p>&copy; 2025</p>
+     </footer>
+
+     <!-- html구조2 -->
+    <!-- <header>상단</header>
+    <section>슬라이드</section>
+    <section>컨텐츠</section>
+    <footer>하단</footer> -->
+</body>
+</html>

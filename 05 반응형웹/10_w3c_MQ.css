@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/* 10_w3c_MQ.css */
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol,li {
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+}
+
+body {
+    padding: 1%;
+}
+
+header {
+    padding: 30px 0px;
+    background-color: blue;
+    margin-bottom: 10px;
+}
+header h1 {
+    font-size: 26px;
+    color: #fff;
+    text-indent: 14px;
+}
+
+section {
+    width: 100%;
+}
+
+section .container {
+    padding: 0% 1%;
+
+}
+section .container .con1 {
+    width: 23%;
+}
+section .container .con1 li {
+    padding: 16px 10px;
+    background-color: skyblue;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+section .container .con2 {
+    width: 46%;
+    margin-bottom: 10px;
+}
+section .container .con2 > h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+section .container .con2 > p {
+    font-size: 18px;
+}
+
+section .container .con3 {
+    width: 23%;
+    padding: 30px 20px;
+    background-color: blue;
+}
+section .container .con3 > li {
+    color: #fff;
+    text-align: center;
+}
+section .container .con3 > li > h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+section .container .con3 > li > p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}

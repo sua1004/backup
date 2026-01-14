@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04_spanning-rows</title>
+</head>
+
+<body>
+
+    <table width="500" cellpadding="6">
+        <tr bgcolor="lightgray">
+            <th></th>
+            <th>ABC</th>
+            <th>BBC</th>
+            <th>CNN</th>
+        </tr>
+
+        <tr bgcolor="lightgray">
+            <th>6pm-7pm</th>
+            <td rowspan="2">영화</td>
+            <td>코미디</td>
+            <td>뉴스</td>
+        </tr>
+
+        <!-- 
+        행(row)과 행을 병합 : rowspan (속성)을 병합 시작점에 추가하기
+        ㄴ 가로가 병합해서 세로가 길어진 것!
+        -->
+
+        <tr bgcolor="pink">
+            <th>7pm-8pm</th>
+            <td>스포츠</td>
+            <td>시사</td>
+        </tr>
+    </table>
+    
+</body>
+</html>

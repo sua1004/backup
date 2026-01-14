@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>06_자식요소선택자</title>
+
+    <style>
+        /* 하위요소 선택자 */
+        .gnb li a {
+            background-color: yellow;
+        }
+        .gnb a {
+            color: red;
+        }
+
+        /* 자식요소 선택자 */
+        .gnb > li > a {
+            font-weight: bold;
+            color: orange;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+    GNB : Global Navigation Bar / 대메뉴
+    LNB : Nocal Navigaton bar / 서브메뉴
+    -->
+
+    <nav>
+        <ul class="gnb">
+            <li>
+                <a href="#">menu1</a>
+                <ul>
+                    <li><a href="#">sub</a></li>
+                    <li>sub</li>
+                    <li><a href="#">sub</a></li>
+                    <li>sub</li>
+                    <li>sub</li>
+                </ul>
+            </li>
+
+            <li>menu2</li>
+        </ul>
+
+    </nav>
+
+</body>
+
+</html>

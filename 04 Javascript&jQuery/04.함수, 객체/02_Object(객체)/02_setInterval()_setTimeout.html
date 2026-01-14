@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02_example</title>
+
+    <script>
+
+        //(1) setInterval
+        //일정한 시간간격으로 코드 실행하기
+
+        //예제1 - 변수 i가 3초 간격으로 1씩 증가
+        /* var i = 1;
+        var int = setInterval(function () {
+            console.log(i);
+            i++;
+        }, 3000); */
+
+
+        //예제2
+        /* var subNum = 1000;
+
+        function auto (){
+            subNum--;
+            console.log(subNum);
+        } */
+
+        //auto();
+
+        //setInterval(auto, 3000);
+        /* setInterval(function(){
+            auto();
+        }, 3000); */
+
+
+        //(2) setTimeout()
+
+        var timeNum = 0;
+        setTimeout(function(){
+            timeNum++;
+            console.log('timeNum: '+timeNum)
+        }, 5000);
+    </script>
+</head>
+
+<body>
+
+    <button onclick="clearInterval(int);">STOP!!!!</button>
+
+</body>
+
+</html>

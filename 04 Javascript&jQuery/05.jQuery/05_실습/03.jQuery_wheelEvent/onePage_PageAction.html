@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>onePage_autoscroll_PageAction</title>
+	
+	<link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+
+	<style>
+		* {
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol, li {
+            list-style: none;
+        }
+        ul::after, ol::after {
+            content: "";
+            display: block;
+            clear: non;
+        }
+        li {
+            float: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        /* 보이는 화면 기준으로 크기설정!!!! */
+        html, body {
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+        }
+
+        /* header 디자인 */
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: rgba(0,0,0,0.7);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999;
+        }
+
+        header .inbox {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            height: 100%;
+
+            /* outline: 2px solid lime; */
+        }
+
+        header .logo {
+            height: 100%;
+            float: left;
+        }
+        header .logo a {
+            display: block;
+        }
+        header .logo a img {
+            height: 60px;
+            padding-top: 10px;
+            display: block;
+        }
+
+
+        header .gnb {
+            float: right;
+            position: relative;
+            top: 30px;
+        }
+        header .gnb li {
+            margin: 0 7px;
+        }
+
+        .gnb li:hover {
+            transform: scale(1.1);
+        }
+        .gnb li:hover a {
+            color: lime;
+            text-decoration: underline;
+        }
+
+        /* 선택된 메뉴 - selM (메뉴 li에 적용!) */
+        .selM {
+            transform: scale(1.1);
+        }
+        .selM a {
+            color: lime;
+            text-decoration: underline;
+        }
+
+
+		/* 각 섹션 디자인 */
+		.page {
+			width: 100%;
+			height: 100%;
+			position: relative; /*.minfo의 기준!*/
+			overflow: hidden;
+			/* 초기설정으로 주어진 공간 바깥쪽에 배치되는 요소가 있을 경우 
+			보이지 않도록 overflow 처리! */
+		}
+
+		#page1 {background: url(images/p1.png) no-repeat top/cover;}
+        #page2 {background: url(images/p2.png) no-repeat top/cover;}
+        #page3 {background: url(images/p3.png) no-repeat top/cover;}
+        #page4 {background: url(images/p4.png) no-repeat top/cover;}
+        #page5 {background: url(images/p5.png) no-repeat top/cover;}
+        #page6 {background: url(images/p6.png) no-repeat top/cover;}
+        #page7 {background: url(images/p7.png) no-repeat top/cover;}
+
+
+		/* 영화 정보 박스 */
+		.minfo {
+			width: 450px;
+			padding: 8px 20px;
+			background-color: rgba(0,0,0,0.7);
+			color: #fff;
+			white-space: nowrap;
+			font-family: 'Cute Font', cursive;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+		}
+
+		/** .minfo 초기 css **/
+		/* #page1 .minfo {
+			left: 150%;
+		}
+		#page2 .minfo {
+			display: none;
+		}
+		#page3 .minfo {
+			top: -100%;
+		}
+		#page4 .minfo {
+			transform: translate(-50%,-50%) scale(0);
+		}
+		#page5 .minfo {
+			transform: translate(-50%,-50%) rotateY(180deg);
+		}
+		#page6 .minfo {
+			transform: translate(-50%,-50%) rotate(1000deg) scale(0);
+		}
+		#page7 .minfo {
+			transform: translate(-50%,-50%) scaleX(10);
+			opacity: 0;
+		} */
+
+
+		.minfo h2 {
+			font-size: 42px;
+			padding: 5px;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.minfo h2 span {
+			font-size: 28px;
+		}
+		.minfo h3 {
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+		.minfo h4 {
+			font-size: 28px;
+			margin-bottom: 20px;
+		}
+
+
+		/* 블릿 내비게이션 */
+        ol#bnavi {
+            width: 15px;
+
+            position: fixed;
+            /* left: 0; */
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        ol#bnavi li {
+            width: 100%;
+            height: 15px;
+            margin: 6px 0;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 50%;
+            position: relative; /* span태그의 기준! */
+        }
+        ol#bnavi li a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        ol#bnavi li a span {
+            font: bold .9rem '맑은 고딕';
+            position: absolute;
+            right: 200%;
+            top: -50%;
+
+            white-space: nowrap;
+            text-shadow: 1px 0 #888, -1px 0 #888, 0 1px #888, 0 -1px #888;
+            display: none;
+        }
+
+        /* 선택된 블릿 - selB */
+        .selB {
+            background-color: #ed686a;
+            transform: scale(1.15);
+        }
+        .selB span {
+            display: block !important;
+        }
+
+		/* footer */
+		/* footer {
+			background-color: #2D9596;
+			padding: 100px 0;
+			font-size: 32px;
+			text-align: center;
+			color: #fff;
+			height: 300px !important;
+			box-sizing: border-box;
+		} */
+
+
+
+
+
+	</style>
+
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery-ui-1.8.23.min.js"></script>
+	<script src="js/onePage_PageAction.js"></script>
+	
+	
+	
+</head>
+
+<body>
+
+	<header>
+        <div class="inbox">
+            <h1 class="logo"><a href="#"><img src="images/logo_cgv.png" alt="CGV로고"></a></h1>
+
+            <nav class="gnb">
+                <ul>
+                    <li class="selM"><a href="#page1">닥터두리틀</a></li>
+                    <li><a href="#page2">안녕베일리</a></li>
+                    <li><a href="#page3">라라랜드</a></li>
+                    <li><a href="#page4">어바웃타임</a></li>
+                    <li><a href="#page5">어벤져스</a></li>
+                    <li><a href="#page6">아이언맨</a></li>
+                    <li><a href="#page7">라이온킹</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+	<!--각 페이지 박스-->
+	<!--section#page$.page*7-->
+	<section id="page1" class="page">
+		<article class="minfo">
+			<h2>닥터 두리틀 <span>(Dolittle, 2020)</span></h2>
+			<h3>코미디, 가족, 판타지</h3>
+			<h4>감독 : 스티븐 개건</h4>
+			<h4>배우 : 로버트 다우니 주니어</h4>
+			<h4>등급 : 전체관람가</h4>
+		</article>
+	</section>
+	<section id="page2" class="page">
+		<article class="minfo">
+			<h2>안녕베일리 <span>(A Dog's Journey, 2019)</span></h2>
+			<h3>가족</h3>
+			<h4>감독 : 게일 맨쿠소</h4>
+			<h4>배우 : 조시 게드, 데니스 퀘이드, 캐서린 프레스콧</h4>
+			<h4>등급 : 전체관람가</h4>
+		</article>
+	</section>
+	<section id="page3" class="page">
+		<article class="minfo">
+			<h2>라라랜드 <span>(La La Land, 2016)</span></h2>
+			<h3>드라마, 뮤지컬, 멜로/로맨스</h3>
+			<h4>감독 : 데이미언 셔젤</h4>
+			<h4>배우 : 엠마 스톤, 라이언 고슬링</h4>
+			<h4>등급 : 12세 관람가</h4>
+		</article>
+	</section>
+	<section id="page4" class="page">
+		<article class="minfo">
+			<h2>어바웃타임 <span>(About time, 2013)</span></h2>
+			<h3>멜로/로맨스, 코미디</h3>
+			<h4>감독 : 리차드 커티스</h4>
+			<h4>배우 : 레이첼 맥아담스, 도널 클리슨</h4>
+			<h4>등급 : 15세 관람가</h4>
+		</article>
+	</section>
+	<section id="page5" class="page">
+		<article class="minfo">
+			<h2>어벤져스:엔드게임 <span>(Avengers Endgame, 2019)</span></h2>
+			<h3>액션, SF</h3>
+			<h4>감독 : 안소니 루소, 조 루소</h4>
+			<h4>배우 : 로버트 다우니 주니어, 크리스 에반스</h4>
+			<h4>등급 : 12세 관람가</h4>
+		</article>
+	</section>
+	<section id="page6" class="page">
+		<article class="minfo">
+			<h2>아이언맨3 <span>(Iron Man3, 2013)</span></h2>
+			<h3>SF, 모험, 액션</h3>
+			<h4>감독 : 셰인 블랙</h4>
+			<h4>배우 : 로버트 다우니 주니어, 기네스 펠트로</h4>
+			<h4>등급 : 12세 관람가</h4>
+		</article>
+	</section>
+	<section id="page7" class="page">
+		<article class="minfo">
+			<h2>라이온킹 <span>(The Lion King, 2019)</span></h2>
+			<h3>모험, 드라마, 가족</h3>
+			<h4>감독 : 존 파브로</h4>
+			<h4>배우 : 도날드 글로버, 비욘세</h4>
+			<h4>등급 : 전체관람가</h4>
+		</article>
+	</section>
+
+	<!-- 페이저 : 블릿 내비게이션 -->
+    <ol id="bnavi">
+        <!-- li*7>a[href=#page$]>span -->
+        <li class="selB"><a href="#page1"><span>닥터두리틀</span></a></li>
+        <li><a href="#page2"><span>안녕베일리</span></a></li>
+        <li><a href="#page3"><span>라라랜드</span></a></li>
+        <li><a href="#page4"><span>어바웃타임</span></a></li>
+        <li><a href="#page5"><span>어벤져스</span></a></li>
+        <li><a href="#page6"><span>아이언맨</span></a></li>
+        <li><a href="#page7"><span>라이온킹</span></a></li>
+    </ol>
+
+	<!-- <footer class="page">
+		<p>Copyright2024</p>
+	</footer> -->
+
+
+
+</body>
+
+</html>

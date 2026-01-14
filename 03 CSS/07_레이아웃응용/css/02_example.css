@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+/*** reset.css
+***************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal; /* =400 */
+}
+
+a {
+    text-decoration: none;
+}
+
+/*** common.css (공통으로 사용할 디자인)
+***************************************************************************/
+
+/* float 해제룰 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.recipe {
+    /* width: 1280px;
+    margin: 0 auto; */
+    margin: 0 10%;
+    
+}
+
+.recipe .title {
+    text-align: center;
+    margin: 8% auto;
+
+    outline: 2px solid tomato;
+}
+
+.recipe .title h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.recipe .title p {
+    font-size: 20px;
+    color: #555;
+}
+
+
+/* .recipe .content {
+    
+} */
+
+.recipe .content .box {
+    width: 18.4%;
+    float: left;
+
+    outline: 2px solid tomato;
+}
+
+.recipe .content .box ~ .box {
+    margin-left: 2%
+}
+
+.recipe .content .box:nth-child(5n+1) {
+    margin-left: 0;
+}
+
+.recipe .content .box h3 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.recipe .content .box img {
+    width: 100%;
+}
+
+.recipe .content .box .img1 {
+    border-radius: 0 50px 0 0;
+}

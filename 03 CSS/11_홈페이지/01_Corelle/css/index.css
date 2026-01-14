@@ -1,0 +1,288 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    display: block;
+}
+
+body {
+    background-image: url(../images/bg_body.png);
+}
+.container {
+    width: 1200px;
+    margin: 60px auto;
+
+    position: relative; /* footer의 기준!! */
+
+    /* outline: 3px solid red; */
+}
+.container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+header {
+    /* background-color: lightblue; */
+
+    width: 210px;
+    height: 848px;
+
+    background-image: url(../images/bg_head.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    float: left;
+    
+    padding: 50px 40px 0;
+    box-sizing: border-box;
+}
+
+header h1 {
+    /* outline: 2px solid lime; */
+
+    margin-bottom: 30px;
+}
+header h1 a {
+    background-image: url(../images/bg_gnb.png);
+    background-position-y: 10px;
+    text-indent: -9999px;
+}
+
+header nav {
+    /* outline: 2px solid lime; */
+}
+header nav ul {}
+header nav ul li {
+    /* outline: 1px solid lime; */
+
+    margin: 20px 0;
+}
+header nav ul li a {
+    background-image: url(../images/bg_gnb.png);
+    padding: 10px 0;
+    text-indent: -9999px;
+}
+
+/* nav 메뉴 위치 조절 / hover 효과 */
+header nav ul li.brand a {
+    background-position: -40px -40px;
+}
+header nav ul li.brand a:hover {
+    background-position: -250px -40px;
+}
+
+header nav ul li.vitrelle a {
+    background-position: -40px -110px;
+}
+header nav ul li.vitrelle a:hover {
+    background-position: -250px -110px;
+}
+
+header nav ul li.new a {
+    background-position: -40px -182px;
+}
+header nav ul li.new a:hover {
+    background-position: -250px -182px;
+}
+
+header nav ul li.book a {
+    background-position: -40px -254px;
+}
+header nav ul li.book a:hover {
+    background-position: -250px -254px;
+}
+
+header nav ul li.event a {
+    background-position: -40px -314px;
+}
+header nav ul li.event a:hover {
+    background-position: -250px -314px;
+    background-repeat: no-repeat;
+}
+
+/* header h1 {
+    background-image: url(../images/bg_gnb.png);
+    width: 130px;
+    height: 30px;
+
+    outline: 2px solid blue;
+
+    position: absolute;
+    top: 45px;
+    left: 40px;
+
+}
+header h1 a {
+   
+}
+
+header nav {}
+header nav ul {}
+header nav ul li {}
+
+header nav ul .brand {
+    background-image: url(../images/bg_gnb.png);
+    background-position: left -40px;
+
+    width: 150px;
+    height: 50px;
+
+    position: absolute;
+    top: 110px;
+    left: -8px;
+    outline: 2px solid blue;
+    
+} */
+
+section {
+    /* background-color: tomato; */
+
+    width: 960px;
+    height: 848px;
+
+    background-image: url(../images/bg_main.gif);
+
+    float: right;
+    position: relative; /* article의 기준!! */
+}
+
+section article {
+    /* background-color: yellow; */
+
+    position: absolute;
+}
+section article.con_book {
+    width: 296px; /* 이미지 전체 넓이의 절반 */
+    height: 320px;
+}
+section article.con_history {
+    width: 295px;
+    height: 314px;
+
+    right: 0px;
+    top: 267px;
+}
+section article.con_movie {
+    width: 296px;
+    height: 222px;
+
+    bottom: 120px;
+}
+
+section article.con_innovation {
+    width: 369px;
+    height: 120px;
+    overflow: hidden;
+
+    left: 296px;
+    bottom: 0px;
+}
+section article.con_event {
+    width: 160px;
+    height: 268px;
+    overflow: hidden;
+
+    right: 136px;
+    bottom: 0px;
+}
+
+section article a {
+    width: 100%;
+    height: 100%;
+
+    font-size: 0;
+
+    /* text-indent: -9999px; */
+    /* 
+    img태그는 인라인 요소라 글자처럼 취급되기 때문에 text-indent를
+    사용했을 때 이미지가 사라지는 문제가 발생함
+    -> img 태그를 block 요소로 변경하여 문제해결!
+    */
+
+    transition: all 0.5s;
+}
+section article a:hover {
+    background-position: right top;
+}
+
+/* 1) 1~3 article에 배경이미지 사용 */
+section article.con_book a {
+    background-image: url(../images/img_main01.png);
+}
+
+section article.con_history a {
+    background-image: url(../images/img_main02.png);
+}
+
+section article.con_movie a {
+    background-image: url(../images/img_main03.png);
+}
+
+/* 2) 4~5 article의 이미지 태그 사용 */
+section article a img {
+    /* display: block; */
+    transition: all 0.5s;
+}
+section article a img:hover {
+    transform: translateX(-50%);
+}
+
+footer {
+    /* background-color: green; */
+
+    clear: both;
+    
+    width: 150px;
+
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+footer address {
+    background-image: url(../images/bg_footer.png);
+    background-repeat: no-repeat;
+    height: 30px;
+
+    font-size: 0;
+    margin-bottom: 10px;
+}
+footer .copy {
+    height: 40px;
+    background: url(../images/bg_footer.png) no-repeat left -37px;
+    margin-bottom: 20px;
+
+    font-size: 0;
+}
+footer .sns {
+    font-size: 0; /* inline-block의 여백을 헤결! */
+}
+/* footer .sns::after {
+    content: "";
+    display: block;
+    clear: both;
+} */
+footer .sns a {
+    width: 36px;
+    height: 36px;
+    background: url(../images/bg_footer.png) no-repeat;
+    
+    /* a태그의 가로 나열을 위해! */
+    /* float: left; */
+    display: inline-block;
+}
+footer .sns a:first-child {
+    background-position: left bottom;
+    margin-right: 6px;
+}
+footer .sns a:last-child {
+    background-position: -46px bottom;
+}

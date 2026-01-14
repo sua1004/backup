@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02_box</title>
+</head>
+
+<body>
+
+    <h2>padding</h2>
+    <p class="bg padding1">padding: 50px; (네 방향 모두 50px)</p>
+    <p class="bg padding2">padding: 20px 40px; (위/아래 20px, 좌/우 40px)</p>
+    <p class="bg padding3">padding: 20px 40px 10px; (위 20px, 좌/우 40px, 아래 10px)</p>
+    <p class="bg padding4">padding: 20px 10px 30px 5px; (위 20px, 오른쪽 10px, 아래 30px, 왼쪽 5px)</p>
+
+    <style>
+        .bg {
+            background-color: greenyellow;
+        }
+
+        .padding1 {
+            padding: 50px;
+        }
+
+        .padding2 {
+            padding: 20px 40px;
+        }
+
+        .padding3 {
+            padding: 20px 40px 10px;
+        }
+
+        .padding4 {
+            padding: 20px 10px 30px 5px;
+        }
+    </style>
+
+
+    <h2>margin</h2>
+    <h3 class="center">Center</h3>
+
+    <p class="margin1">아날로그(Analog) 신디사이저는 종종 디지털(Diagital) 신디사이저보다 '따뜻한' 소리가 난다고 힌다.</p>
+    <p class="margin2">아날로그(Analog) 신디사이저는 종종 디지털(Diagital) 신디사이저보다 '따뜻한' 소리가 난다고 힌다.</p>
+    <p class="margin3">아날로그(Analog) 신디사이저는 종종 디지털(Diagital) 신디사이저보다 '따뜻한' 소리가 난다고 힌다.</p>
+
+    <style>
+        .center {
+            border-bottom: 2px solid tomato;
+            width: 50%;
+            margin: 0 auto 50px auto;
+            text-align: center;
+        }
+
+        .margin1 {
+            width: 200px;
+            border: 2px solid blue;
+            padding: 10px;
+        }
+
+        .margin2 {
+            width: 200px;
+            border: 2px solid blue;
+            padding: 10px;
+            margin: 50px;
+        }
+
+        .margin3 {
+            width: 200px;
+            border: 2px solid blue;
+            padding: 10px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <h2>display: block, inline, inline-block;</h2>
+
+    <h3 class="block">나는 블록요소~~~~~</h3>
+    <a href="#">나는 인라인 요소~~~~~</a>
+
+    <ul class="inline-block">
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+    </ul>
+
+    <ul class="inline">
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+    </ul>
+
+    <h3>inline(인라인) 요소</h3>
+    <ui>
+        <li>img, a</li>
+        <li>span</li>
+        <li>b, strong, i, em, sup, sub, q</li>
+        <li>폼태그 - input, textaree, button, label, select</li>
+    </ui>
+
+    <h3>block(블록) 요소</h3>
+    <ul>
+        <li>div (division)</li>
+        <li>heading (h1~h6)</li>
+        <li>p</li>
+        <li>ul, ol, li (list-item)</li>
+        <li>header, nav, section, article, aside, footer, main</li>
+        <li>hr</li>
+        <li>폼태그 - form, fieldset</li>
+    </ul>
+
+    <style>
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .block {
+            background-color: darkseagreen;
+            display: inline;
+        }
+
+        a {
+            background-color: plum;
+            display: block;
+        }
+
+
+        .inline-block li {
+            background-color: indianred;
+            color: white;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 10;
+        }
+
+         .inline li {
+            background-color: dodgerblue;
+            color: white;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 10px;
+            display: inline;
+        }
+    </style>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_font-rem</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            font-size: 6rem;
+        }
+        p span {
+            font-size: 48px;
+            font-size: 3rem;
+            /* 1rem = 16px, 16px * 3 = 48px */
+        }
+
+        /* 
+        - rem 단위는 root(문서)를 기준으로 조절되는 em 단위
+        - rem 단위는 웹 문서의 시작인 <html> 태그를 기준으로 하기 떄문에 상속 문제가 발생하지 않음
+        - rem 단위는 IE 하위브라우저에서 작동하지 않는 문제가 있으므로 px 단위를 사용해 값을 입력하고 바로 이어서 rem 단위를 사용
+        (풀백 fallback 기법!)
+        */
+    </style>
+</head>
+
+<body>
+
+    <p>
+        rem 단위!
+        <span>rem 단위2!!!!</span>
+    </p>
+
+</body>
+
+</html>

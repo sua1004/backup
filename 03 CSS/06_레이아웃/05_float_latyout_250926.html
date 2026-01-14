@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>05_float_latyout</title>
+
+         <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-size: 24px;
+                line-height: 50px;
+            }
+            header {
+                width: 100%;
+                height: 120px;
+                background-color: plum;
+            }
+            main {
+                width: 90%;
+                height: 500px;
+                background-color: greenyellow;
+                margin: 0 auto;
+            }
+
+            section {
+                background-color: bisque;
+            }
+
+            article.content {
+                /* outline: 3px solid red; */
+                width: 100%;
+
+                /* float 영향을 해제하는 방법 - 3번 */
+                /* overflow: auto; */
+
+                /* float 영향을 해제하는 방법 - 4번 */
+                /* height: 400px; */
+            }
+            article.content > div {
+                width: 33.33%;
+                height: 400px;
+                /* height: 100%; */
+
+                float: left;
+            }
+
+            .con1 {background-color: dodgerblue;}
+            .con2 {background-color: lightpink;}
+            .con3 {background-color: orange;}
+
+            article.banner {
+                /* float 영향을 해제하는 방법 - 1번 */
+                /* clear: both; */
+                width: 100%;
+                height: 300px;
+                background-color: darkseagreen;
+            }
+
+            /* float 영향을 해제하는 방법 - 5번 */
+            /* 
+            float을 해제하기 위한 클래스와 가상요소 생성
+            - 사용위치 : float된 자식을 감싸는 부모요소(또는 상위요소)에 사용!
+            */
+
+            .clearfix::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            footer {
+                width: 100%;
+                height: 100px;
+                background-color: navy;
+                color: #fff;
+            }
+
+
+         </style>
+    </head>
+    <body>
+
+        <header>
+            <p>header</p>
+        </header>
+
+        <main>
+            <p>메인 슬라이드</p>
+        </main>
+
+        <section>
+            <article class="content clearfix">
+                <!-- ::before -->
+                <div class="con1">컨텐츠1</div>
+                <div class="con2">컨텐츠2</div>
+                <div class="con3">컨텐츠3</div>
+                <!-- ::after -->
+            </article>
+
+            <article class="banner">
+                <p>배너배너</p>
+            </article>
+        </section>
+
+        <footer>
+            <p>Copyright2025</p>
+        </footer>
+        
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Variables</title>
+    </head>
+
+    <body>
+        
+        <script>
+            /* 
+            변수 - 변하는 값
+            상수 - 변하지 않는 값
+
+            변수명 작성 주의사항
+            1. 변수명 첫 글자에 $와 _와 영문자만 올 수 있음
+            (숫자는 변수명 첫글자로 선언 불가!)
+
+            2. 변수명 첫글자 다음에 영문자, 숫자, $, _만 표기할 수 있음
+            (한글 사용 불가)
+
+            3. 변수명으로는 예약어(document, window 등) 사용할 수 없음
+            (*에약어 : 이미 자바스크립트에서 사용중인 단어들)
+
+            4. 변수명 사용할 때는 대/소문자 구분
+
+            5. 변수명 지을 때는 되도록 의미 부여 (내용 또는 사용 용도에 따라)
+
+            */
+
+            // 1) 변수 선언하기 2) 새로운 데이터 저장하기
+            var box;
+            box = 100;
+            box = 70;
+
+            document.write(box, '<br>');
+
+            var box2 = 2025;
+            document.write(box2, '<br><br>');
+
+            /* 
+            1. 문자형 데이터
+            - 문자형 데이터는 따옴표로 묶어줄 것
+            - 큰 따옴표, 작은 따옴표 상관없이 사용하되 따옴표 중첩되지 않도록 사용
+            - 연산자 + 를 사용하면 문자형 데이터를 한 줄로 연결
+            - 문자형 데이터 조합에 숫자형 데이터가 있을 경우, 숫자형 데이터도
+            문자형 데이터로 취급하여 문자열 반환
+
+            2. 숫자형 데이터
+            - 따옴표 없이 작성
+            - 따옴표 안에 숫자가 작성될 경우, 숫자로 표기되는 문자형 데이터!!!
+            - 숫자형 데이터는 산술연산 가능!!!
+            */
+
+            var string = "javascript";
+            var num = 2025;
+            var tag = '<h1>태그 안에 입력!</h1>';
+
+            document.write(string + num);
+            document.write(tag);
+
+            //숫자형 데이터
+            var num1 = 50;
+            var num2 = 33;
+            var num3 = '33';
+
+            document.write(num2, '<br>');
+            document.write(num3, '<br>');
+
+            document.write(num1 + num2, '<br>'); // 50+33=83
+            document.write(num1 + num3, '<br>'); // 50+'33'=5033
+
+            /* 
+            3. 논리형 데이터
+            - 논리형 데이터는 true(참) 또는 false(거짓)
+            - Booleam() 매서드는 데이터에 대한 true 또는 false 값을 반환해 주는 매서드!
+            */
+
+            var t = 10 > 5;
+            document.write(t, '<br>'); //true
+
+            var hi = Boolean('hello');
+            document.write(hi, '<br>'); //true
+
+            /* 
+            논리형 데이터에서 항상 false를 반환하는 경우!
+
+            1) 빈 문자 ("")
+            2) 숫자 0
+            3) undefined (변수의 초깃값이 설정되지 않았을 때)
+            4) null
+            */
+
+            var zero = 0;
+            var result = Boolean(zero);
+            document.write(result); //false
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test_arguments</title>
+
+    <script>
+
+        /* 
+        
+        /////// 기본형 /////////////////////////////////
+
+            function 함수명(){
+                arguments;
+            }
+            
+            함수명(데이터1, 데이터2, 데이터3);
+
+        ////////////////////////////////////////////////
+
+        */
+
+        //예제1
+        function sum() {
+            var sum = arguments[0] + arguments[1] + arguments[2];
+
+            document.write(sum);
+        }
+
+        //sum(10, 20, 30);
+
+
+        //예제2
+        function test() {
+            var test = 0;
+
+            for (var i = 0; i < arguments.length; i++) {
+                test += arguments[i];
+            }
+
+            document.write(test);
+        }
+
+        test(10, 20, 30, 40, 50);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

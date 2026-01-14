@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol,li {
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+/* 보이는 화면 기준의 크기설정! */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1.title {
+    margin: 20px 0 40px;
+    padding: 0 50px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+h1.title span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ff748b;
+}
+
+.content {
+    width: 100%;
+    height: 75%;
+    /* overflow-x: hidden; */
+    /* background-color: lightpink; */
+}
+.content ul {
+    width: 200%;
+    /* ul의 너비 100% 당 li는 5개! / 200%는 li를 10개! */
+    position: relative;
+}
+.content ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.content ul li {
+    /* outline: 1px solid red; */
+
+    width: 10%;
+    /* 5개가 1세트, 최대 10개의 메뉴가 나열되는 것을 가정하여, 부모공간의 1/10 사용!!!! */
+    float: left;
+
+    padding: 0 10px;
+    box-sizing: border-box; 
+    position: relative; /* .caption의 기준!!! */
+}
+
+.content ul li img {
+    width: 100%;
+    display: block;
+}
+.content ul li .caption {
+    /* display: none; */
+
+    width: calc(100% - 20px);
+    position: absolute;
+    top: 50%; /* 최초위치 */
+    left: 10px;
+    opacity: 0;
+
+    /* top: 105%; */
+    
+}
+.content ul li .caption h2 {
+    font-size: 1.3rem;
+    letter-spacing: -1.2px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    position: relative; /* 가상요소 after의 기준!! */
+}
+.content ul li .caption h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #333;
+    position: absolute;
+    top: calc(100% + 10px);
+}
+.content ul li .caption p {
+    font-size: 18px;
+    letter-spacing: -1px;
+    word-break: keep-all;
+}

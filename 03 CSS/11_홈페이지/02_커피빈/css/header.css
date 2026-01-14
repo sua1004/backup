@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+/* header.css */
+
+header {
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    z-index: 9999;
+}
+
+header .header-top {
+    width: 100%;
+    background-color: lightgray;
+    height: 40px;
+    line-height: 40px;
+}
+header .header-top ul {
+    width: 1280px;
+    margin: 0 auto;
+    text-align: right;
+
+    /* outline: 2px solid red; */
+}
+header .header-top ul li {
+    float: none;
+    display: inline-block;
+    margin-left: 10px;
+
+    /* outline: 2px solid blueviolet; */
+}
+header .header-top ul li:last-child {}
+header .header-top ul li:last-child a {
+    width: 60px;
+    background: rgb(47, 28, 17) url(../img/ico_user_info_line.png) no-repeat center;
+
+    text-indent: -9999px;
+    text-align: left; 
+    /* 상위요소 ul의 text-align  값이 right으로 되어 있어서
+    a태그 안의 내용이 li 공간안에 오른쪽으로 정렬,
+    text-align로 시작 지점이 바뀌었음에도 a의 글자가 오른쪽으로 정렬되어 
+    li 내용이 겹쳐 보이므로 text-align을 left로 변경!
+    */
+}
+
+
+header .header-bottom {
+    /* background-color: aquamarine; */
+
+    width: 1280px;
+    margin: 0 auto;
+    height: 100px;
+
+    /* position: relative; */ /* .gnb의 기준! */
+}
+header .header-bottom .logo {
+    /* outline: 2px solid red; */
+
+    float: left;
+    height: 100%;
+    padding: 15px 0;
+    box-sizing: border-box;
+    margin-right: 50px;
+}
+header .header-bottom .logo a {}
+header .header-bottom .logo a img {
+    height: 70px;
+    display: block;
+}
+
+
+header .header-bottom .gnb {
+    /* outline: 2px solid red; */
+
+    float: left;
+
+ /*    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 66%; */
+}
+header .header-bottom .gnb ul {}
+header .header-bottom .gnb ul li {
+    margin: 0 15px;
+}
+header .header-bottom .gnb ul li a {
+    line-height: 100px;
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: 700;
+    color: rgb(47, 28, 17);
+    text-transform: uppercase;
+}
+header .header-bottom .gnb ul li.active a {
+    color: rgb(207,102,26);
+}
+
+
+header .header-bottom .search {
+    /* outline: 2px solid red; */
+
+    float: right;
+    height: 100%;
+    padding: 35px 0;
+    box-sizing: border-box;
+}
+
+.search fieldset {
+    border: none;
+    display: inline;
+    vertical-align: middle;
+}
+.search fieldset legend {
+    display: none;
+}
+
+.search input {
+    border: none;
+    outline: 0;
+    height: 30px;
+}
+.search input[type="search"] {
+    border-bottom: 1px solid #333;
+}
+.search input[type="submit"] {
+    background-color: transparent;
+    background-image: url(../img/ico_search.png);
+    background-repeat: no-repeat;
+    background-position: right;
+
+    font-size: 0;
+    width: 24px;
+    cursor: pointer;
+
+    vertical-align: middle;
+
+    /* outline: 1px solid red; */
+}
+

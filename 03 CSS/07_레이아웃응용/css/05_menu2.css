@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol, li {
+    list-style: none;
+} 
+a {
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+header {
+    /* background-color: tomato; */
+    padding: 25px 0;
+    border-bottom: 1px solid #888;
+    margin-bottom: 30px;
+
+    margin: 0 50px;
+}
+header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+
+    float: left;
+}
+header .tab-menu {
+    float: right;
+}
+header .tab-menu li {
+    display: inline-block;
+    font-size: 20px;
+}
+header .tab-menu li ~ li {
+    margin-left: 35px;
+}
+
+header .tab-menu li a {
+     color: #333;
+}
+header .tab-menu li a:hover {
+    color: blue;
+}
+
+
+section {
+    /* background-color: green; */
+    margin-bottom: 30px;
+    margin: 0 50px;
+}
+section .main {
+    height: 400px;
+    background-color: antiquewhite;
+    margin-bottom: 30px;
+
+    font-size: 18px;
+}
+
+section .sub {
+    margin-bottom: 30px;
+}
+section .sub p {
+    background-color: lightgrey;
+    height: 300px;
+    padding-top: 20px;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+section .sub .content {
+    float: left;
+}
+section .sub .content li{
+    float: left;
+    text-align: center;
+}
+section .sub .content li ~ li {
+   margin-left: 20px;
+}
+section .sub .content li:first-child {
+    margin-left: 20px;
+}
+
+section .sub .content li a {
+    color: black;
+}
+
+section .sub .content .box1 {
+    width: 300px;
+    height: 250px;
+
+    background-color: plum;
+}
+section .sub .content .box2 {
+    width: 500px;
+    height: 250px;
+
+    background-color: darkcyan;
+}
+section .sub .content .box3 {
+    width: 300px;
+    height: 250px;
+
+    background-color: purple;
+}
+
+section .banner {
+    height: 100px;
+    background-color: lightgreen;
+
+    font-size: 18px;
+}
+
+
+footer {
+    background-color: #999;
+    padding: 40px 0;
+}
+
+footer .footer-wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 20px;
+    color: #222;
+
+    float: left;
+   margin-left: 50px;
+}
+
+footer .footer-menu {
+    float: right;
+}
+footer .footer-menu li {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 50px;
+}
+footer .footer-menu li ~ li {
+    margin-left: 35px;
+}
+
+footer .footer-menu li a {
+    color: #222;
+}
+footer .footer-menu li a:hover {
+    color: blue;
+}

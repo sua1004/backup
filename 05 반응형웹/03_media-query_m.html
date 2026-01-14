@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_media-query_m</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        header {
+            width: 100%;
+            height: 100px;
+            background-color: black;
+            color: white;
+            line-height: 100px;
+            
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999;
+        }
+        header h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        section {
+            margin-top: 100px;
+        }
+
+        article.main {
+            width: 100%;
+            height: 700px;
+            background-image: url(images/irene.jpg);
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+            font-size: 0;
+        }
+
+        article.album {
+            margin-top: 60px;
+        }
+        article.album h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        article.album .album-thumb {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        article.album .album-thumb a {
+            width: 100%;
+        }
+        article.album .album-thumb a img {
+            width: 100%;
+            display: block;
+        }
+
+        article.album .btn {
+            font-size: 1.2rem;
+            border: 1px solid #ccc;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 16px 0;
+            color: #666;
+            border-radius: 6px;
+        }
+
+        article.banner {
+            margin-top: 70px;
+            width: 100%;
+            padding: 40px 0;
+            font-size: 1.4rem;
+            background-color: tomato;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 0.5rem;
+        }
+        footer {
+            width: 100%;
+            padding: 30px 0;
+            background-color: gray;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+        }
+
+        /* 
+        미디어 쿼리 해상도
+        768px / 1024px
+        */
+        @media all and (min-width:768px) {
+            article.main {
+                height: 600px;
+                background-image: url(images/redvelvet2.jpg);
+            }
+            article.album .album-thumb::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            article.album .album-thumb a {
+                width: 50%;
+                float: left;
+            }
+            article.banner {
+                font-size: 1.6rem;
+                background-color: violet;
+            }
+        }
+
+        @media all and (min-width:1024px) {
+            article.main {
+                background-image: url(images/redvelvet.jpg);
+            }
+            article.album .album-thumb {
+                width: 90%;
+                max-width: 1320px;
+                margin: 0 auto 40px;
+
+                /* outline: 2px solid red; */
+            }
+            article.album .btn {
+                width: 300px;
+            }
+            article.banner {
+                margin-top: 100px;
+                padding: 60px 0;
+                background-color: purple;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SM TOWN</h1>
+    </header>
+
+    <section>
+        <article class="main">
+            레드벨벳 화보 이미지입니다.
+        </article>
+
+        <article class="album">
+            <h2>New Album</h2>
+
+            <div class="album-thumb">
+                <a href="#"><img src="images/album1.jpg" alt=""></a>
+                <a href="#"><img src="images/album2.jpg" alt=""></a>
+            </div>
+
+            <a href="#" class="btn">지난앨범 보러가기</a>
+        </article>
+
+        <article class="banner">
+            <p>Red Velvet</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; Copyright 2025</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02_position-absolute1</title>
+
+    <style>
+        /* 
+        position 속성값
+
+        2)02 absolute
+        - 절대위치
+        - (부모를 포함한) 상위요소를 기준으로 요소의 위치를 지정
+        - 기준이 되는 상위요소에 postiton: relative 선언
+          (형제요소는 기준이 될 수 없음!!)
+        - 기준이 되는 상위요소가 없을 경우 문서 전체(body)를 기준으로 위치 이동
+        - left, right, top, bottom 좌표 사용 가능
+
+        - absolute된 요소는 부모가 높이를 읽을 수 없다!!!
+
+        */
+
+        .box1, .box2 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        .box1 {
+            background-color: tomato;
+        }
+
+        .box2 {
+            background-color: skyblue;
+        }
+
+        .parent {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #000;
+            position: relative;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box1">Box1</div>
+
+    <div class="parent">
+    <div class="box2">Box2</div>
+    </div>
+
+</body>
+
+</html>

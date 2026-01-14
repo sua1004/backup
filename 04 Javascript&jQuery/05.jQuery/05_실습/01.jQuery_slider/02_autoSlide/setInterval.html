@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol, li {
+            list-style: none;
+        }
+        .main {
+            width: 100%;
+            background-image: url(image/line.png);
+
+            position: relative; /* .pager의 기준!!! */
+        }
+        .main .slide-box {
+            width: 1280px;
+            margin: 0 auto;
+
+            outline:  3px solid red;
+            overflow: hidden;
+        }
+        .slide-box .gallery {
+            width: 400%;
+            position: relative; /* 좌표를 사용하기 위해 position 설정! */
+        }
+        .slide-box .gallery::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .slide-box .gallery li {
+            width: 25%;
+            float: left;
+        }
+        .slide-box .gallery li img {
+            width: 100%;
+            display: block;
+        }
+
+        .main .pager {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .main .pager li {
+            display: inline-block;
+            font-size: 20px;
+        }
+        .main .pager li~li {
+            margin-left: 10px;
+        }
+
+    </style>
+
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/setInterval.js"></script>
+</head>
+
+<body>
+    <!-- 
+    .slide-box : 실제 슬라이드가 보여지는 공간!
+    .gallery : 슬라이드 전체를 담는 부모! (실제 움직이는 대상)
+    .gallery li : 각 슬라이드
+    -->
+
+    <div class="main">
+
+        <div class="slide-box">
+            <ul class="gallery">
+                <li><img src="image/banner1.jpg" alt=""></li>
+                <li><img src="image/banner2.jpg" alt=""></li>
+                <li><img src="image/banner3.jpg" alt=""></li>
+                <li><img src="image/banner1.jpg" alt=""></li>
+            </ul>
+        </div>
+
+        <ul class="pager">
+            <li id="btn0">●</li>
+            <li id="btn1">●</li>
+            <li id="btn2">●</li>
+        </ul>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>07_example</title>
+</head>
+<body>
+
+    <!-- 
+    문서와 디자인을 분리할 것(웹 표준)
+    문서 : html
+    디자인 : css
+
+    <th>, <td> 각 태그에 width (속성)을 추가하는 것은 웹 표준을 위반하는 것
+    태그의 너비를 설정할 때는 아래 방법(<col> 태그)을 이용할 것!
+    -->
+
+    <table border="1" width="600">
+        
+        <!-- 
+        <colgroup> : <col> 태그를 묶어주는 태그
+        <col> : col 값을 설정하는 태그(닫힘 태그 없음)
+        
+        <colgroup>
+            <col width="20%">
+            <col width="40%">
+            <col width="40%">
+        </colgroup>
+        -->
+
+        <colgroup>
+            <col width="30%">
+            <col span="2" width="35%" style="background-color: pink">
+        </colgroup>
+
+        <tr>
+            <th></th>
+            <th>가정용 호스팅</th>
+            <th>기업용 호스팅</th>
+        </tr>
+
+        <tr>
+            <th>디스크공간</th>
+            <td>250MB</td>
+            <td>1GB</td>
+        </tr>
+
+        <tr>
+            <th>대역폭</th>
+            <td>5GB / 월</td>
+            <td>50GB / 월</td>
+        </tr>
+
+        <tr>
+            <th>이메일 계정</th>
+            <td>3</td>
+            <td>5</td>
+        </tr>
+
+        <tr>
+            <th>서버</th>
+            <td>공유</td>
+            <td>가상서버호스팅(VPS)</td>
+        </tr>
+
+        <tr>
+            <th>지원방법</th>
+            <td>이메일</td>
+            <td>전화와 이메일</td>
+        </tr>
+
+        <tr>
+            <th>설정</th>
+            <td>무료</td>
+            <td>무료</td>
+        </tr>
+
+        <tr>
+            <th>FTP 계정</th>
+            <td>1</td>
+            <td>5</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td colspan="3">지금 가입하면 10% 할인!</td>
+        </tr>
+    </table>
+    
+</body>
+</html>

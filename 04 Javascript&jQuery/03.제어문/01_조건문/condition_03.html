@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>condition_03</title>
+</head>
+
+<body>
+	<h4>변수를 생성하고 비교할 값을 Kitty로 지정, 변수와 값이 일치한지를 조건문의 if ~ else를 이용하여, "You're not Kitty!"을 출력하세요.(else의 실행문이 출력되도록 하세요.)
+	</h4>
+
+	<script>
+		// if문 출력 >> true, Hello Kitty!
+		// else문 출력 -> false, You're not Kitty!
+
+		var name = 'kitty';
+		var userCat = 'Munzi';
+
+		if (name == userCat){
+			document.write('Hello Kitty!<br>');
+		} else {
+			/* document.write('You&rsquo;re not Kitty!'); */
+			document.write(`You're 'not' "Kitty!"<br>`);
+		}
+		
+		// 비교 연산자 != 를 사용하는 경우
+		if (name != userCat){
+			//두 개의 이름이 같지 않다! -> true
+			document.write(`You're 'not' "Kitty!"<br>`);
+		} else {
+			//두 개의 이름이 같다! -> false
+			document.write('Hello Kitty!<br>');
+		}
+
+		/* 
+		탬플릿 리터럴(Template Literals)
+		- ES6에서 새로 도입된 문자열 표기방식
+		- 문자형 데이터 입력시, 작은 따옴표나 큰 따옴표 대신 백틱(backtick, `)문자 사용
+		- 문자형 데이터 작성 시 따옴표 중첩을 고려하지 않고 사용해도 문제 없음
+		*/
+
+		document.write(userCat + '님 반갑습니다!<br>');
+
+		document.write(`${userCat}님 반갑습니다!<br>`);
+		//${} 변수 선택
+
+		//테스트!
+		var num1 = 10, num2 = 20;
+		document.write(`두 수의 합계는 ${num1+num2}입니다.<br><br>`);
+
+		var txt = `
+		안녕하세요
+		즐거운 금요일이예요
+		오늘부터 주말권 얏호!
+		`;
+
+		document.write(txt);
+		console.log(txt); //변수'txt'가 로그에는 줄바꿈이 적용
+
+
+
+		/* var name = prompt('이름을 입력하세요!');
+		if (name == 'Kitty'){
+			document.write('Hello Kitty');
+		} else {
+			document.write("You're not Kitty");
+		} */
+	</script>
+
+</body>
+
+</html>

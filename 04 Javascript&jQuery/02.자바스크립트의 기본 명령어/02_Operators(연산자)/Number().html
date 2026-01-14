@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Number()</title>
+</head>
+
+<body>
+
+    <script>
+
+        var string = Number(prompt('좋아하는 계절은?'));
+        document.write(string, '<br>');
+        //NaN -> Not a Number
+        //빈 칸일 경우 = 0 반환
+
+        //Number()에 논리형 데이터가 들어간 경우
+        var bTrue = Number(true);
+        var bFalse = Number(false);
+
+        document.write(bTrue, '<br>'); //1
+        document.write(bFalse, '<br>'); //0
+
+    </script>
+    
+</body>
+</html>

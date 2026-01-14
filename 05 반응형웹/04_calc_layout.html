@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_calc_layout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 90%;
+            min-width: 500px;
+            height: 600px;
+            border: 4px solid #000;
+            margin: 50px auto 0;
+        }
+
+        #wrap > div {
+            height: 100%;
+            float: left;
+        }
+
+        /* 각 컨텐츠 박스 */
+        .con1 {
+            width: 200px;
+            background-color: #1f518b;
+        }
+        .con2 {
+            width: 300px;
+            background-color: #f7e014;
+        }
+        .con3 {
+            width: calc(100% - 500px);
+            background-color: #ffd0d0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div class="con1">Content(고정)</div>
+        <div class="con2">Content(고정)</div>
+        <div class="con3">Content(가변)</div>
+    </div>
+
+</body>
+
+</html>

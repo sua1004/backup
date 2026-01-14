@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>브런치빈</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol, li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .clear::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* 보이는 화면 기준!!!  */
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 전체너비에 양쪽 고정된 여백 사용 */
+        header {
+            width: 100%;
+            padding: 0 100px;
+            box-sizing: border-box;
+
+            height: 100px;
+            background-color: rgba(255,255,255,0.9);
+
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999;
+        }
+        header .logo {
+            float: left;
+        }
+        header .logo img {
+            height: 40px;
+            display: block;
+            margin-top: 30px;
+        }
+
+
+        header nav {
+            /* outline: 2px solid lime; */
+
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+        }
+
+        header nav .gnb {}
+        header nav .gnb > li {
+            /* outline: 2px solid tomato; */
+
+            float: left;
+            position: relative; /* .lnb의 기준!!! */
+        }
+        header nav .gnb > li ~ li {
+            margin-left: 20px;
+        }
+        header nav .gnb > li > a {
+            font-size: 20px;
+            line-height: 100px;
+            font-weight: bold;
+            padding: 0 10px;
+
+            /* outline: 2px solid tomato; */
+        }
+        header nav .gnb > li > .lnb {
+            width: 140px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #d9d9d9;
+            overflow: hidden;
+
+            position: absolute;
+            left: 0;
+            top: 100%;
+            transform: translateY(-16px);
+
+            display: none;
+        }
+        .lnb li {}
+        .lnb li a {
+            padding: 16px 12px;
+            color: #666;
+            letter-spacing: -1.2px;
+        }
+        .lnb li a:hover {
+            background-color: #8b5dff;
+            color: #fff;
+        }
+
+        main {
+            width: 100%;
+            height: 100%;
+            background: url(img/brunchBean.png) no-repeat top/cover;
+        }
+        main a {
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+        }
+
+        section {
+            margin: 60px 0 80px;
+        }
+        section .inner {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+
+            /* outline: 2px solid tomato; */
+        }
+
+        section .sec-tit {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        section .brand-slogan {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+        }
+        section .brand-des {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        section .brand-des p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: rgba(255,255,255,0.6);
+            padding: 60px 100px;
+            text-align: center;
+        }
+
+
+    </style>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            //mouseenter, mouseleave >> hover()
+            $('.gnb > li').hover(function(){
+                //mouseenter
+                //$(this).find('.lnb').slideDown();
+                $(this).find('.lnb').fadeIn();
+
+            }, function(){
+                //mouseleave
+                //$('.lnb').stop().slideUp();
+                $('.lnb').fadeOut();
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inner clear">
+            <h1 class="logo"><a href="#"><img src="img/logo_brunchbean.png" alt="브런치빈 로고"></a></h1>
+
+            <nav>
+                <ul class="gnb clear">
+                    <li>
+                        <a href="#">대메뉴1</a>
+
+                        <ul class="lnb">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">브랜드 소개</a>
+
+                        <ul class="lnb">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                            <li><a href="#">서브메뉴3</a></li>
+                            <li><a href="#">브랜드 스토리</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">매장 안내</a>
+
+                        <ul class="lnb">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                            <li><a href="#">플래그십 스토어</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">퍼플 멤버십</a>
+
+                        <ul class="lnb">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                            <li><a href="#">서브메뉴3</a></li>
+                            <li><a href="#">멤버십 이용안내</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">대메뉴5</a>
+
+                        <ul class="lnb">
+                            <li><a href="#">서브메뉴1</a></li>
+                            <li><a href="#">서브메뉴2</a></li>
+                            <li><a href="#">서브메뉴3</a></li>
+                            <li><a href="#">서브메뉴4</a></li>
+                            <li><a href="#">서브메뉴5</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <a href="#">브런치의 새로운 문화, 브린치 빈이 시작합니다.</a>
+    </main>
+
+    <section>
+        <div class="inner">
+            <h2 class="sec-tit">Brand Identity</h2>
+            <p class="brand-slogan">
+                브런치의 새로운 문화<br>
+                브런치의 새로운 기준
+            </p>
+
+            <div class="brand-des">
+                <p>
+                    밥 대신 브런치를 먹을 수 있는 그날까지<br>
+                    브런치빈은 매일 고민하며 연구합니다.
+                </p>
+                <p>
+                    신선한 재료와 특별한 조리방법, 그리고 깊은 소식<br>
+                    누구나 즐길 수 있는 한국식 브런치 메뉴 개발까지!!! 
+                    <br><br>
+                    우리나라 브런치의 새로운 문화<br>
+                    브런치빈이 선도합니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright 2025</p>
+    </footer>
+</body>
+</html>

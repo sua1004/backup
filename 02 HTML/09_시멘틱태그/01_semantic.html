@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>semantic_pra</title>
+</head>
+
+<body>
+
+    <!-- 
+    <header> : 소개 콘텐츠 또는 탐색 링크 세트를 묶어주는 태그
+    ex) 하나 이상의 제목 요소, 로고 또는 아이콘, 저자 정보 등
+    -->
+
+    <header>
+        <h1>Kim's Kitchen</h1>
+
+        <!-- 
+        <nav> : 탐색 링크를 묶어주는 태그
+        -->
+
+        <nav>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">교실</a></li>
+                <li><a href="#">케이터링</a></li>
+                <li><a href="#">소개</a></li>
+                <li><a href="#">연락처</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- 
+    <section> : 일반적으로 제목이 있는 콘텐츠의 주제별 그룹을 묶어주는 태그
+    (서론-본론-결론 중의 본론 느낌?)
+
+    <article> : 독립적이고 자체적인 콘텐츠를 묶어주는 태그
+    (본론에서 같은 주제끼리 묶어주는 태그)
+
+    <section> 태그는 하나의 문서에서 <section>을 정의함
+    <article> 태그는 <section> 태그 속에서 독립적이고 자체적인 콘텐츠(같은 주제의 콘텐츠)를 정의함
+    -->
+
+    <section>
+        <article>
+            <figure>
+                <img src="images/bok-choy.jpg" alt="한국의 청경채 요리">
+                <figcaption>Bok Choy</figcaption>
+            </figure>
+
+            <!-- 
+            <fugure> : 사진과 같은 자체적인 콘텐츠를 묶어주는 태그
+
+            <figcaption> : <figure> 태그에 대한 캡션을 정의
+            (<figure> 태그에 대한 설명)
+            첫번째 또는 마지막 하위 요소로 배치할 수 있음
+            -->
+
+            <h2>한국의 채식주의자</h2>
+            <h3>런던에서의 5주 코스</h3>
+            <p>5주간 전통적인 한국의 채식주의자 음식에 대해 소개하고 쌀과 국수요리를 가르친다.</p>
+        </article>
+
+        <article>
+            <figure>
+                <img src="images/soysauce.jpg" alt="한국의 간장 소스">
+                <figcaption>Soy Sauce</figcaption>
+            </figure>
+
+            <h2>소스 마스터 클래스</h2>
+            <h3>1일 워크샵</h3>
+            <p>1일 집중코스에서는 다양한 한국 요리에서 사용할 수 있는 가장 맛있는 소스를 만드는 방법을 살펴본다.</p>
+        </article>
+
+        <article>
+            <h2>인기 요리법</h2>
+
+            <div>
+                <a href="#">한우 불고기</a>
+                <a href="#">궁중 떡볶이</a>
+                <a href="#">산적꼬치구이</a>
+                <a href="#">돼지 등갈비 구이</a>
+                <a href="#">더덕생채</a>
+            </div>
+
+            <!-- 
+            <nav>
+                <a href="#">한우 불고기</a>
+                <a href="#">궁중 떡볶이</a>
+                <a href="#">산적꼬치구이</a>
+                <a href="#">돼지 등갈비 구이</a>
+                <a href="#">더덕생채</a>
+            </nav>
+
+            여기서 <div> 태그가 말고 <nav> 태그를 써도 되는 지,
+            안 된다면 왜 안되는지 질문하기!
+            ㄴ 위에서는 사용자에게 메뉴를 알려주기 위한 목적으로서 <nav> 태그가 쓰였지만, 지금의 경우 콘텐츠가 목적이기 때문에 <div> 태그가 쓰임!
+
+            * 링크라고 해서 무조건 <nav> 태그가 쓰이는 것은 아님
+            중요한 건 해당 링크들이 (문서의)메뉴로서의 목적인지 콘텐츠로서의 목적인지 구분하여 사용할 것!
+            
+            -->
+        </article>
+
+    </section>
+
+    <!-- 
+    <footer> : 문서의 바닥글(마지막글)을 묶어주는 태그
+    ex) 저자 정보, 저작권 정보, 연락처 정보, 사이트맵 상위 링크로 올라가기 등
+    -->
+
+    <footer>
+        <h3>연락처</h3>
+
+        <address>
+            Kim's Kitchen <br>
+            27 Redchurch Street
+        </address>
+
+        <!-- 
+        <address> : 문서나 기사의 작성자/소유자에 대한 연락처 정보를 묶어주는 태그
+        (이탤릭체로 화면에 보여짐)
+        -->
+
+        <p>&copy; 2011 Kim's Kitchen</p>
+    </footer>
+</body>
+
+</html>

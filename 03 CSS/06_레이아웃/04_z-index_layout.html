@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04_z-index_layout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        header {
+            background-color: lightblue;
+            color: white;
+            width: 100%;
+            height: 100px;
+
+            /* position: fixed;
+            left: 0;
+            top: 0;
+
+            z-index: 1; */
+            
+        }
+
+        section .slide {
+            background-color: plum;
+            width: 100%;
+            height: 350px;
+
+            /* margin-top: 100px; */
+
+            position: relative;
+        }
+
+        section .slide a {
+            width: 60px;
+            height: 60px;
+            display: block;
+            
+            position: absolute;
+            top: 50;
+            margin-top: -30px;
+        }
+
+        section .solide a.prev {
+            left: 100px;
+        }
+
+        section .solide a.next {
+            right: 100px;
+        }
+
+        section .slide a img {
+            width: 50px;
+            display: block;
+        }
+
+        section .content {
+            background-color: lightgoldenrodyellow;
+            width: 100%;
+            height: 1500px;
+        }
+
+        footer {
+            background-color: lightslategray;
+            width: 100%;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>header 고정</p>
+    </header>
+
+    <section>
+        <article class="slide">
+            <p>슬라이드</p>
+            <a href="#" class="prev"><img src="img/left_icon.png" alt="이전 버튼"></a>
+            <a href="#" class="next"><img src="img/right_icon.png" alt="다음 버튼"></a>
+        </article>
+
+        <article class="content">
+            <p>컨텐츠</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>footer</p>
+    </footer>
+
+</body>
+
+</html>

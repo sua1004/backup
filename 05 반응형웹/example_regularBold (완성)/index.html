@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레귤러볼드 | Regular Bold</title>
+
+    <!-- [if It IE 9]
+            <script src="js/respond.js"></script>
+    <[endif] -->
+
+    <!--[if It IE 9]>          
+    	<script src="js/html5shiv.min.js"></script>       
+    <![endif]-->
+    
+    <!-- favicon 파비콘 -->
+    <!-- pc용/ico -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- 안드로이드/png -->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- 애플IOS/jpg -->
+    <link rel="apple-touch-icon" href="images/favicon.jpg">
+
+
+    <!-- 구글웹폰트 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=PT+Serif:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="stylesheet" href="css/index_tablet.css">
+    <link rel="stylesheet" media="all and (max-width:767px)" href="css/index_mobile.css">
+
+    <!-- jQuery 라이브러리 연결!! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.m-menu-v2').click(function(){
+                $('.gnb').slideToggle(600);
+            });
+        });
+
+        $(window).resize(function(){
+
+            var vw = $(this).width();
+            console.log(vw);
+
+            if (vw > 1024) {
+                //$('.gnb').css('display','block'); //인라인스타일로 적용되므로 최우선 순위!
+                $('.gnb').show();
+
+            } else {
+                //$('.gnb').css('display','none');
+                $('.gnb').hide();
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="inner clearfix">
+            <h1 class="logo">
+                <a href="#"><img src="images/logo.jpg" alt="레귤러볼드"></a>
+            </h1>
+
+            <!-- 태블릿/모바일 메뉴 버튼 -->
+            <!-- <div class="m-menu">
+                <a href="#"><img src="images/button.png" alt="전체메뉴"></a>
+            </div> -->
+
+            <div class="m-menu-v2">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="gnb">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="sns">
+                <a href="#" target="_blank"><img src="images/icon_insta.png" alt="인스타그램 바로가기"></a>
+                <a href="#" target="_blank"><img src="images/icon_youtube.png" alt="유튜브 채널 바로가기"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- index 페이지의 본문!! -->
+    <section>
+        <!-- 영역1. INTRO -->
+        <article class="intro">
+            <div class="txt-box">
+                <p class="des-en eng">
+                    Regular<b>Bold</b> is a leading contender out of Korea creative groups, we were established by the excellent directors in
+                    diverse sectors.
+                </p>
+                <p class="des-ko"><span class="eng">Regular<b>Bold</b></span>는 다양한 분야의 뛰어난 디렉터들이 만든 <strong>국내 최고의 크리에이티브 그룹</strong>입니다</p>
+            </div>
+
+            <a href="#" class="btn">채용공지</a>
+        </article>
+
+        <!-- 영역2. WORKS (레퍼런스) -->
+        <article class="works">
+            <div class="img-box-wrap clearfix">
+                <div class="img-box">
+                    <a href="#"><img src="images/01_brand.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/02_uiux.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/03_interior.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/04_pictures.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/05_printpackage.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/06_exhibition.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/07_bookproduct.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/08_illustgraphic.jpg" alt=""></a>
+                </div>
+
+                <!-- !!!!!추가!!!!! -->
+                <!-- <div class="img-box">
+                    <a href="#"><img src="images/01_brand.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/02_uiux.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/03_interior.jpg" alt=""></a>
+                </div>
+                <div class="img-box">
+                    <a href="#"><img src="images/04_pictures.jpg" alt=""></a>
+                </div> -->
+            </div>
+        </article>
+
+        <!-- 영역3. ABOUT (팀소개) -->
+        <article class="about">
+            <h2 class="sec-tit">about Regular<b>Bold</b></h2>
+            <p>
+                It is a total creative platform which responds to the brand, contents, digital marketing and times of convergence.
+            </p>
+
+            <a href="#" class="btn eng">More Info</a>
+        </article>
+
+        <!-- 영역4. NEWS (새소식) -->
+        <article class="news">
+            <h2 class="sec-tit">OUR News</h2>
+            <p>고객의 브랜드에 통합적으로 반응하고 함께하는 <span class="eng">Regular<b>Bold</b></span>입니다.</p>
+
+            <div class="box-wrap clearfix">
+                <div class="box">
+                    <img src="images/recruit.jpg" alt="">
+
+                    <h3 class="title"><a href="#">[Recruit] RegularBold 채용공지</a></h3>
+                    <p class="date">2017년 3월 2일</p>
+                </div>
+                <div class="box">
+                    <img src="images/degital_media.jpg" alt="">
+                
+                    <h3 class="title"><a href="#">디지털 미디어 디자인 감정과 이성의 경계에 서서</a></h3>
+                    <p class="date">2017년 3월 2일</p>
+                </div>
+                <div class="box">
+                    <img src="images/news.jpg" alt="">
+                
+                    <h3 class="title"><a href="#">2017년 웹트렌드 컴퍼런스 'Trend Insight &amp; Outsight'</a></h3>
+                    <p class="date">2017년 1월 14일</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- CONTACT : 서브페이지에서도 공통으로 고정된 배너! -->
+    <section class="contact">
+        <div class="inner">
+            <h2 class="sec-tit">Contact</h2>
+            <p>고객의 브랜드에 통합적으로 반응하고 함께하는 <span class="eng">Regular<b>Bold</b></span>입니다.</p>
+
+            <a href="#" class="btn eng">More Info</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="inner clearfix">
+            <div class="footer-box">
+                <h4>copyright</h4>
+                <p>Powered by RegularBold</p>
+            </div>
+            <div class="footer-box">
+                <h4>follow</h4>
+                <p>Instagram</p>
+            </div>
+            <div class="footer-box">
+                <h4>contact</h4>
+                <p>
+                    Email / hello@regularbold.co.kr<br>
+                    Tel / 02 1234 5678
+                </p>
+            </div>
+        </div>
+
+        <div class="top">
+            <a href="#"><img src="images/top.jpg" alt="맨 위로 이동"></a>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="todolist.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="todo-container">
+        <h1 class="todo-title">Todo List</h1>
+        <form class="todo-form" autocomplete="off">
+            <input type="text" class="todo-input" placeholder="할 일을 입력하세요">
+            <button type="submit" class="todo-add-btn">추가</button>
+        </form>
+        <ul class="todo-list">
+            <!-- 할 일이 여기에 추가됩니다 -->
+        </ul>
+        <div class="todo-max-msg" style="display:none; color:#ff6b6b; text-align:center; margin-top:1rem; font-size:1rem;">최대 10개까지만 등록할 수 있습니다.</div>
+    </div>
+    <script>
+        $(function(){
+            function updateMaxMsg() {
+                if ($('.todo-item').length >= 10) {
+                    $('.todo-input, .todo-add-btn').prop('disabled', true);
+                    $('.todo-max-msg').show();
+                } else {
+                    $('.todo-input, .todo-add-btn').prop('disabled', false);
+                    $('.todo-max-msg').hide();
+                }
+            }
+            // 할 일 추가
+            $('.todo-form').on('submit', function(e){
+                e.preventDefault();
+                const value = $('.todo-input').val().trim();
+                if (!value) return;
+                if ($('.todo-item').length >= 10) return;
+                const $li = $('<li class="todo-item">\
+                    <label class="todo-checkbox-label">\
+                        <input type="checkbox" class="todo-checkbox">\
+                        <span class="todo-text"></span>\
+                    </label>\
+                    <button class="todo-delete-btn">삭제</button>\
+                </li>');
+                $li.find('.todo-text').text(value);
+                $('.todo-list').append($li);
+                $('.todo-input').val('').focus();
+                updateMaxMsg();
+            });
+            // 완료 체크시 취소선, 텍스트/라벨 클릭 시 체크 토글 금지
+            $('.todo-list').on('click', '.todo-checkbox-label', function(e){
+                if (!$(e.target).hasClass('todo-checkbox')) {
+                    e.preventDefault();
+                }
+            });
+            $('.todo-list').on('change', '.todo-checkbox', function(){
+                const $item = $(this).closest('.todo-item');
+                if (this.checked) {
+                    $item.find('.todo-text').addClass('done');
+                } else {
+                    $item.find('.todo-text').removeClass('done');
+                }
+            });
+            // 삭제
+            $('.todo-list').on('click', '.todo-delete-btn', function(){
+                $(this).closest('.todo-item').remove();
+                updateMaxMsg();
+            });
+            // 텍스트 더블 클릭 시 인라인 수정
+            $('.todo-list').on('dblclick', '.todo-text', function(e){
+                const $span = $(this);
+                if ($span.parent().find('.todo-edit-input').length) return;
+                const oldText = $span.text();
+                const $input = $('<input type="text" class="todo-edit-input">').val(oldText);
+                $span.replaceWith($input);
+                $input.focus();
+                function finishEdit() {
+                    let newValue = $input.val().trim();
+                    if (!newValue) newValue = oldText;
+                    const $newSpan = $('<span class="todo-text"></span>').text(newValue);
+                    if ($input.closest('.todo-item').find('.todo-checkbox').prop('checked')) {
+                        $newSpan.addClass('done');
+                    }
+                    $input.replaceWith($newSpan);
+                }
+                $input.on('keydown', function(e){
+                    if(e.key==='Enter'){
+                        finishEdit();
+                    }
+                });
+                $input.on('blur', finishEdit);
+            });
+            updateMaxMsg();
+        });
+    </script>
+</body>
+</html>

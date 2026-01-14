@@ -1,0 +1,187 @@
+@charset "utf-8";
+
+/*** reset **********************************************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol, li {
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+}
+
+/*** common (공통의 css) ****************************************************************************************/
+/* float해제를 위한 클래스와 가상요소! */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 
+구글 웹폰트
+
+1) Noto Sans Kr (font-weight: 100~900)
+font-family: "Noto Sans KR", sans-serif;
+
+2) Fredoka (font-weight: 300~700)
+font-family: "Fredoka", sans-serif;
+*/
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+}
+
+.sandwich-menu {
+    width: 1200px;
+    margin: 60px auto;
+
+    /* background-color: yellow; */
+}
+
+.sandwich-menu .top {
+    /* outline: 2px solid red; */
+
+    margin-bottom: 40px;
+}
+.sandwich-menu .top .title {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 2.7rem;
+     
+    line-height: 60px;
+
+    background-image: url(../img/example3/bul_tit.png);
+    background-repeat: no-repeat;
+    padding-left: 30px;
+
+    float: left;
+
+    /* background-color: yellow; */
+}
+
+.sandwich-menu .top .tabmenu {
+    /* background-color: greenyellow; */
+    float: right;
+}
+.sandwich-menu .top .tabmenu li {
+    display: inline-block;
+    line-height: 60px;
+
+    position: relative; /* 가상요소 after의 기준!!! */
+}
+.sandwich-menu .top .tabmenu li~li {
+    margin-left: 30px;
+}
+
+.sandwich-menu .top .tabmenu li::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 14px;
+    background-color: #b2b2b2;
+
+    position: absolute;
+    left: -16px;
+    top: 24px;
+}
+.sandwich-menu .top .tabmenu li:first-child::after {
+    display: none;
+}
+
+.sandwich-menu .top .tabmenu li a {
+    color: #b2b2b2;
+}
+.sandwich-menu .top .tabmenu li.active a {
+    color: #009132;
+    font-weight: 600;
+}
+
+
+.sandwich-menu .content {
+    /* outline: 3px solid plum; */
+
+    position: relative; /* .btn의 기준!!! */
+}
+
+.sandwich-menu .content .btn {
+    /* outline: 2px solid blue; */
+
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+}
+.sandwich-menu .content .btn.prev {
+    left: -80px;
+}
+.sandwich-menu .content .btn.next {
+    right: -80px;
+}
+
+
+.sandwich-menu .content .btn a {
+    /* 글자 없애기 */
+    font-size: 0;
+    /* text-indent: -9999px; */
+    /* opacity: 0; */
+
+    display: block;
+    height: 100%;
+    background-image: url(../img/example3/icon_event_slider_arr.png);
+    background-repeat: no-repeat;
+}
+.sandwich-menu .content .prev a:hover {
+    background-position: left bottom;
+}
+
+.sandwich-menu .content .next a {
+    background-position: right top;
+}
+.sandwich-menu .content .next a:hover {
+    background-position: right bottom;
+}
+
+.sandwich-menu .content .menu-wrap {
+    /* background-color: yellow; */
+
+    width: 100%;
+}
+
+.menu-wrap li {
+    /* outline: 2px solid red; */
+
+    width: 25%;
+    float: left;
+}
+
+.menu-wrap li a {
+    display: block;
+}
+.menu-wrap li a img {
+    width: 100%;
+}
+
+.menu-wrap li .info {
+    padding: 0 20px;
+    text-align: center;
+}
+.menu-wrap li .info h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.menu-wrap li .info p {
+    color: #888;
+    line-height: 1.4;
+    letter-spacing: -0.6px;
+    word-break: keep-all;
+}

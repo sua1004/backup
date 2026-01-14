@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04_z-index</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            font-size: 26px;
+            position: absolute;
+        }
+
+        .b1 {
+            background-color: tomato;
+            left: 60px;
+            top: 100px;
+            z-index: 1;
+        }
+
+        .b2 {
+            background-color: greenyellow;
+            left: 100px;
+            top: 140px;
+            z-index: 20;
+        }
+
+        .b3 {
+            background-color: dodgerblue;
+            left: 140px;
+            top: 200px;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box b1">1</div>
+    <div class="box b2">2</div>
+    <div class="box b3">3</div>
+    
+</body>
+</html>

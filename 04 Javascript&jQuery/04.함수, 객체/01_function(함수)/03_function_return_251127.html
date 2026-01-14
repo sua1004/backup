@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>03_function_return</title>
+
+    <script>
+        /* 
+        함수 return문
+        - 함수 호출을 통해 실행된 결과값을 '반환' 받을 때 사용
+        - 함수 호출한 자리에 결과값이 반환됨
+        - 함수에서 return문이 실행되면 선택문의 break문처럼 코드를 강제종료
+        - return으로 값을 반환하고 코드 종료 
+
+        ///////// 기본형 ////////////////////////////////////
+
+            function 함수명 (){
+                실행코드1; ----------------- ②
+                return 값; ----------------- ③
+
+                실행코드2;
+            }
+
+            var 참조변수 = 함수명(); --------- ①
+
+        /////////////////////////////////////////////////////
+
+        *실행순서
+        ① 함수를 호출하면
+        ② 코드1이 실행
+        ③ return문을 통해 데이터 반환, 실행코드2는 실행하지 않고 종료!
+        */
+
+        //예제1
+        function sum (num1, num2){
+
+            document.write('코드가 시작됩니다~ <br>');
+            return num1+num2;
+
+            document.write('코드가 출력됩니다~ <br>');
+        }
+
+        var result = sum(10, 20);
+        document.write(result, '<br><br>');
+
+        //예제2 - 입력받은 값의 평균 구하기 
+        // 국어, 수학, 영어, 과학 점수를 입력받아 평균점수를 구해서 반환하기!
+
+        /* 
+        평균구하기
+        과목 점수 합계 / 과목수 = 평균
+
+        과목별 점수 입력받기 >> Number(prompt())
+        >> Number(prompt()) 4번 반복 -> 반복문, 과목명만 바꿔서!
+        >> 과목명을 배열로 저장 
+        >> 과목명 : 배열의 인덱스값
+
+        과목수의 활용!
+        >> 과목수는 어떻게 구할까? >> 배열에 저장 >> 배열의 길이 구하기 (배열.length)
+        >> 과목수만큼의 반복 : 반복문의 조건식
+        >> 평균을 구할 때 나누는 값
+        */
+
+        var subject = ['국어','수학','영어','과학','사회'];
+
+        var result2 = avg(subject);
+        document.write(`평균점수는 ${result2}입니다.`);
+
+        //평균을 구하는 함수!
+        function avg (arrData){
+
+            var total = 0; 
+
+            //매개변수에 담긴 배열의 길이 구하기!
+            var dataLeng = arrData.length; 
+
+            for (var i=0; i < dataLeng; i++){
+                total += Number(prompt(subject[i] + '점수를 입력하세요!'));
+            }
+
+            console.log(total); //반복문을 통해 얻은 점수의 합계!
+
+            var result = total / dataLeng;
+            return result;
+        }
+
+
+
+        /* var subLeng = subject.length; //4
+        console.log('subject 배열의 길이: ' + subLeng);
+
+        var total = 0; //입력받은 점수를 담을 변수!
+
+        for (var i=0; i < subLeng; i++){
+            total += Number(prompt(subject[i] + '점수를 입력하세요!'));
+        }
+
+        document.write(total); */
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

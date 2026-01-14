@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    border-top: 3px solid rgb(241, 100, 138);
+    background-color: #fff;
+    box-shadow: 0 1px 10px #d9d9d9;
+}
+
+header h1 {
+    text-align: center;
+}
+
+header h1 img {
+    height: 35px;
+    margin-top: 22.5px;
+}
+
+section {
+    width: 100%;
+    background: url(images/introduce-top-visual.png) no-repeat top/auto 216px;
+    padding-top: 216px;
+    /* 배경이미지 높이만큼!!! */
+}
+
+article.brand {
+    width: 1200px;
+    margin: 50px auto 100px;
+}
+
+article.brand h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 30px;
+}
+
+article.brand .content-box {
+    margin-top: 100px;
+    /* background-color: bisque; */
+}
+
+/* article.brand .content-box > div {} */
+
+article.brand .content-box .box {
+    margin-bottom: 80px;
+    height: 280px;
+    position: relative;
+
+    /* outline: 2px solid red; */
+}
+
+.box .img-box {
+    width: 50%;
+    height: 100%;
+
+    /* 제이쿼리 구현을 위한 초기설정 */
+    width: 0;
+    overflow: hidden;
+
+    /* outline: 2px solid blue; */
+}
+
+/* 짝수번째 .box */
+.box.even .img-box {
+    position: absolute;
+    left: 50%;
+}
+
+.box .img-box img {
+    height: 100%;
+    display: block;
+    border-radius: 30px;
+}
+
+.box .txt-box {
+    width: 40%;
+
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* 제이쿼리 구현을 위한 초기설정! */
+    display: none;
+    opacity: 0; /* 4번 박스 등장을 위한 설정 */
+}
+
+/* 짝수번째 .box */
+.box.even .txt-box {
+    right: 55%;
+    /* .txt-box의 위치를 right으로 설정했기 때문에 right 속성값 변경! */
+}
+
+.box .txt-box h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.box .txt-box p {
+    font-size: 20px;
+}
+
+.box .txt-box p span {
+    color: rgb(241, 100, 138);
+}
+
+/* 4번 박스 등장 리플레이를 위한 클래스 추가 **********/
+.box.active .img-box {
+    width: 50%;
+    transition: width 0.8s ease;
+}
+.box.active .txt-box {
+    opacity: 1;
+    transition: opacity 0.8s ease 0.8s;
+}
+/****************************************************/
+
+footer {
+    background-color: rgb(241, 100, 138);
+    padding: 60px 0;
+    text-align: center;
+    color: #fff;
+}

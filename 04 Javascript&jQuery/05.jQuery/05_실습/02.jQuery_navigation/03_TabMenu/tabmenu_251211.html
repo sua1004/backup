@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tabmenu</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .container {
+            width: 800px;
+            margin: 50px auto;
+            /* outline: 2px solid tomato; */
+        }
+
+        .tabmenu {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tabmenu ul {}
+
+        .tabmenu ul li {
+            font-size: 18px;
+            text-transform: uppercase;
+            display: inline-block;
+
+            border: 2px solid #ccc;
+            border-radius: 50px;
+            overflow: hidden;
+
+            margin: 0 5px;
+        }
+
+        /* .tabmenu ul li~li {
+            margin-left: 10px;
+        } */
+        .tabmenu ul li a {
+            color: #ccc;
+            padding: 8px 18px;
+        }
+
+        /* 선택된 탭메뉴 디자인!!! */
+        .tabmenu ul li.on {
+            background-color: tomato;
+            border-color: tomato;
+        }
+
+        .tabmenu ul li.on a {
+            color: #fff;
+        }
+
+
+        .content-box {
+            border: 1px solid #ccc;
+            padding: 30px;
+        }
+
+        .content-box>div {
+            width: 100%;
+
+            display: none;
+            /* 탭메뉴 구현을 위한 초기설정! */
+            /* outline: 1px solid tomato; */
+        }
+
+        .content-box>div.on {
+            display: block;
+        }
+
+        .content-box h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .content-box p {
+            font-size: 20px;
+        }
+
+        .content-box img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+
+        /* $(function(){
+
+            // .content-box의 초기설정
+            $('#box1').show();
+
+            // id값 활용해서 선택한 탭메뉴의 내용이 보이도록 하기!
+            $('.tabmenu a').click(function(e){
+
+                //a의 기본기능 막기!
+                e.preventDefault();
+
+                var aHref = $(this).attr('href');
+                console.log(aHref);
+
+                //선택된(클릭한) 탭메뉴 디자인 변경 >> on 클래스 사용!
+                $(this).parent().addClass('on').siblings().removeClass('on');
+
+                //내용 변경 >> aHref값 사용!
+                //$(aHref).show().siblings().hide();
+
+                $('.content-box>div').hide();
+                $(aHref).fadeIn(600);
+
+            });
+            
+        }); */
+
+        $(document).ready(function () {
+            //인덱스 번호 활용
+
+            $('.tabmenu a').on('click', function (evt) {
+
+                evt.preventDefault();
+
+                //클릭된 a태그의 부모 li의 인덱스 구하기!
+                var idx = $(this).parent().index();
+                console.log(idx);
+
+                //탭메뉴와 내용에 on클래스 사용!
+
+                //함수호출!
+                tabtab(idx);
+
+                /* $('.tabmenu li').eq(idx).addClass('on').siblings().removeClass('on');
+
+                $('.content-box > div').eq(idx).addClass('on').siblings().removeClass('on'); */
+
+            });
+
+        });
+
+        //탭메뉴 함수 만들기
+        function tabtab(num) {
+            $('.tabmenu li').eq(num).addClass('on').siblings().removeClass('on');
+
+            //$('.content-box > div').eq(num).addClass('on').siblings().removeClass('on');
+
+            $('.content-box > div').hide().eq(num).fadeIn(600);
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- 탭메뉴 덩어리 -->
+        <div class="tabmenu">
+            <ul>
+                <li class="on"><a href="#box1">menu1</a></li>
+                <li><a href="#box2">menu2</a></li>
+                <li><a href="#box3">menu3</a></li>
+                <li><a href="#box4">menu4</a></li>
+            </ul>
+        </div>
+
+        <!-- 내용이 보여질 덩어리! -->
+        <div class="content-box">
+            <div id="box1" class="con1 on">
+                <h2>메뉴1 내용</h2>
+                <p>재미있는 탭메뉴 구현하기!!!!</p>
+            </div>
+
+            <div id="box2" class="con2">
+                <h2>메뉴2 내용</h2>
+
+                <div class="txt-box">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book.</p>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                        essentially unchanged. </p>
+                    <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+
+            <div id="box3" class="con3">
+                <h2>메뉴3 내용</h2>
+
+                <div class="survey">
+                    <p>망곰이의 붕어빵 취향은?</p>
+
+                    <img src="https://pbs.twimg.com/media/GAkrg_oa0AAtFsu.jpg" alt="팥이 좋아? 슈크림이 좋아?">
+                </div>
+            </div>
+
+            <div id="box4" class="con4">
+                <h2>메뉴4 내용</h2>
+                <p>오늘도 좋은 하루 되세요!!!</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

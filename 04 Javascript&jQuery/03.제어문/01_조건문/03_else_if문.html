@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_else_if문</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+        (3) else if문 : 두 가지 이상의 조건식에서 정해놓은 조건을 만족했을 때 실행되는 조건문
+
+        /////////////// 기본형 /////////////////////////////////////////
+
+            if (조건식1){
+                실행코드1;
+            } else if (조건식2){
+                실행코드2;
+            } else if (조건식3){
+                실행코드3;
+            } else if (조건식4){
+                실행코드4;
+            } else {
+                실행코드; 
+            }
+
+        ////////////////////////////////////////////////////////////////
+
+        * 주어진 조건식을 '차례로' 검사, 만족하는 조건식이 나오면 그에 해당하는 코드를 실행하고 조건문 종료
+        * 조건식 중 만족하는 조건식이 하나도 없으면 else문 코드 실행하고 종료
+        */
+
+        // 예제1. 만족도에 따른 메세지 출력
+        /* 
+        만족도 5점 만점
+
+        5 : 매우 만족
+        4 : 만족
+        3 : 보통
+        2 : 불만족
+        1 : 매우 불만족
+        */
+
+        /* var score = prompt('서비스에 대한 만족도를 평가해 주세요.(1~5점 사이 숫자만 입력)');
+
+        if (score == 5){
+            alert('매우 만족');
+        } else if (score == 4 ){
+            alert('만족');
+        } else if (score == 3){
+            alert('보통');
+        } else if (score == 2){
+            alert('불만족');
+        } else if (score == 1){
+            alert('매우 불만족');
+        } else {
+            alert('점수를 바르게 입력해 주세요!');
+        } */
+
+
+        // 예제2. 입력되는 월에 따라 계절을 화면에 출력하기
+        // 3~5월 봄, 6~8월은 여름, 9~11월 가을, 12~2월 겨울
+
+        /* var season = prompt('오늘 날짜의 월을 입력해 주세요!(숫자만 작성)');
+
+        if (3 == season || 4 == season || season == 5){
+            document.write('꽃이 만개하는 화사한 봄이네요!');
+        } else if (6 == season || 7 == season || season ==8){
+            document.write('무더운 여름 시원하게 보내세요!');
+        } else if (9 == season || 10 == season || season == 11){
+            document.write('독서의 계절 가을이네요!');
+        } else if (season == 12 || season == 1 || season == 2){
+            document.write('길거리 음식과 함께 따뜻한 겨울 보내세요!');
+        } else {
+            alert('1~12월 중에서 입력해 주세요!');
+        } */
+
+        // 예제 2번 풀이
+        /* 
+        봄 (3~5) month = 3,4,5
+        여름 (6~8) month = 6,7,8
+        가을 (9~11) month = 9,10,11
+        겨울 (12~2) month = 12,1,2
+
+        *계절별 구간 설정
+        1) 봄 3~5월
+        3 <= month <= 5
+        3 <= month && month <= 5
+
+        2) 여름 6~8월
+        6 <= month <= 8
+        6 <= month && month <= 8
+
+        3) 가을 9~11월
+        9 <= month <= 11
+        9 <= month && month <= 11
+
+        4) 겨울 12~1월
+        month == 12 || month == 1 ||  month == 2
+        */
+
+        //사용자에게 입력받은 월 정보를 담아줄 변수!
+        var month = Number(prompt('지금은 몇 월 입니까?(숫자만 입력)'));
+
+        if (3 <= month && month <= 5){
+            document.write('꽃이 화사한 봄이네요!');
+        } else if (6 <= month && month <= 8){
+             document.write('햇빛이 뜨거운 여름이네요!');
+        } else if (9 <= month && month <= 11){
+            document.write('독서의 계절 가을이네요!');
+        } else if (month == 12 || month == 1 || month == 2){
+            document.write('흰눈이 펑펑 내리는 겨울이네요!');
+        } else {
+            alert('1~12월 중에 입력해 주세요!');
+        }
+
+    </script>
+
+</body>
+
+</html>

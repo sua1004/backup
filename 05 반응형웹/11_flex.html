@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+</head>
+
+<body>
+
+    <!-- 
+    1. 플렉서블 박스(#container)에 적용하는 속성
+        1) display: flex | inline-flex;
+        2) flex-direction : row(기본값) | row-reverse | column | column-reverse;
+            ㄴ 플렉스 아이템 배치 방향
+        3) flex-wrap : nowrap(기본값) | wrap | wrap-reverse;
+            ㄴ 플렉스 아이템 줄바꿈 설정
+
+        * 주축, 교차축 방향으로 플렉스 아이템 배치하기
+        5) 주축 방향으로 아이템 배치 (x축)
+        justify-content : flex-start(기본값) | flex-end | center | space-between | space-around;
+
+        6) 교차축 방향으로 아이템 배치 (y축)
+        align-items : stretch(기본값) | flex-start | flex-end | center | baseline;
+
+    2. 플렉스 아이템(.item)에 적용하는 속성
+        1) 교차축(y축) 방향으로 플렉스 아이템을 '개별적'으로 배치하기
+        align-self : auto | stretch | flex-start | flex-end | center | baseline
+
+    3. 플렉서블 박스의 '가운데 정렬 공식'
+        display: flex;
+        justify-content: center; (가로방향 x축 가운데 정렬)
+        align-item: center; (세로방향 y축 가운데 정렬)
+        
+    -->
+
+    <div id="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+
+    <style>
+        #container {
+            width: 600px;
+            height: 500px;
+            border: 3px solid #000;
+            background-color: #fed136;
+            margin: 0 auto;
+
+            display: flex;
+            /* flex-direction: column-reverse; */ /* 플렉스 아이템 나열 설정, 기본값 row */
+            /* flex-flow: wrap-reverse; */ /* 플렉스 아이템 줄바꿈 설정, 기본값 nowrap(줄바꿈 x) */
+
+            justify-content: space-around; /* x축의 아이템 나열 설정 */
+            /* align-items: baseline; */ /* y축의 아이템 나열 설정 */
+
+            gap: 40px;
+        }
+
+        .item {
+            /* width: 100%; */
+            width: 30%;
+        }
+
+        .item:nth-child(1) {
+            background-color: tomato;
+            /* align-self: stretch; */
+        }
+        .item:nth-child(2) {
+            background-color: yellowgreen;
+            /* align-self: flex-start; */
+            /* flex-grow: 1; */
+        }
+        .item:nth-child(3) {
+            background-color: plum;
+            /* align-self: flex-end; */
+        }
+    </style>
+
+</body>
+
+</html>

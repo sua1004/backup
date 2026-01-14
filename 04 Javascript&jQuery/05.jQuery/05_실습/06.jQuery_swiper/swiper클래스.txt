@@ -1,0 +1,5 @@
+*swiper 플러그인 
+
+.swiper-container -> 실제 슬라이드가 보여지는 공간!
+.swiper-wrapper -> 전체를 담는 부모!
+.swiper-slide -> 각 슬라이드!

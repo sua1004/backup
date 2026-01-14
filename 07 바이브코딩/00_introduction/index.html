@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인 프로필</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Portfolio</div>
+            <button class="nav-toggle" aria-label="메뉴 토글">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home">홈</a></li>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#skills">기술</a></li>
+                <li><a href="#projects">프로젝트</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">안녕하세요, <span class="highlight">이수아</span>입니다</h1>
+                <p class="hero-subtitle">프론트엔드 개발자 | 창의적인 문제 해결자</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">연락하기</a>
+                    <a href="#projects" class="btn btn-secondary">프로젝트 보기</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-image">
+                    <div class="image-placeholder">👤</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        안녕하세요! 저는 웹 개발에 열정을 가진 프론트엔드 개발자입니다.<br>
+                        사용자 경험을 중시하며, 아름답고 기능적인 웹 애플리케이션을 만드는 것을 좋아합니다.
+                    </p>
+                    <p>
+                        항상 새로운 기술을 배우고 성장하는 것을 즐기며, 
+                        협업을 통해 더 나은 결과를 만들어내는 것을 추구합니다.
+                    </p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-label">이름</span>
+                            <span class="info-value">이수아</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">이메일</span>
+                            <span class="info-value">your.email@example.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">위치</span>
+                            <span class="info-value">서울, 대한민국</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기술 섹션 -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Vue.js</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Design</h3>
+                    <ul>
+                        <li>UI/UX Design</li>
+                        <li>Figma</li>
+                        <li>Adobe XD</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>VS Code</li>
+                        <li>Webpack</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <a href="project1.html" class="project-card-link">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">📱</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>프로젝트 1</h3>
+                            <p>웹 애플리케이션 프로젝트 설명이 들어갑니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="project2.html" class="project-card-link">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">🌐</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>프로젝트 2</h3>
+                            <p>웹 애플리케이션 프로젝트 설명이 들어갑니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="project3.html" class="project-card-link">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">⚡</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>프로젝트 3</h3>
+                            <p>웹 애플리케이션 프로젝트 설명이 들어갑니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p class="contact-description">
+                    프로젝트나 협업에 관심이 있으시다면 언제든지 연락해주세요!
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-link">
+                        <span class="contact-icon">✉️</span>
+                        <span>이메일</span>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="contact-link">
+                        <span class="contact-icon">🔗</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="contact-link">
+                        <span class="contact-icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 이수아. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

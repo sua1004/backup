@@ -1,0 +1,6 @@
+블록 주석처리 ctrl+shift+/
+자동정렬 alt+shift+F
+
+잘라내기 ctrl+X
+
+단어선택 alt+shift+오른쪽 방향키

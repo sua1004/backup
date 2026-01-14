@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>08_상태선택자</title>
+
+    <style>
+        a {
+            color: tomato;
+            text-decoration: none;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:visited {
+            color: skyblue;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        a:active {
+            color: greenyellow;
+        }
+
+        /* 
+        1) :link  방문하지 않은 링크에 스타일 적용
+        2) :visited  방문한 링크에 스타일 적용
+        3) :active  웹 요소를 활성화(클릭)햇을 때 스타일 적용
+        4) :hover  웹 요소에 마우스 커서를 올려놓았을 때 스타일 적용
+
+        **css 작성순서에 영향을 받으므로 작성순서 주의할 것!
+        :link  >>  :visited  >>  :hover  >>  :active
+        */
+    </style>
+</head>
+
+<body>
+
+    <p>
+        <a href="http://www.google.com" target="_blank">구글 바로가기</a>
+    </p>
+
+</body>
+
+</html>

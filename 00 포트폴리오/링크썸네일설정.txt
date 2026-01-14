@@ -1,0 +1,9 @@
+<!--썸네일 링크-->
+
+<meta property="og:image" content="img/link_thumbnail.jpg">
+<meta property="og:title" content="포트폴리오 보기">
+<meta property="og:description" content="강남 그린컴퓨터아카데미">
+
+
+
+**썸네일 제작 시 크기 설정 800px * 400px

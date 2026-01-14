@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+/* register.css */
+
+@import url(header.css);
+@import url(footer.css);
+
+/* float을 해제하는 선택자 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+}
+
+/* 여기서부터 section */
+section {
+    width: 100%;
+    background-image: url(../img/login_bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    margin-top: 120px;
+    padding: 80px 0;
+}
+
+section .inner-section {
+    width: 800px;
+    margin: 0 auto;
+}
+
+section .section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section .join {
+    background-color: #fff;
+    color: #666;
+    padding: 20px 0;
+}
+
+.join .top {
+    border-bottom: 0.6px solid #ccc;
+    padding-bottom: 20px;
+    position: relative;
+    /* .msg의 기준!! */
+    margin-bottom: 20px;
+}
+
+.join .top img {
+    margin-left: 60px;
+    /* float: left; */
+}
+
+.join .top .msg {
+    /* float: right; */
+    /* display: inline-block; */
+
+    position: absolute;
+    right: 60px;
+    bottom: 20px;
+}
+
+.join .top .msg p:first-child {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.join .top .msg p:last-child {
+    color: #999;
+}
+
+.join .top .msg p span {
+    color: #007042;
+}
+
+
+.join .content {
+    padding: 0 20px;
+}
+
+.join .content fieldset {
+    /* outline: 1px solid red; */
+    margin-bottom: 40px;
+}
+
+.join .content fieldset legend {
+    display: block;
+    margin-bottom: 20px;
+    color: 554538;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.join .content fieldset table {
+    width: 100%;
+    border-top: 2px solid #554538;
+    border-bottom: 1px solid #554538;
+    border-collapse: collapse;
+}
+
+/* table태그의 tr, th, td 공통 css */
+.join table tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.join table th {
+    width: 20%;
+    padding: 16px 0;
+    padding-left: 16px;
+    background-color: #d9d9d9;
+    text-align: left;
+}
+
+.join table td {
+    width: 80%;
+    padding: 16px 0 16px 16px;
+    background-color: #f4f4f2;
+}
+
+.join table td span {
+    font-size: 14px;
+    color: #999;
+}
+
+/* 폼태그 css */
+.join input {
+    width: 180px;
+    height: 30px;
+    padding-left: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* input 태그로 만드는 버튼의 공통 css */
+.join input[type="submit"],
+.join input[type="reset"],
+.join input[type="button"] {
+    width: auto;
+    padding: 0 4px;
+}
+
+.join input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+.join input[type="tel"] {
+    width: 100px;
+    margin: 0 10px;
+    text-align: center;
+}
+.join input[type="tel"]:first-child {
+    width: 80px;
+    margin-left: 0;
+}
+
+.join label {
+    display: block;
+}
+
+
+/* 아이디 입력칸과 중복확인 버튼 높이 맞추기 */
+.join table td.userid input {
+    vertical-align: middle;
+}
+.join table td.userid span {
+    vertical-align: middle;
+}
+
+
+.join table td.useremail input[type="email"] {
+    width: 300px;
+    margin-bottom: 10px;
+}
+.join table td.useremail label {
+    font-size: 14px;
+}
+
+.join table td.nickname input {
+    width: 300px;
+}
+.join table td .date {
+    margin-bottom: 10px;
+}
+.join table td .date select {
+    height: 30px;
+    color: #777;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.join table td .date + p {
+    font-size: 14px;
+}
+
+.join .btn {
+    width: 100% !important;
+    height: 60px;
+    display: block;
+    border: 0;
+    background-color: #007042;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}

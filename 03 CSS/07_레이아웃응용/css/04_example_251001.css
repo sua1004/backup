@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol, li {
+    list-style: none;
+} 
+a {
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+/* float해제를 위한 클래스 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.instagram {
+    width: 100%;
+    background-color: rgb(124, 81, 161);
+    padding: 100px 0;
+}
+.instagram .inbox {
+    /* width: 1280px; */
+
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.instagram .title {
+    font-size: 2rem;
+    color: rgb(255,255,255);
+    font-weight: 600;
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+.instagram .content {
+    /* outline: 2px solid lime; */
+    /* background-color: rgb(243, 130, 0); */
+    margin-bottom: 60px;
+}
+.instagram .content ul {}
+.instagram .content ul li {
+    width: 16.66%;
+    float: left;
+    overflow: hidden;
+
+    /* outline: 3px solid plum; */
+}
+.instagram .content ul li a {
+    display: block;
+}
+.instagram .content ul li a img {
+    width: 100%;
+    /* float: left; */
+    display: block;
+
+    transition: all 0.6s;
+}
+
+/* hover */
+.instagram .content ul li:hover img {
+    transform: scale(1.5);
+    opacity: 0.5;
+}
+
+.instagram .button {
+    /* outline: 2px solid lime; */
+    text-align: center;
+    /* 
+    하위요소 중 인라인 성격을 가진 요소는 글자처럼 취급되므로
+    text-align을 통해 정렬할 수 있다!
+    */
+}
+.instagram .button a {
+    font-size: 18px;
+    background-color: rgb(243, 130, 0);
+    color: rgb(255,255,255);
+    padding: 10px 20px;
+    text-transform: uppercase;
+
+    display: inline-block;
+}

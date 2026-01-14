@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_responsive1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* pc */
+        #wrap {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+           /*  outline: 3px solid red; */
+        }
+        header {
+            width: 100%;
+            height: 200px;
+            background-color: lightpink;
+        }
+
+        section::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        section nav {
+            width: 30%;
+            height: 500px;
+            background-color: skyblue;
+            float: left;
+        }
+        section article {
+            width: 70%;
+            height: 500px;
+            background-color: greenyellow;
+            float: left;
+        }
+
+        /* 노트북 */
+        @media all and (max-width:1280px){
+            body {
+                background-color: navy;
+            }
+            section nav {
+                background-color: darkseagreen;
+            }
+            section article {
+                background-color: lightyellow;
+            }
+        }
+
+        /* 태블릿 */
+        /* 768px ~ 1024px */
+        @media (min-width:768px) and (max-width:1024px) {
+            #wrap {
+                width: 100%;
+            }
+            header {
+                height: 150px;
+                background-color: tomato;
+            }
+            section nav {
+                width: 25%;
+            }
+            section article {
+                width: 75%;
+            }
+        }
+
+        /* 모바일 */
+        /* 태블릿 직전까지 모바일 UI적용 */
+        /* @media (min-width:0px) and (max-width:767px) {} */
+        @media all and (max-width:767px) {
+            #wrap {
+                width: 100%;
+            }
+            header {
+                height: 150px;
+                background-color: tomato;
+                color: #fff;
+            }
+            section nav {
+                width: 100%;
+                height: 300px;
+                float: none; /* float의 기본값 */
+            }
+            section article {
+                width: 100%;
+                height: 700px;
+                float: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <header>헤더</header>
+
+        <section>
+            <nav>메뉴</nav>
+            <article>본문</article>
+        </section>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04_example_return</title>
+
+    <script>
+        //총 8개의 이미지를 사용해 갤러리를 만들어 보세요. 처음 화면에는 1번 이미지가 나오고 다음 버튼을 누르면 다음 이미지로 변경되도록 구현하세요.
+
+        //이전 또는 다음 버튼을 눌렀을 때 >> click이벤트 (onclick)
+        //이미지 경로 변경 >> src 속성값을 변경 >> setAttribute('속성명','값')
+        
+        var num = 1; //이미지 파일명을 변경할 변수 
+        
+        function next (){
+
+            if (num === 8){
+                alert('마지막 이미지입니다!');
+                return false;
+            }
+
+            num++;
+            console.log(num);
+
+            /* if (num >= 9){
+                alert('마지막 이미지입니다!!!');
+                num = 8;
+                console.log('if문 실행!!!' + num);
+            } */
+
+            //변경된 변수값 적용!!! >> 이미지 경로 변경!
+            //document.getElementById('photo').setAttribute('src','images/pic_'+ num +'.jpg');
+            document.getElementById('photo').setAttribute('src',`images/pic_${num}.jpg`);
+
+        }
+
+        function prev (){
+
+            if (num === 1){
+                alert('첫번째 이미지입니다!');
+                return false;
+            }
+
+            num--;
+            console.log(num);
+
+            /* if (num<=0){
+                num=1;
+                console.log('prev함수 if문 실행!!!!');
+            } */
+
+            document.getElementById('photo').setAttribute('src',`images/pic_${num}.jpg`);
+        }
+        
+        function gallery (direction){
+
+            //[다음] 버튼을 누르면 num++ >> true
+            //[이전] 버튼을 누르면 num-- >> false
+
+            if (direction){
+                //true, 다음 버튼을 클릭!
+                if (num === 8) return false;
+                num++;
+
+            } else {
+                //false, 이전 버튼을 클릭!
+                if (num === 1) return false;
+                num--;
+            }
+
+            console.log('현재 num의 값: ' + num);
+
+            //변경된 num의 값을 적용!
+            document.getElementById('photo').setAttribute('src',`images/pic_${num}.jpg`);
+
+        }
+        
+        
+    </script>
+
+    <style>
+        #galleryZone {
+            text-align: center;
+        }
+        .img-box {
+            margin-bottom: 20px;
+        }
+        .img-box img {
+            width: 500px;
+        }
+        button {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="galleryZone">
+        <div class="img-box">
+            <img src="images/pic_1.jpg" alt="" id="photo">
+        </div>
+
+        <div class="btngrp">
+            <!-- 1) next(), prev() 각각의 함수 사용 -->
+            <!-- <button onclick="prev();">이전</button>
+            <button onclick="next();">다음</button> -->
+
+            <!-- 2) 하나의 함수 사용 -->
+             <button onclick="gallery(0);">이전</button>
+             <button onclick="gallery(1);">다음</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

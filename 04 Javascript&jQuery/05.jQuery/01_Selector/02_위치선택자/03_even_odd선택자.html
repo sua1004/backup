@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03_even_odd선택자</title>
+
+    <script src="jquery-1.7.2.min.js"></script>
+
+    <script>
+        /* 
+        홀수 - odd / 짝수 - even
+
+        even 선택자 : 짝수 '인덱스' 요소 선택자
+        $('요소선택:even')
+
+        odd 선택자 : 홀수 '인덱스' 요소 선택자
+        $('요소선택:odd')
+
+        *nth-child(even|odd)를 사용하면 우리가 아는 순서와 맞출 수 있다!
+        (03 CSS/01_CSS선택지(selector)/07-1_위치선택자(배수).htnl 참고)
+        */
+
+        $(document).ready(function(){
+            $('#menu li:even').css('background-color','yellow');
+            $('#menu li:odd').css('background-color','pink')
+
+            $('#menu li:nth-child(even)').css('color','red');
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <h1>even/odd 선택자</h1>
+    <ul id="menu">
+        <li>내용1 (인덱스 0)</li>
+        <li>내용2 (인덱스 1)</li>
+        <li>내용3 (인덱스 2)</li>
+        <li>내용4 (인덱스 3)</li>
+        <li>내용5 (인덱스 4)</li>
+        <li>내용6 (인덱스 5)</li>
+    </ul>
+
+</body>
+
+</html>

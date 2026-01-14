@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>06_border-and-background</title>
+    </head>
+
+    <body>
+       
+        <table cellpadding="6" border="1" width="500" style="border-collapse: collapse;">
+
+            <!-- 
+            표에 간격 없이 테두리 넣기 : <table> 태그 안에 style (속성) 추가하기
+            style 속성 값 : border-collapse: collapse 설정
+            -->
+            
+            <tr bgcolor="lightblue">
+                <th></th>
+                <th>인출</th>
+                <th>예금</th>
+                <th>잔고</th>
+            </tr>
+
+            <tr bgcolor="yellow">
+                <th>1월</th>
+                <td>250.00</td>
+                <td>660.50</td>
+                <td>410.50</td>
+            </tr>
+
+            <tr bgcolor="lightgray">
+                <th bgcolor="pink">2월</th>
+                <td bgcolor="pink">135.55</td>
+                <td bgcolor="pink">895.20</td>
+                <td bgcolor="lightgreen">1170.15</td>
+            </tr>
+
+            <!-- 
+            태그에 설정된 색보다 직접 설정된 색이 우선적으로 설정됨 (bgcolor)
+            -->
+
+        </table>
+
+    </body>
+</html>

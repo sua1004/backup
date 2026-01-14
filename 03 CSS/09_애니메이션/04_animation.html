@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04_animation</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 30px;
+        }
+
+        /* ANIMATION 1 */
+        .box1 {
+            background-color: bisque;
+            animation-name: change;
+            animation-duration: 5s;
+
+            /* 애니메이션의 반복 횟수 */
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes change {
+
+            /* 애니메이션의 시작지점 스타일 */
+            from {
+                background-color: aqua;
+            }
+
+            /* 애니메이션 종료지점 스타일 */
+            to {
+                background-color: darkred;
+                border-radius: 50%;
+            }
+        }
+
+        /* ANIMATION 2 */
+        .box2 {
+            background-color: yellowgreen;
+            position: relative;
+            animation-name: move;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            /* 무한반복 */
+            animation-direction: alternate;
+            /* 역방향 */
+        }
+
+        @keyframes move {
+            0% {
+                left: 0;
+                top: 0;
+                background-color: red;
+            }
+
+            25% {
+                left: 200px;
+                top: 0;
+                background-color: darkorange;
+            }
+
+            50% {
+                left: 200px;
+                top: 200px;
+                background-color: yellow;
+            }
+
+            75% {
+                left: 0;
+                top: 200px;
+                background-color: lightseagreen;
+            }
+
+            100% {
+                left: 0;
+                top: 0;
+                background-color: dodgerblue;
+            }
+        }
+
+        /* ANIMATION 3 */
+        h2 {
+            margin-top: 300px;
+        }
+
+        .bar {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            background-color: tomato;
+            color: #fff;
+            position: relative;
+
+            /* animation-name: run;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-delay: 3s; */
+
+            animation: run 5s 3s infinite;
+            /* animation: name duration timing-function delay count direction */
+        }
+        .linear {animation-timing-function: linear;}
+        .ease {animation-timing-function: ease;}
+        .ease-in {animation-timing-function: ease-in;}
+        .ease-out {animation-timing-function: ease-out;}
+        .ease-in-out {animation-timing-function: ease-in-out;}
+
+        @keyframes run {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ANIMATION 1 -->
+    <div class="box1"></div>
+
+    <!-- ANIMATION 2 -->
+    <div class="box2"></div>
+
+    <!-- ANIMATION 3 -->
+    <h2>timing-function</h2>
+    <div class="bar linear">일정한 속도</div>
+    <div class="bar ease">시작과 종료 부드럽게</div>
+    <div class="bar ease-in">서서히 시작</div>
+    <div class="bar ease-out">서서히 종료</div>
+    <div class="bar ease-in-out">서서히 시작해서 서서히 종료</div>
+</body>
+
+</html>

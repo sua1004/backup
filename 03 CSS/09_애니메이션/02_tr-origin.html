@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02_tr-origin</title>
+
+    <style>
+
+        .origin {
+            width: 160px;
+            height: 240px;
+            border: 1px solid #000;
+            float: left;
+            margin: 40px;
+        }
+        img {
+            -webkit-transform: rotate(10deg);
+            -ms-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+
+        /* 
+        벤더 프리픽스
+        : css 표준으로 지정되지 않은 기능, css 권고안에 포함되지 
+        못한 기능들을 사용하고자 할 때 사용
+
+        -webkit- : Chrome, safari, IOS, Android
+        -ms- : Internet Explorer, Edge
+        -moz- : Firefox (mozila사)
+        -o- : Opera, 12.0 이전 버전을 고려하는 경우에 사용
+                (오페라 15.0 이후에는 -webkit-을 사용)
+        */
+
+        .ltop img {
+            transform-origin: left top;
+        }
+        .rtop img {
+            transform-origin: right top;
+        }
+        .lbottom img {
+            transform-origin: left bottom;
+        }
+        .rbottom img {
+            transform-origin: right bottom;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="origin">
+        <div class="ltop">
+            <img src="images/rose.jpg" alt="장미">
+        </div>
+    </div>
+
+    <div class="origin">
+        <div class="rtop">
+            <img src="images/rose.jpg" alt="장미">
+        </div>
+    </div>
+
+    <div class="origin">
+        <div class="lbottom">
+            <img src="images/rose.jpg" alt="장미">
+        </div>
+    </div>
+
+    <div class="origin">
+        <div class="rbottom">
+            <img src="images/rose.jpg" alt="장미">
+        </div>
+    </div>
+</body>
+
+</html>

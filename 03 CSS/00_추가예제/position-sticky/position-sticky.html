@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>position-sticky</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            box-shadow: 0 0 8px #ccc;
+        }
+
+        main {
+            margin: 30px 0;
+            padding: 100px;
+            background-color: #d9eafd;
+            text-align: center;
+        }
+        main h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        main p {
+            font-size: 1.6rem;
+        }
+
+        section {
+            width: 80%;
+            margin: 0 auto 50px;
+
+            /* outline: 2px solid red; */
+        }
+        section::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        section article.left {
+            width: 60%;
+            float: left;
+        }
+        section article.left img {
+            display: block;
+            margin: 0 auto;
+        }
+        section article.left img:first-child {
+            width: 60%;
+        }
+        section article.left img:nth-child(2) {
+            width: 80%;
+        }
+        section article.left img:last-child {
+            width: 100%;
+        }
+
+        section article.right {
+            width: 36%;
+            float: right;
+
+            box-shadow: 0 0 10px #ccc;
+            padding: 40px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 30px;
+            margin-top: 50px;
+
+            position: sticky;
+            top: 100px; /* 좌표값 없으면 sticky 동작 안됨! (고정할 좌표값) */
+        }
+        section article.right h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        section article.right p {
+            font-size: 1.4rem;
+        }
+
+        footer {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #bcccdc;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+    position: sticky;
+    특정 지점에서 요소 고정 (relative + fixed)
+
+    - sticky 속성을 갖는 요소들은 부모 요소 안에서만 적용
+    - 부모 요소의 높잇값 안에서 sticky가 고정되므로 부모가 높잇값을 갖고 있어야 함
+    (부모요소에 거장된 높잇값 설정 또는 자식요소의 높이를 읽을 수 있으면 됩니다!!!!)
+    - 부모 요소 중에 overflow 속성이 적용되어 있으면 동작 안됨
+    
+    -->
+
+    <header>
+        <h1>position-sticky</h1>
+    </header>
+
+    <main>
+        <h2>망그러진 곰</h2>
+        <p>망곰이가 여러분을 응원합니다!</p>
+    </main>
+
+    <section>
+        <article class="left">
+            <img src="img/doit1.jpg" alt="">
+            <img src="img/doit2.jpg" alt="">
+            <img src="img/doit3.jpg" alt="">
+        </article>
+
+        <article class="right">
+            <h2>망곰이 메세지</h2>
+            <p>할 수 있다!!!</p>
+        </article>
+    </section>
+
+    <footer>
+            <p>Copyright 2025</p>
+        </footer>
+
+</body>
+
+</html>

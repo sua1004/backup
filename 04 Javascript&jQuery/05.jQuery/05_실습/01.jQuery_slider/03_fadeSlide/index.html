@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>fadeSlide</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            background-color: #fff09f;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        /* .viewer - 실제 슬라이드가 보여지는 공간! + 전체 슬라이드를 담는 부모 역할! */
+        .viewer {
+            width: 1420px;
+            height: 610px;
+            margin: 60px auto;
+            border-radius: 30px;
+            overflow: hidden;
+
+            /* outline: 2px solid red; */
+            position: relative; /* .slide의 기준 */
+        }
+
+        /* 각 슬라이드 */
+        .viewer .slide {
+            width: 100%;
+            position: absolute;
+        }
+        .viewer .slide img {
+            width: 100%;
+            display: block;
+        }
+        .viewer .active {
+            z-index: 1;
+        }
+    </style>
+
+    <!----------------------------------------------------------------------------->
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script>
+        /* 
+        *fade 슬라이드 전환 원리
+        현재 보이는 슬라이드 >> 1번
+        '다음'에 보여질 슬라이드 >> 2번
+
+        1) 1번 슬라이드가 보여지도록 z-index값 설정 (active 클래스 사용)
+        2) 2번 슬라이드에 fadeIn 효과를 적용할 수 있도록 display:none; 설정, active 클래스(z-index) 추가 -> hide(), addClass()
+        3) 2번 슬라이드 등장!!! (fadeIn 효과!)
+
+        4) 1번 슬라이드의 active 클래스(z-index) 제거, 1번 슬라이드를 .viewer의 맨 뒤로 이동 (다음을 위한 준비!!!) -> removeClass(), append(), appendTo
+        */
+
+        $(document).ready(function(){
+            //함수 호출
+            //fadeSlide();
+
+            //1. 클릭할 때마다 함수 호출
+            /* $('.viewer').click(function(){
+                fadeSlide();
+            }); */
+
+            //2. 3초 간격으로 함수 호출 (자동실행)
+            //setInterval(fadeSlide, 3000);
+
+            //3. 이벤트 적용
+            //마우스를 올리면 슬라이드가 멈추고 -> clearInterval
+            //마우스가 벗어나면 다시 자동실행 되도록 구현! -> setInterval
+
+            var autoCall; //인터벌용 변수
+
+            autoCall = setInterval(fadeSlide, 3000);
+
+            $('.viewer').mouseover(function(){
+                //인터벌 제거 - 멈춤
+                clearInterval(autoCall);
+                console.log(autoCall);
+            }).mouseout(function(){
+                //인터벌 재실행
+                autoCall = setInterval(fadeSlide, 3000);
+            });
+
+            //답안 작성
+            /* setInterval(function(){
+                fadeSlide(),
+                $('.viewer').hover().stop()
+            }, 3000); */
+        });
+
+        /*///////////////////////////////////// 
+        함수명 : fadeSlide
+        기능 : fade 효과를 적용해 슬라이드 전환
+        /////////////////////////////////////*/
+
+        function fadeSlide (){
+
+            // 1번 - 현재 보여지는 슬라이드, 첫번째 슬라이드
+            var firstSlide = $('.viewer .slide').first();
+
+            // 2번 - 현재 보여지는 슬라이드의 '다음' 슬라이드
+            var nextSlide = firstSlide.next();
+
+            nextSlide.hide().addClass('active').fadeIn(800, function(){
+                //다음을 위한 준비!!!
+                //첫번째 슬라이드의 z-index 제거
+                firstSlide.removeClass('active');
+                
+                //1번 슬라이드를 맨뒤로 이동!
+                $('.viewer').append(firstSlide);
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h1 class="title">Knotted Dount</h1>
+
+    <div class="viewer">
+        <div class="slide active"><img src="slide1.jpg" alt=""></div>
+        <div class="slide"><img src="slide2.jpg" alt=""></div>
+        <div class="slide"><img src="slide3.jpg" alt=""></div> 
+        <div class="slide"><img src="slide4.jpg" alt=""></div>
+    </div>
+
+    <!-- 
+    fade효과를 적용한 slide 구현은
+    실제 슬라이드가 보여지는 영역이 슬라이드 전체를 담는 역할을 대신할 수 있다!
+    -->
+
+</body>
+
+</html>

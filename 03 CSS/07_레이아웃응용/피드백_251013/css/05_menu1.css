@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol, li {
+    list-style: none;
+} 
+a {
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+/* float해제를 위한 클래스 */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    
+}
+
+/* .wrapper {
+    width: 1280px;
+    margin: 0 auto;
+} */
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    /* background-color: yellow; */
+}
+header h1 {
+    /* margin: 40px 0 40px; */
+    padding: 40px 0;
+    font-size: 25px;
+}
+header .menu {
+    /* margin: 0 auto; */
+    /* display: inline-block; */
+}
+header .menu li{
+    /* float: left; */
+    display: inline-block;
+
+    font-size: 20px;
+    margin: 0 60px;
+    line-height: 60px;
+}
+header .menu li a {
+    color: black;
+}
+header .menu li a:hover {
+    color: aqua;
+}
+
+
+section {
+    width: 1280px;
+    margin: 0 auto 40px;
+
+    background-color: green;
+    /* text-align: center;
+    margin: 0 25px;
+    margin-bottom: 40px; */
+}
+section .main {
+    background-color: orange;
+    padding-top: 20px;
+    /* padding-top대신 line-height 써보세요! */
+    height: 600px;
+    font-size: 18px;
+}
+
+section .product {
+    font-size: 18px;
+}
+section .product p {
+    height: 300px;
+    padding-top: 20px;
+    float: left;
+    /* width: 307.5px; */
+    width: 25%;
+}
+section .product p:nth-child(2n) {
+    background-color: lightpink;
+}
+section .product p:nth-child(2n+1) {
+    background-color: lightblue;
+}
+
+/* section .product .pro1 {
+    background-color: lightblue;
+}
+section .product .pro2 {
+    background-color: lightpink;
+}
+section .product .pro3 {
+    background-color: lightblue;
+}
+section .product .pro4 {
+    background-color: lightpink;
+} */
+
+section .banner {
+    font-size: 18px;
+}
+section .banner p {
+    padding: 40px 0;
+    float: left;
+    /* width: 590px; */
+    width: 50%;
+}
+
+section .banner .ba1 {
+    background-color: greenyellow;
+}
+section .banner .ba1 {
+    background-color: tomato;
+}
+
+footer {
+    background-color: lightgray;
+    /* height: 150px; */
+    border-top: 2px solid gray;
+}
+
+.footer-wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    /* height: 100%; */
+}
+footer ul {
+    /* padding: 0 50px;
+    padding-bottom: 20px; */
+
+    /* padding: 0 50px 20px; */
+    overflow: hidden;
+    
+}
+footer ul li {
+    float: left;
+    line-height: 50px;
+    
+    /* padding-top: 25px; */
+}
+footer ul li ~ li {
+    margin-left: 20px;
+}
+footer ul li a {
+    color: black;
+}
+footer ul li a:hover {
+    color: blue;
+}
+
+footer p {
+    border-top: 1px solid gray;
+    text-align: left;
+
+    padding: 40px 0;
+
+    /* margin-top: 0;
+    padding-top: 30px;
+    text-indent: 50px; */
+}

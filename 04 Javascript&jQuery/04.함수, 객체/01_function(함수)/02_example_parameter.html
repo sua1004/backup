@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>02_example_parameter</title>
+
+    <script>
+        //prompt를 통해 방문자의 아이디와 비밀번호를 입력받고, 만일 잘못된 아이디가 입력된 경우에는 "존재하지 않는 아이디입니다."라는 경고 창을 나타내고, 잘못된 비밀번호가 작성된 경우에는 "잘못된 비밀번호입니다."라는 경고창을 나타내시오. 아이디와 비밀번호가 일치하면 환영문구를 출력하세요.
+
+        var rightId = "green";
+        var rightPw = "1234";
+
+        /* 
+        1) 아이디, 비밀번호 입력 >> prompt()
+
+        2) 입력받은 값으로 아이디, 비밀번호 일치 여부 확인!! >> 함수!!
+
+        (1) 아이디 비교 (if~else문)
+        (1-1) 일치 >> 비밀번호
+        (1-2) 불일치 >> alert('존재하지 않는 아이디입니다.');
+
+        (2) 비밀번호 비교 (if~else문)
+        (2-1) 일치 >> document.write('환영합니다!');
+        (2-2) 불일치 >> alert('잘못된 비밀번호입니다.');
+        */
+
+        
+
+        /* //1) 아이디, 비밀번호 입력
+        var userId = prompt('아이디를 입력하세요.');
+        var userPw = prompt('비밀번호를 입력하세요.');
+
+        login(userId, userPw);
+
+        //2) 입력받은 값으로 아이디, 비밀번호 일치 여부 확인!
+        function login (id, pw){
+
+            //아이디 비교
+            if (rightId == id){ //아이디 일치
+
+                if (rightPw == pw){ //비밀번호 일치
+                    document.write('환영합니다!');
+                } else { //비밀번호 불일치
+                    alert('잘못된 비밀번호입니다.');
+                }
+            } else {
+                //아이디 불일치
+                alert('존재하지 않는 아이디입니다.');
+            }
+        } */
+
+        
+        //답안 작성
+        /* 
+        아이디/비밀번호 -> 사용자에게 입력 받기
+
+        아이디가 틀렸을 시 -> "존재하지 않는 아이디입니다."라는 경고 창
+        비밀번호가 틀렸을 시 ->  "잘못된 비밀번호입니다."라는 경고창
+
+        둘 다 일치하면 -> 환영 문구 출력
+        */
+        
+        var userId = prompt('아이디를 입력하세요.');
+        var userPw = prompt('비밀번호를 입력하세요.');
+
+        function login (inputId, inputPw){
+
+            if (rightId == inputId){
+                
+                if (rightPw == inputPw){
+                    document.write(`${userId}님 환영합니다!`);
+                } else {
+                    alert('잘못된 비밀번호입니다.');
+                }
+            } else {
+                alert('존재하지 않는 아이디입니다.');
+            }
+        }
+        
+        login(userId, userPw);
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

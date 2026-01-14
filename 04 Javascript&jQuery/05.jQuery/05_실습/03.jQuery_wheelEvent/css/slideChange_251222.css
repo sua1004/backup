@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol,li {
+    list-style: none;
+}
+ul::after, ol::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+li {
+    float: left;
+}
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 보이는 화면 기준 크기 설정! */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: navy;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0,0,0,0.6);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+header .inner {
+    width: 100%;
+    max-width: 1720px;
+
+    /* width: calc(100% - 100px); */
+    margin: 0 auto;
+    height: 100%;
+    /* outline: 2px solid lime; */
+}
+header .logo {
+    margin-left: 50px;
+    float: left;
+}
+header .logo a {}
+header .logo a img {
+    height: 30px;
+    margin-top: 35px;
+    display: block;
+}
+
+header .gnb {
+    margin-right: 50px;
+    float: right;
+}
+header .gnb ul {}
+header .gnb ul li~li {
+    margin-left: 20px;
+}
+header .gnb ul li a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 100px;
+}
+header .gnb ul li a:hover {
+    color: #ff748b;
+    text-decoration: underline;
+}
+
+/* 선택된 gnb 메뉴 디자인 */
+header .gnb ul li.on a {
+    color: #ff748b;
+    text-decoration: underline;
+}
+
+/* 섹션 디자인 */
+/* 
+.page를 가진 section 의 부모는 body!
+body가 가진 width, height를 100% 모두 사용하겠다!
+>> 보이는 화면 기준으로 각 섹션이 한페이지씩 공간을 사용할 수 있어요!
+*/
+.page {
+    width: 100%;
+    height: 100%;
+
+    position: relative; /* .b-logo의 기준! */
+    /* outline: 3px solid lime; */
+}
+.page .b-logo {
+    display: block;
+    height: 60px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+}
+
+/* 각 페이지 배경이미지! */
+#brand1 {background: url(../img/brands_img_laneige.jpg) no-repeat top/cover;}
+#brand2 {background: url(../img/brands_img_innisfree.jpg) no-repeat top/cover;}
+#brand3 {background: url(../img/brands_img_prmr.jpg) no-repeat top/cover;}
+#brand4 {background: url(../img/brands_img_mamonde.jpg) no-repeat top/cover;}
+#brand5 {background: url(../img/brands_img_iope.jpg) no-repeat top/cover;}
+#brand6 {background: url(../img/brands_img_hanyul.jpg) no-repeat top/cover;}
+
+/* 페이저 내비게이션 */
+.side-pager {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+}
+.side-pager ul {}
+.side-pager ul li {
+    float: none;
+    margin: 10px 0;
+}
+.side-pager ul li a {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 50%;
+
+    position: relative; /* span의 기준!! */
+}
+.side-pager ul li a span {
+    /* 메뉴글자를 담은 요소 */
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+
+    width: 100px;
+    position: absolute;
+    left: 200%;
+    top: -6px;
+
+    display: none;
+}
+
+.side-pager ul li a:hover span {
+    display: block;
+}
+
+/* 선택된 페이저 디자인 */
+.side-pager ul li.on a {
+    background-color: #fff;
+}
+.side-pager ul li.on a span {
+    display: block;
+}
+
+footer {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #b6a28e;
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+
+    height: 150px !important;
+    box-sizing: border-box;
+}
